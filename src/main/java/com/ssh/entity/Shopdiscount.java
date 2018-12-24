@@ -1,15 +1,15 @@
 package com.ssh.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "character_function_operation", schema = "mysys", catalog = "")
-public class CharacterFunctionOperation {
+public class Shopdiscount {
     private int id;
 
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     public int getId() {
         return id;
     }
@@ -23,7 +23,7 @@ public class CharacterFunctionOperation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CharacterFunctionOperation that = (CharacterFunctionOperation) o;
+        Shopdiscount that = (Shopdiscount) o;
 
         if (id != that.id) return false;
 

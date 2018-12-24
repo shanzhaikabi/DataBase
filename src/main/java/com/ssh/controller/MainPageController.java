@@ -19,7 +19,7 @@ public class MainPageController {
     private UserServiceImpl userService;
 
     @RequestMapping(value = "/mainPage",method = RequestMethod.GET)
-    public ModelAndView register(@CookieValue("userid") String userid) {
+    public ModelAndView register(@CookieValue(name = "userid",defaultValue = "") String userid) {
         User user = userService.getUserFromCookie(userid);
         ModelMap map=new ModelMap();
         map.put("user",user);

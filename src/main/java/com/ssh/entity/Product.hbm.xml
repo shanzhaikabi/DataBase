@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.ssh.entity.Product" table="product" schema="darkhome">
+        <id name="productId">
+            <column name="productId" sql-type="varchar(20)" length="20"/>
+        </id>
+        <property name="productName">
+            <column name="productName" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="productPrice">
+            <column name="productPrice" sql-type="decimal(10)" precision="10" not-null="true"/>
+        </property>
+        <property name="productDetail">
+            <column name="productDetail" sql-type="varchar(80)" length="80" not-null="true"/>
+        </property>
+        <property name="productStock">
+            <column name="productStock" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

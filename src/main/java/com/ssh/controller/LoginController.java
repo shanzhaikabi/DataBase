@@ -42,7 +42,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView loginWhenHaveCookie(@CookieValue("username") String userName,@CookieValue("password") String password) throws IOException {
+    public ModelAndView loginWhenHaveCookie(@CookieValue(name = "username",defaultValue = "") String userName,@CookieValue(name = "password",defaultValue = "") String password) throws IOException {
         ModelMap map=new ModelMap();
         map.put("userName",userName);
         map.put("userPass",password);

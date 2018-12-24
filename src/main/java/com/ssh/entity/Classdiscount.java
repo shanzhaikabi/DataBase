@@ -1,15 +1,15 @@
 package com.ssh.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "user_character", schema = "mysys", catalog = "")
-public class UserCharacter {
+public class Classdiscount {
     private int id;
 
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     public int getId() {
         return id;
     }
@@ -23,7 +23,7 @@ public class UserCharacter {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UserCharacter that = (UserCharacter) o;
+        Classdiscount that = (Classdiscount) o;
 
         if (id != that.id) return false;
 

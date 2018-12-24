@@ -4,8 +4,9 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.ssh.entity.Operation" table="operation" schema="mysys">
-        <id name="operationid" column="operationid"/>
-        <property name="name" column="name"/>
+    <class name="com.ssh.entity.Shopdiscount" table="shopdiscount" schema="darkhome">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
     </class>
 </hibernate-mapping>

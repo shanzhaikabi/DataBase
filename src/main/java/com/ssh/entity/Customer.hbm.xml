@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.ssh.entity.Customer" table="customer" schema="darkhome">
+        <id name="customerId">
+            <column name="customerId" sql-type="varchar(20)" length="20"/>
+        </id>
+        <property name="customerName">
+            <column name="customerName" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="customerIdentity">
+            <column name="customerIdentity" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="customerAddress">
+            <column name="customerAddress" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="customerTel">
+            <column name="customerTel" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="customerLevel">
+            <column name="customerLevel" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
