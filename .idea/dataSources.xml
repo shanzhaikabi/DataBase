@@ -15,5 +15,59 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="config" uuid="7fbba83e-6ac6-4346-8ffe-da113f5b4e0c">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>jdbc.properties
+
+/Users/Shanzhai/Desktop/github/DataBase/src/main/resources/config.properties</remarks>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/darkhome?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=true</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="yearIsDateType" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="tinyInt1isBit" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="dataSource" uuid="d3517fcc-c04d-47dc-9af2-b4ff5c88ef05">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>c3p0
+
+/Users/Shanzhai/Desktop/github/DataBase/src/main/resources/META-INF/spring-hibernate.xml</remarks>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/darkhome?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=true</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="yearIsDateType" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="tinyInt1isBit" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="sessionFactory/Hibernate" uuid="98392114-012b-49e3-a961-09cbe199365f">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/Users/Shanzhai/Desktop/github/DataBase/src/main/resources/META-INF/spring-hibernate.xml</remarks>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/darkhome</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="yearIsDateType" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="tinyInt1isBit" value="false" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>

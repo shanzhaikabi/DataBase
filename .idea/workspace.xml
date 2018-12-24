@@ -2,18 +2,29 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="DataBase" />
+      <artifact name="Shanzhai:Web exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="470eff69-21d5-4f19-b11c-7aa5d5374c7f" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/Shanzhai.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Management_Web_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssh/respository/CostomerRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssh/respository/CustomerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bcae2a63-0a45-40ca-bf35-b65e4de132e4.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/WEB-INF/classes/META-INF/Management.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/WEB-INF/classes/META-INF/spring-hibernate.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/WEB-INF/classes/META-INF/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/WEB-INF/classes/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/views/mainPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/views/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/views/registerFail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssh/respository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssh/respository/UserRepositoryImpl.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,7 +48,88 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkHome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="class: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="classdiscount: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="customer: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="discount: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="discountdetail: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="ordermaster: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="product: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="productdiscount: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="shop: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="shopdiscount: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -50,58 +142,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state relative-caret-position="170">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Shanzhai.iml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/CostomerRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+            <state relative-caret-position="595">
+              <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1047#1048#0" expanded="true" />
+                <element signature="e#1103#1104#0" expanded="true" />
+                <element signature="e#1140#1141#0" expanded="true" />
+                <element signature="e#1186#1187#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/login.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/CustomerRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/efb10e1e-07a9-40a6-8573-cc90d797e884/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Character.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/CharacterFunctionOperation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="68">
+              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -109,8 +176,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/RegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1155#1156#0" expanded="true" />
@@ -120,20 +187,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/mainPage.jsp">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Classdiscount.hbm.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            <state relative-caret-position="102">
+              <caret line="6" column="67" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/register.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-mvc.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="238">
+              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-hibernate.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -155,6 +231,7 @@
     <findStrings>
       <find>　　　　</find>
       <find>　　</find>
+      <find>classpath</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,8 +256,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/utils/UserUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/UserCharacter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/UserRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/CharacterFunctionOperation.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/registerFail.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/register.jsp" />
@@ -188,11 +263,15 @@
         <option value="$PROJECT_DIR$/src/main/webapp/views/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/MainPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/MainPageController.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/UserRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/CostomerRepositoryImpl.java" />
       </list>
     </option>
   </component>
@@ -210,16 +289,29 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="120" />
-    <option name="width" value="1800" />
-    <option name="height" value="1099" />
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Shanzhai" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1532" />
+    <option name="y" value="98" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,7 +350,49 @@
               <item name="DataBase" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ssh" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ssh" type="462c0819:PsiDirectoryNode" />
+              <item name="respository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ssh" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DataBase" type="b2602c69:ProjectViewProjectNode" />
@@ -268,33 +402,34 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="JPA.DatabaseSchemaImportDialog" value="bcae2a63-0a45-40ca-bf35-b65e4de132e4" />
+    <property name="JPA.DatabaseSchemaImportDialog" value="c0115146-dbf8-477f-9dcb-9aab44055055" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545634708934" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545656224852" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/views" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="" />
       <recent name="com.ssh.entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/ssh/controller" />
       <recent name="$PROJECT_DIR$/src/main/webapp/views" />
       <recent name="$PROJECT_DIR$/target" />
       <recent name="$PROJECT_DIR$/src/main" />
@@ -313,7 +448,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.14">
+  <component name="RunManager">
     <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -331,15 +466,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in Shanzhai" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Shanzhai" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -365,11 +491,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.14" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.14" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+    <configuration name="Tomcat 9.0.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/DataBase/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="DataBase">
+        <artifact name="Shanzhai:Web exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/DataBase" />
           </settings>
@@ -434,72 +560,8 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="DataBase" />
+          <artifact name="Shanzhai:Web exploded" />
         </option>
-      </method>
-    </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.14" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment />
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="_DataBase" />
-        <option name="DEPLOY_TOMCAT_APPS" value="true" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="12185" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
@@ -511,15 +573,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="JUnit.All in Shanzhai" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.14" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.All in Shanzhai" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
@@ -534,22 +587,21 @@
       <workItem from="1544597016187" duration="13601000" />
       <workItem from="1545134898367" duration="13320000" />
       <workItem from="1545566472887" duration="3802000" />
-      <workItem from="1545630131152" duration="696000" />
-      <workItem from="1545630908480" duration="2117000" />
-      <workItem from="1545648763589" duration="1709000" />
+      <workItem from="1545643895705" duration="7241000" />
+      <workItem from="1545656239621" duration="45000" />
     </task>
+    <task id="LOCAL-00001" summary="重构了entity">
+      <created>1545655395307</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545655395307</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="All_in_Shanzhai - 2018.12.24 at 13h 58m 18s.xml">
-      <configuration name="All in Shanzhai" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Shanzhai - 2018.12.24 at 13h 58m 32s.xml">
-      <configuration name="All in Shanzhai" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35245000" />
+    <option name="totallyTimeSpent" value="38009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -561,13 +613,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
-    <editor active="true" />
+    <frame x="1532" y="98" width="1440" height="877" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49860725" visible="true" weight="0.20541082" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4955414" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" sideWeight="0.5013928" side_tool="true" weight="0.24964234" />
       <window_info id="Designer" order="2" />
-      <window_info id="Persistence" order="3" sideWeight="0.5013928" side_tool="true" weight="0.24964234" />
+      <window_info id="Persistence" order="3" sideWeight="0.5044586" side_tool="true" visible="true" weight="0.2639485" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
@@ -575,7 +626,7 @@
       <window_info id="Web" order="8" sideWeight="0.5013928" side_tool="true" weight="0.24964234" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29866117" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32611465" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -584,25 +635,30 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32866243" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32577905" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32611465" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32729805" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32729805" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" weight="0.32729805" />
       <window_info anchor="bottom" id="Version Control" order="15" />
-      <window_info anchor="bottom" id="Database Console" order="16" weight="0.32729805" />
+      <window_info anchor="bottom" id="Database Console" order="16" weight="0.32611465" />
+      <window_info anchor="bottom" id="Hibernate Console" order="17" weight="0.3299363" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.3297568" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.3296593" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="重构了entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构了entity" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -611,26 +667,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/a.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/a.java" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bcae2a63-0a45-40ca-bf35-b65e4de132e4/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bcae2a63-0a45-40ca-bf35-b65e4de132e4/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
     <entry file="file://$PROJECT_DIR$/target/applicationContext.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/TestServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#134#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/TestServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Character.java" />
     <entry file="das://bcae2a63-0a45-40ca-bf35-b65e4de132e4/schema/mysys/table/user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -638,31 +681,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/4.3.5.Final/hibernate-core-4.3.5.Final.jar!/org/hibernate/SessionFactory.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-mvc.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/4.3.5.Final/hibernate-core-4.3.5.Final.jar!/org/hibernate/SessionFactory.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-hibernate.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-          <folding>
-            <element signature="e#1105#1121#0" expanded="true" />
-            <element signature="e#1179#1192#0" expanded="true" />
-            <element signature="e#1248#1266#0" expanded="true" />
-            <element signature="e#1322#1340#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        <state relative-caret-position="102">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -676,9 +698,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/UserCharacter.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/UserCharacter.hbm.xml" />
     <entry file="das://bcae2a63-0a45-40ca-bf35-b65e4de132e4/schema/mysys/table/user_character">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -686,53 +706,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/User.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/UserCharacter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1604">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/CharacterFunctionOperation.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/DomainRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Character.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="70" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/TestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/User.hbm.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/UserCharacter.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/User.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/CharacterFunctionOperation.hbm.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/CharacterFunctionOperation.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Character.hbm.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/TestService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/registerFail.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -740,17 +720,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/UserRepositoryImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="527">
+          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.1.RELEASE/spring-webmvc-4.3.1.RELEASE-sources.jar!/org/springframework/web/servlet/ModelAndView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="99" column="29" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3068#3069#0" expanded="true" />
+            <element signature="e#3117#3118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/MainPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/mainPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c0115146-dbf8-477f-9dcb-9aab44055055/schema/darkhome/table/classdiscount">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c0115146-dbf8-477f-9dcb-9aab44055055/schema/darkhome/table/class">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c0115146-dbf8-477f-9dcb-9aab44055055/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -762,70 +825,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/DomainRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
-          <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3068#3069#0" expanded="true" />
-            <element signature="e#3117#3118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/MainPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="21" column="72" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
+        <state relative-caret-position="85">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Ordermaster.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="48" column="45" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Ordermaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Shanzhai.iml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/CostomerRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        <state relative-caret-position="595">
+          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Character.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/CustomerRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/CharacterFunctionOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="68">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/RegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1155#1156#0" expanded="true" />
@@ -834,34 +896,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/mainPage.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-mvc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        <state relative-caret-position="238">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/register.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-hibernate.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="302">
+          <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/login.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Classdiscount.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/efb10e1e-07a9-40a6-8573-cc90d797e884/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        <state relative-caret-position="102">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -871,7 +923,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>DataBase</last-edited>
+          <last-edited>Shanzhai:Web exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -884,7 +936,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring</last-edited>
+          <last-edited>Web (Shanzhai)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -919,12 +971,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Shanzhai</last-edited>
+          <last-edited>Web|Shanzhai</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
