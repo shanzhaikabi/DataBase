@@ -6,5 +6,21 @@
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
     </data-source>
+    <data-source name="config" uuid="7fbba83e-6ac6-4346-8ffe-da113f5b4e0c">
+      <database-info product="MySQL" version="5.7.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )" dbms="MYSQL" exact-version="5.7.20">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <user-name>root</user-name>
+      <introspection-schemas>*:@</introspection-schemas>
+    </data-source>
+    <data-source name="dataSource" uuid="d3517fcc-c04d-47dc-9af2-b4ff5c88ef05">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>root</user-name>
+    </data-source>
+    <data-source name="sessionFactory/Hibernate" uuid="98392114-012b-49e3-a961-09cbe199365f">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+    </data-source>
   </component>
 </project>

@@ -1,6 +1,6 @@
 package com.ssh.respository;
 
-import com.ssh.entity.Customer;
+import com.ssh.entity.Shopdiscount;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-
-public class CustomerRepositoryImpl implements CustomerRepository{
+public class ShopdiscountRepositoryImpl implements ShopdiscountRepository{
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -19,31 +18,31 @@ public class CustomerRepositoryImpl implements CustomerRepository{
         return this.sessionFactory.openSession();
     }
 
-    public Customer load(String id) {
-        return (Customer)getCurrentSession().load(Customer.class,id);
+    public Shopdiscount load(Integer id) {
+        return (Shopdiscount) getCurrentSession().load(Shopdiscount.class,id);
     }
 
-    public Customer get(String id) {
-        return (Customer)getCurrentSession().get(Customer.class,id);
+    public Shopdiscount get(Integer id) {
+        return (Shopdiscount) getCurrentSession().get(Shopdiscount.class,id);
     }
 
-    public List<Customer> findAll() {
+    public List<Shopdiscount> findAll() {
         return null;
     }
 
-    public void persist(Customer entity) {
+    public void persist(Shopdiscount entity) {
         getCurrentSession().persist(entity);
     }
 
-    public String save(Customer entity) {
-        return (String)getCurrentSession().save(entity);
+    public Integer save(Shopdiscount entity) {
+        return (Integer) getCurrentSession().save(entity);
     }
 
-    public void saveOrUpdate(Customer entity) {
+    public void saveOrUpdate(Shopdiscount entity) {
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(String id) {
+    public void delete(Integer id) {
         getCurrentSession().delete(id);
     }
 
