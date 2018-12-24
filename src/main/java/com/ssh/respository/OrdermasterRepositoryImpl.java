@@ -1,6 +1,6 @@
 package com.ssh.respository;
 
-import com.ssh.entity.Customer;
+import com.ssh.entity.Ordermaster;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-
-public class CustomerRepositoryImpl implements CustomerRepository{
+public class OrdermasterRepositoryImpl implements OrdermasterRepository{
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -19,27 +18,28 @@ public class CustomerRepositoryImpl implements CustomerRepository{
         return this.sessionFactory.openSession();
     }
 
-    public Customer load(String id) {
-        return (Customer)getCurrentSession().load(Customer.class,id);
+
+    public Ordermaster load(String id) {
+        return (Ordermaster)getCurrentSession().load(Ordermaster.class,id);
     }
 
-    public Customer get(String id) {
-        return (Customer)getCurrentSession().get(Customer.class,id);
+    public Ordermaster get(String id) {
+        return (Ordermaster)getCurrentSession().get(Ordermaster.class,id);
     }
 
-    public List<Customer> findAll() {
+    public List<Ordermaster> findAll() {
         return null;
     }
 
-    public void persist(Customer entity) {
+    public void persist(Ordermaster entity) {
         getCurrentSession().persist(entity);
     }
 
-    public String save(Customer entity) {
-        return (String)getCurrentSession().save(entity);
+    public String save(Ordermaster entity) {
+        return (String) getCurrentSession().save(entity);
     }
 
-    public void saveOrUpdate(Customer entity) {
+    public void saveOrUpdate(Ordermaster entity) {
         getCurrentSession().saveOrUpdate(entity);
     }
 
