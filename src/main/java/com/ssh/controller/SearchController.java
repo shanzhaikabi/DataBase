@@ -95,4 +95,13 @@ public class SearchController {
         }
         return new ModelAndView("/search",map);
     }
+
+    @RequestMapping(value = "/search",method = RequestMethod.GET)
+    public ModelAndView searchProduct(String id){
+        ModelMap map=new ModelMap();
+        List<Product> productList = productService.ShowProductByName("");
+        map.put("result",SearchUtils.search_result_product(productList));
+        map.put("from","商品列表");
+        return new ModelAndView("/search",map);
+    }
 }
