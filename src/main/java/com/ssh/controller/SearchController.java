@@ -5,6 +5,7 @@ import com.ssh.service.ProductServiceImpl;
 import com.ssh.service.ShopServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,5 +40,10 @@ public class SearchController {
             throw new Exception();
         }
         //return new ModelAndView("mainPage",map);
+    }
+
+    @RequestMapping(value = "/search",method = RequestMethod.POST)
+    public ModelAndView searchProductByShop(String shopId){
+        return productService.ShowProductByShopId(shopId);
     }
 }
