@@ -1,60 +1,52 @@
 package com.ssh.service;
 
+import com.ssh.entity.Clazz;
+import com.ssh.entity.Discount;
 import com.ssh.entity.Product;
+import com.ssh.entity.Shop;
 import com.ssh.respository.ProductRepositoryImpl;
-import com.ssh.utils.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService{
     @Autowired
     private ProductRepositoryImpl productRepository;
-/*
-    public ModelAndView ShowProductByName(String name){
-        List<Product> productList = productRepository.findByName(name);
-        return getModelAndView(productList);
-    }
+    @Autowired
+    private ShopServiceImpl shopService;
+    @Autowired
+    private ClassServiceImpl classService;
+    @Autowired
+    private DiscountServiceImpl discountService;
 
-    public ModelAndView ShowProductByClassId(String classId) {
-        List<Product> productList = productRepository.findByClass(classId);
-        return getModelAndView(productList);
-    }
-
-    public ModelAndView ShowProductByShopId(String shopId) {
-        List<Product> productList = productRepository.findByShop(shopId);
-        return getModelAndView(productList);
-    }
-
-    private ModelAndView getModelAndView(List<Product> productList) {
-        ModelMap map = new ModelMap();
-        if (productList.size() > 0) {
-            map.put("result", SearchUtils.search_result_product(productList));
-        }
-        else{
-            map.put("result", "抱歉，未能找到相关结果");
-        }
-        return new ModelAndView("/search",map);
-    }*/
-
-
-
-    public ModelAndView ShowProductDetail(String id){
+    public List ShowProductDetail(String id){
+        List list = new ArrayList();
         Product product = productRepository.get(id);
-        ModelMap map = new ModelMap();
-        if (null == product) {
-            map.put("result","抱歉，未能找到相关结果");
-        }
-        else{
-            String shopId = product.getShopId();
-            String classId = product.getClassId();
+        list.add(product);
+        if (null == product) return null;
+        Clazz clazz = classService.GetClassById(product.getClassId());
+        if (null == clazz) return null;
+        list.add(clazz);
+        Shop shop = shopService.GetShopById(product.getShopId());
+        if (null == shop) return null;
+        list.add(shop);
+        List<Discount> discountList = new ArrayList<Discount>();
+        discountList.addAll(discountService.getDiscountForShop(shop.getShopId()));
+        discountList.addAll(discountService.getDiscountForClass(clazz.getClassId()));
+        discountList.addAll(discountService.getDiscountForProduct(product.getProductId()));
+        list.add(3,discountList);
+        return list;
+    }
 
-        }
-        return new ModelAndView("/product", map);
+    public List ShowProductDetailHavingCustomer(String id,String CustomerId){
+        List list = ShowProductDetail(id);
+        List<Discount> currentDiscountList = discountService.getCurrentDiscountFromUser(CustomerId);
+        currentDiscountList.retainAll((List)list.get(3));
+        list.add(currentDiscountList);
+        return list;
     }
 
     public List<Product> ShowProductByName(String name) {

@@ -14,5 +14,8 @@
         <property name="discountStatus">
             <column name="discountStatus" sql-type="varchar(20)" length="20" not-null="true"/>
         </property>
+        <property name="discountType">
+            <column name="discountType" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

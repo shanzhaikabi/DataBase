@@ -9,6 +9,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -35,8 +36,7 @@ public class ClazzRepositoryImpl implements ClazzRepository {
 
     public List<Clazz> findByName(String name){
         Criteria c = getCurrentSession().createCriteria(Clazz.class).add(Restrictions.like("className","%"+name+"%"));
-        List<Clazz> list = c.list();
-        return list;
+        return c.list() == null ? new ArrayList<>() : c.list();
     }
 
     public void persist(Clazz entity) {

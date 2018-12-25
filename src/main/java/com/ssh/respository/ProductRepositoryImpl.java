@@ -9,6 +9,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -35,20 +36,17 @@ public class ProductRepositoryImpl implements ProductRepository{
 
     public List<Product> findByName(String name) {
         Criteria c = getCurrentSession().createCriteria(Product.class).add(Restrictions.like("productName","%" + name + "%"));
-        List<Product> list = c.list();
-        return list;
+        return c.list() == null ? new ArrayList<>() : c.list();
     }
 
     public List<Product> findByClass(String classId) {
         Criteria c = getCurrentSession().createCriteria(Product.class).add(Restrictions.eq("classId",classId));
-        List<Product> list = c.list();
-        return list;
+        return c.list() == null ? new ArrayList<>() : c.list();
     }
 
     public List<Product> findByShop(String shopId) {
-        Criteria c = getCurrentSession().createCriteria(Product.class).add(Restrictions.eq("shopId",shopId));
-        List<Product> list = c.list();
-        return list;
+        Criteria c = getCurrentSession().createCriteria(Product.class).add(Restrictions.eq("shopId", shopId));
+        return c.list() == null ? new ArrayList<>() : c.list();
     }
 
     public void persist(Product entity) {

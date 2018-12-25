@@ -8,6 +8,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -34,8 +35,7 @@ public class ShopRepositoryImpl implements ShopRepository{
 
     public List<Shop> findByName(String name){
         Criteria c = getCurrentSession().createCriteria(Shop.class).add(Restrictions.like("shopName","%"+name+"%"));
-        List<Shop> list = c.list();
-        return list;
+        return c.list() == null ? new ArrayList<>() : c.list();
     }
 
     public void persist(Shop entity) {

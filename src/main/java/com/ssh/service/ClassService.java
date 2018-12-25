@@ -7,4 +7,5 @@ import java.util.List;
 public interface ClassService {
     List<Clazz> ShowClassByName(String name);
     String GetNameById(String id);
+    Clazz GetClassById(String id);
 }

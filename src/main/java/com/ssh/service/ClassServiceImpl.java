@@ -22,5 +22,9 @@ public class ClassServiceImpl implements ClassService{
         return clazz == null ? null : clazz.getClassName();
     }
 
+    public Clazz GetClassById(String id) {
+        Clazz clazz = classRepository.get(id);
+        return clazz;
+    }
 
 }

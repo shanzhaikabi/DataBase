@@ -23,6 +23,7 @@ public class ProductUtils {
         //candis
         ans = ans + "<fieldset>";
         ans = ans + "<legend>可用优惠券</legend>";
+        System.out.println(candis);
         Iterator<Discount> iterator = candis.iterator();
         while(iterator.hasNext()) {
             ans = ans + "<fieldset>";

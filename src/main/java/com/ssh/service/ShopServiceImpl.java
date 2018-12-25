@@ -21,4 +21,11 @@ public class ShopServiceImpl implements ShopService{
         Shop shop = shopRepository.get(id);
         return shop == null ? null : shop.getShopName();
     }
+
+    public Shop GetShopById(String id) {
+        Shop shop = shopRepository.get(id);
+        return shop;
+    }
+
+
 }

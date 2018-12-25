@@ -1,9 +1,12 @@
 package com.ssh.respository;
 
+import com.ssh.entity.Discount;
 import com.ssh.entity.Discountdetail;
 import com.ssh.entity.Product;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -49,5 +52,11 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
 
     public void flush() {
         getCurrentSession().flush();
+    }
+
+    public List<Discountdetail> getDiscountDetailByCustomerId(String customerId) {
+        Criteria c = getCurrentSession().createCriteria(Discountdetail.class)
+                .add(Restrictions.eq("customerId",customerId));
+        return c.list();
     }
 }

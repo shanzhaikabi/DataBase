@@ -8,5 +8,11 @@
         <id name="id">
             <column name="id" sql-type="int(11)"/>
         </id>
+        <property name="discountType">
+            <column name="discountType" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="productId">
+            <column name="productId" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>
