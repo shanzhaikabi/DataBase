@@ -28,7 +28,7 @@ public class ShopRepositoryImpl implements ShopRepository{
         return (Shop) getCurrentSession().get(Shop.class,id);
     }
 
-    public List<Shop> findAll() {
+    public List<Product> findAll() {
         return null;
     }
 

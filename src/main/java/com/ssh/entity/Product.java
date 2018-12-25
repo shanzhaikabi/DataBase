@@ -9,7 +9,9 @@ import javax.persistence.Id;
 public class Product {
     private String productId;
     private String productName;
+    private String shopId;
     private Integer productPrice;
+    private String classId;
     private String productDetail;
     private Integer productStock;
 
@@ -34,6 +36,16 @@ public class Product {
     }
 
     @Basic
+    @Column(name = "shopId", nullable = true, length = 20)
+    public String getShopId() {
+        return shopId;
+    }
+
+    public void setShopId(String shopId) {
+        this.shopId = shopId;
+    }
+
+    @Basic
     @Column(name = "productPrice", nullable = true, precision = 0)
     public Integer getProductPrice() {
         return productPrice;
@@ -41,6 +53,16 @@ public class Product {
 
     public void setProductPrice(Integer productPrice) {
         this.productPrice = productPrice;
+    }
+
+    @Basic
+    @Column(name = "classId", nullable = true, length = 20)
+    public String getClassId() {
+        return classId;
+    }
+
+    public void setClassId(String classId) {
+        this.classId = classId;
     }
 
     @Basic
@@ -72,8 +94,10 @@ public class Product {
 
         if (productId != null ? !productId.equals(product.productId) : product.productId != null) return false;
         if (productName != null ? !productName.equals(product.productName) : product.productName != null) return false;
+        if (shopId != null ? !shopId.equals(product.shopId) : product.shopId != null) return false;
         if (productPrice != null ? !productPrice.equals(product.productPrice) : product.productPrice != null)
             return false;
+        if (classId != null ? !classId.equals(product.classId) : product.classId != null) return false;
         if (productDetail != null ? !productDetail.equals(product.productDetail) : product.productDetail != null)
             return false;
         if (productStock != null ? !productStock.equals(product.productStock) : product.productStock != null)
@@ -86,7 +110,9 @@ public class Product {
     public int hashCode() {
         int result = productId != null ? productId.hashCode() : 0;
         result = 31 * result + (productName != null ? productName.hashCode() : 0);
+        result = 31 * result + (shopId != null ? shopId.hashCode() : 0);
         result = 31 * result + (productPrice != null ? productPrice.hashCode() : 0);
+        result = 31 * result + (classId != null ? classId.hashCode() : 0);
         result = 31 * result + (productDetail != null ? productDetail.hashCode() : 0);
         result = 31 * result + (productStock != null ? productStock.hashCode() : 0);
         return result;

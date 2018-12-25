@@ -1,5 +1,7 @@
 package com.ssh.respository;
 
+import com.ssh.entity.Product;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -8,7 +10,7 @@ public interface DomainRepository<T,PK extends Serializable>{
 
     T get(PK id);
 
-    List<T> findAll();
+    List<Product> findAll();
 
     void persist(T entity);
 

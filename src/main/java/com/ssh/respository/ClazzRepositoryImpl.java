@@ -1,6 +1,7 @@
 package com.ssh.respository;
 
 import com.ssh.entity.Clazz;
+import com.ssh.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class ClazzRepositoryImpl implements ClazzRepository {
         return (Clazz) getCurrentSession().get(Clazz.class,id);
     }
 
-    public List<Clazz> findAll() {
+    public List<Product> findAll() {
         return null;
     }
 

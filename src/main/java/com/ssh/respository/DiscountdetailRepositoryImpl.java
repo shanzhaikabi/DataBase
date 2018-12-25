@@ -1,7 +1,7 @@
 package com.ssh.respository;
 
 import com.ssh.entity.Discountdetail;
-import com.ssh.entity.Shopdiscount;
+import com.ssh.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
         return (Discountdetail) getCurrentSession().get(Discountdetail.class,id);
     }
 
-    public List<Discountdetail> findAll() {
+    public List<Product> findAll() {
         return null;
     }
 

@@ -11,8 +11,14 @@
         <property name="productName">
             <column name="productName" sql-type="varchar(20)" length="20" not-null="true"/>
         </property>
+        <property name="shopId">
+            <column name="shopId" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
         <property name="productPrice">
             <column name="productPrice" sql-type="decimal(10)" precision="10" not-null="true"/>
+        </property>
+        <property name="classId">
+            <column name="classId" sql-type="varchar(20)" length="20" not-null="true"/>
         </property>
         <property name="productDetail">
             <column name="productDetail" sql-type="varchar(80)" length="80" not-null="true"/>

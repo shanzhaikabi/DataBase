@@ -1,5 +1,6 @@
 package com.ssh.respository;
 
+import com.ssh.entity.Product;
 import com.ssh.entity.Shopdiscount;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -26,7 +27,7 @@ public class ShopdiscountRepositoryImpl implements ShopdiscountRepository{
         return (Shopdiscount) getCurrentSession().get(Shopdiscount.class,id);
     }
 
-    public List<Shopdiscount> findAll() {
+    public List<Product> findAll() {
         return null;
     }
 

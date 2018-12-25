@@ -1,6 +1,7 @@
 package com.ssh.respository;
 
 import com.ssh.entity.Customer;
+import com.ssh.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class CustomerRepositoryImpl implements CustomerRepository{
         return (Customer)getCurrentSession().get(Customer.class,id);
     }
 
-    public List<Customer> findAll() {
+    public List<Product> findAll() {
         return null;
     }
 

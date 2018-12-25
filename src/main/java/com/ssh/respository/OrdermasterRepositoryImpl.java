@@ -1,6 +1,7 @@
 package com.ssh.respository;
 
 import com.ssh.entity.Ordermaster;
+import com.ssh.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class OrdermasterRepositoryImpl implements OrdermasterRepository{
         return (Ordermaster)getCurrentSession().get(Ordermaster.class,id);
     }
 
-    public List<Ordermaster> findAll() {
+    public List<Product> findAll() {
         return null;
     }
 
