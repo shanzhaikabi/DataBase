@@ -33,7 +33,7 @@ public class ShopRepositoryImpl implements ShopRepository{
     }
 
     public List<Shop> findByName(String name){
-        Criteria c = getCurrentSession().createCriteria(Shop.class).add(Restrictions.eq("shopName",name));
+        Criteria c = getCurrentSession().createCriteria(Shop.class).add(Restrictions.like("shopName","%"+name+"%"));
         List<Shop> list = c.list();
         return list;
     }

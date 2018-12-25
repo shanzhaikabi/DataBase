@@ -30,7 +30,8 @@ public class SearchController {
     @RequestMapping(value = "/search.do",method = RequestMethod.POST)
     public ModelAndView search(String keyword,String searchCheck) throws Exception {
         ModelMap map=new ModelMap();
-        map.put("from",keyword + " 的搜索结果");
+        if(keyword.equals("")){map.put("from","模糊搜索结果");}
+        else map.put("from",keyword + " 的搜索结果");
         if (searchCheck.equals("product")){
             List<Product> productList = productService.ShowProductByName(keyword);
             if (productList.size() > 0) {

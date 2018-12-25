@@ -34,7 +34,7 @@ public class ClazzRepositoryImpl implements ClazzRepository {
     }
 
     public List<Clazz> findByName(String name){
-        Criteria c = getCurrentSession().createCriteria(Clazz.class).add(Restrictions.eq("className",name));
+        Criteria c = getCurrentSession().createCriteria(Clazz.class).add(Restrictions.like("className","%"+name+"%"));
         List<Clazz> list = c.list();
         return list;
     }
