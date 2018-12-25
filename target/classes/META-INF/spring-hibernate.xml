@@ -36,9 +36,25 @@
                 <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop> <!--hibernate根据实体自动生成数据库表-->
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>   <!--指定数据库方言-->
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>     <!--在控制台显示执行的数据库操作语句-->
-                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>     <!--在控制台显示执行的数据哭操作语句（格式）-->
+                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+                <!--prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/darkHome</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop!-->     <!--在控制台显示执行的数据哭操作语句（格式）-->
             </props>
         </property>
+        <!--<property name="mappingLocations">
+            <list>
+                <value>classpath:com/ssh/entity/Clazz.hbm.xml</value>
+                <value>classpath:com/ssh/entity/Classdiscount.hbm.xml</value>
+                <value>classpath:com/ssh/entity/Customer.hbm.xml</value>
+                <value>classpath:com/ssh/entity/Discount.hbm.xml</value>
+                <value>classpath:com/ssh/entity/Discountdetail.hbm.xml</value>
+                <value>classpath:com/ssh/entity/Ordermaster.hbm.xml</value>
+                <value>classpath:com/ssh/entity/Product.hbm.xml</value>
+                <value>classpath:com/ssh/entity/Productdiscount.hbm.xml</value>
+                <value>classpath:com/ssh/entity/Shop.hbm.xml</value>
+                <value>classpath:com/ssh/entity/Shopdiscount.hbm.xml</value>
+            </list>
+        </property>!-->
     </bean>
 
     <!-- 事物管理器配置  -->
