@@ -14,7 +14,7 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService{
     @Autowired
     private ProductRepositoryImpl productRepository;
-
+/*
     public ModelAndView ShowProductByName(String name){
         List<Product> productList = productRepository.findByName(name);
         return getModelAndView(productList);
@@ -38,6 +38,34 @@ public class ProductServiceImpl implements ProductService{
         else{
             map.put("result", "抱歉，未能找到相关结果");
         }
-        return new ModelAndView("/result",map);
+        return new ModelAndView("/search",map);
+    }*/
+
+
+
+    public ModelAndView ShowProductDetail(String id){
+        Product product = productRepository.get(id);
+        ModelMap map = new ModelMap();
+        if (null == product) {
+            map.put("result","抱歉，未能找到相关结果");
+        }
+        else{
+            String shopId = product.getShopId();
+            String classId = product.getClassId();
+
+        }
+        return new ModelAndView("/product", map);
+    }
+
+    public List<Product> ShowProductByName(String name) {
+        return productRepository.findByName(name);
+    }
+
+    public List<Product> ShowProductByClassId(String classId) {
+        return null;
+    }
+
+    public List<Product> ShowProductByShopId(String shopId) {
+        return null;
     }
 }

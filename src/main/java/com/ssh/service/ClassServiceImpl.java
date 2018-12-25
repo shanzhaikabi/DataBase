@@ -1,5 +1,6 @@
 package com.ssh.service;
 
+import com.ssh.entity.Clazz;
 import com.ssh.respository.ClazzRepositoryImpl;
 import com.ssh.utils.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +15,10 @@ public class ClassServiceImpl implements ClassService{
     @Autowired
     ClazzRepositoryImpl classRepository;
 
-    public ModelAndView ShowClassByName(String name) {
-        ModelMap map = new ModelMap();
+    public List<Clazz> ShowClassByName(String name) {
         List classList = classRepository.findByName(name);
-        if (classList.size() > 0) {
-            map.put("result", SearchUtils.search_result_class(classList));
-        }
-        else{
-            map.put("result", "抱歉，未能找到相关结果");
-        }
-        return new ModelAndView("search",map);
+        return classList;
     }
+
+
 }

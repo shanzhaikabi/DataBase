@@ -1,6 +1,8 @@
 package com.ssh.service;
 
-import org.springframework.web.servlet.ModelAndView;
+import com.ssh.entity.Shop;
+
+import java.util.List;
 
 public interface ShopService {
     /**
@@ -8,5 +10,5 @@ public interface ShopService {
      * @param name
      * @return
      */
-    public ModelAndView ShowShopByName(String name);
+    public List<Shop> ShowShopByName(String name);
 }

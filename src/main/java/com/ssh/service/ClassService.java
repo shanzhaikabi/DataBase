@@ -1,7 +1,9 @@
 package com.ssh.service;
 
-import org.springframework.web.servlet.ModelAndView;
+import com.ssh.entity.Clazz;
+
+import java.util.List;
 
 public interface ClassService {
-    public ModelAndView ShowClassByName(String name);
+    public List<Clazz> ShowClassByName(String name);
 }

@@ -9,15 +9,15 @@ import java.util.List;
 
 public class SearchUtils {
     //TODO:Translate list<class/product/shop> into html string.
-    public String search_result_product(List<Product> list)
+    public static String search_result_product(List<Product> list)
     {
         return "";
     }
-    public String search_result_shop(List<Shop> list)
+    public static String search_result_shop(List<Shop> list)
     {
         return "";
     }
-    public String search_result_class(List<Clazz> list)
+    public static String search_result_class(List<Clazz> list)
     {
         return "";
     }
