@@ -29,22 +29,19 @@
         </h4>
         <div class="space-6"></div>
         <%--${pageContext.request.contextPath }--%>
-        <form action="${pageContext.request.contextPath}/login.do" method="POST">
+        <form action="${pageContext.request.contextPath}/search.do" method="POST">
             <fieldset>
-                <label class="block clearfix">
-                    <span class="block input-icon input-icon-right">
-                        用户名<input type="text" name="userid" class="form-control" placeholder="用户名" value="${userName}"/>
-                    </span>
-                    <span class="block input-icon input-icon-right">
-                        密码<input type="password" name="password" class="form-control" placeholder="密码" value="${userPass}" />
-                    </span>
-                    <tr>
-                        <td  colspan="2" align="center"><input type="checkbox" checked="checked" name="isUseCookie" />记住登陆</td>
-                    </tr>
-                </label>
+                <div class="block input-icon input-icon-right">
+                    关键字<input type="text" name="keyword" class="form-control" placeholder="请输入关键字"/>
+                </div>
+                <div>
+                    <input type="radio" name="SearchCheck" value="product" checked="checked"/>商品
+                    <input type="radio" name="SearchCheck" value="class"/>商品类别
+                    <input type="radio" name="SearchCheck" value="shop"/>商家
+                </div>
                 <div class="space"></div>
                 <div class="clearfix" style="text-align: center;">
-                    <input type="submit" value="提交" style="width:100px;">
+                    <input type="submit" value="搜索" style="width:100px;">
                 </div>
                 <div class="space-4"></div>
             </fieldset>
