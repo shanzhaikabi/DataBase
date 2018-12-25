@@ -1,3 +1,6 @@
+<%@ page import="com.ssh.entity.Product" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -35,9 +38,9 @@
                     关键字<input type="text" name="keyword" class="form-control" placeholder="请输入关键字"/>
                 </div>
                 <div>
-                    <input type="radio" name="SearchCheck" value="product" checked="checked"/>商品
-                    <input type="radio" name="SearchCheck" value="class"/>商品类别
-                    <input type="radio" name="SearchCheck" value="shop"/>商家
+                    <input type="radio" name="searchCheck" value="product" checked="checked"/>商品
+                    <input type="radio" name="searchCheck" value="class"/>商品类别
+                    <input type="radio" name="searchCheck" value="shop"/>商家
                 </div>
                 <div class="space"></div>
                 <div class="clearfix" style="text-align: center;">
@@ -46,6 +49,21 @@
                 <div class="space-4"></div>
             </fieldset>
         </form>
+        <% String type = (String)request.getAttribute("type");
+        if (type != null){
+            if (type == "error"){
+                %> ${result} <%
+            }
+            else if (type == "product"){
+                List<Product> list = (List<Product>)request.getAttribute("result");
+                Iterator<Product> iterator = list.iterator();
+                while(iterator.hasNext()){
+                    Product product = iterator.next();
+                    %> <%=product.getProductName()+"<br>"%><%
+                }
+            }
+        }
+        %>
     </div>
 </div>
 </body>

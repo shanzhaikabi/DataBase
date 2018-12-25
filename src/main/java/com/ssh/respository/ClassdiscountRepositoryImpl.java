@@ -18,7 +18,6 @@ public class ClassdiscountRepositoryImpl implements ClassdiscountRepository{
         return this.sessionFactory.openSession();
     }
 
-
     public Classdiscount load(Integer id) {
         return (Classdiscount)getCurrentSession().load(Classdiscount.class,id);
     }
@@ -27,7 +26,7 @@ public class ClassdiscountRepositoryImpl implements ClassdiscountRepository{
         return (Classdiscount)getCurrentSession().get(Classdiscount.class,id);
     }
 
-    public List<Product> findAll() {
+    public List<Classdiscount> findAll() {
         return null;
     }
 

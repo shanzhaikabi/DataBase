@@ -1,4 +1,12 @@
-# Compiled class file
+*.properties
+
+/out
+/target
+/.idea
+/src/main/resources/META-INF
+/src/main/resources/config.properties
+
+#Compiled class file
 *.class
 
 # Log file
@@ -23,6 +31,3 @@ hs_err_pid*
 
 # properties
 *.properties
-
-/out/*
-/target/*

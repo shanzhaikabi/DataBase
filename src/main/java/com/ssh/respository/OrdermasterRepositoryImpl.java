@@ -28,7 +28,7 @@ public class OrdermasterRepositoryImpl implements OrdermasterRepository{
         return (Ordermaster)getCurrentSession().get(Ordermaster.class,id);
     }
 
-    public List<Product> findAll() {
+    public List<Ordermaster> findAll() {
         return null;
     }
 

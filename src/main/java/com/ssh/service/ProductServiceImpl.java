@@ -14,11 +14,25 @@ public class ProductServiceImpl implements ProductService{
     @Autowired
     private ProductRepositoryImpl productRepository;
 
-    public ModelAndView ShowProductBySearchingName(String name){
+    public ModelAndView ShowProductByName(String name){
         ModelMap map = new ModelMap();
         List<Product> productList = productRepository.findByName(name);
-        map.put("result",productList);
-        map.put("type","product");
+        if (productList.size() > 0) {
+            map.put("result", productList);
+            map.put("type", "product");
+        }
+        else{
+            map.put("result", "抱歉，未能找到相关结果");
+            map.put("type","error");
+        }
         return new ModelAndView("/search",map);
+    }
+
+    public ModelAndView ShowProductByClassId(String classId) {
+        return null;
+    }
+
+    public ModelAndView ShowProductByShopId(String shopId) {
+        return null;
     }
 }

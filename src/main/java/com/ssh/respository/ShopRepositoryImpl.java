@@ -1,9 +1,10 @@
 package com.ssh.respository;
 
-import com.ssh.entity.Product;
 import com.ssh.entity.Shop;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -19,7 +20,6 @@ public class ShopRepositoryImpl implements ShopRepository{
         return this.sessionFactory.openSession();
     }
 
-
     public Shop load(String id) {
         return (Shop) getCurrentSession().load(Shop.class,id);
     }
@@ -28,8 +28,14 @@ public class ShopRepositoryImpl implements ShopRepository{
         return (Shop) getCurrentSession().get(Shop.class,id);
     }
 
-    public List<Product> findAll() {
+    public List<Shop> findAll() {
         return null;
+    }
+
+    public List<Shop> findByName(String name){
+        Criteria c = getCurrentSession().createCriteria(Shop.class).add(Restrictions.eq("shopName",name));
+        List<Shop> list = c.list();
+        return list;
     }
 
     public void persist(Shop entity) {

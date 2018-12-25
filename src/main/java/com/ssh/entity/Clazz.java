@@ -3,7 +3,6 @@ package com.ssh.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "class", schema = "darkhome", catalog = "")
 public class Clazz {
     private String classId;
     private String className;

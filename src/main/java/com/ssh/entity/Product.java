@@ -117,4 +117,5 @@ public class Product {
         result = 31 * result + (productStock != null ? productStock.hashCode() : 0);
         return result;
     }
+
 }

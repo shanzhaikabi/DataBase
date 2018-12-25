@@ -25,7 +25,7 @@ public class DiscountRepositoryImpl implements DiscountRepository{
         return (Discount) getCurrentSession().get(Discount.class,id);
     }
 
-    public List<Product> findAll() {
+    public List<Discount> findAll() {
         return null;
     }
 

@@ -10,7 +10,7 @@ public interface DomainRepository<T,PK extends Serializable>{
 
     T get(PK id);
 
-    List<Product> findAll();
+    List<T> findAll();
 
     void persist(T entity);
 

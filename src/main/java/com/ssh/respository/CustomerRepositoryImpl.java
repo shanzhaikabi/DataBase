@@ -28,7 +28,7 @@ public class CustomerRepositoryImpl implements CustomerRepository{
         return (Customer)getCurrentSession().get(Customer.class,id);
     }
 
-    public List<Product> findAll() {
+    public List<Customer> findAll() {
         return null;
     }
 

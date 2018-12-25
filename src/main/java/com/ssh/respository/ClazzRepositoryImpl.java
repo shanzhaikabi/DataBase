@@ -2,8 +2,10 @@ package com.ssh.respository;
 
 import com.ssh.entity.Clazz;
 import com.ssh.entity.Product;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -27,8 +29,14 @@ public class ClazzRepositoryImpl implements ClazzRepository {
         return (Clazz) getCurrentSession().get(Clazz.class,id);
     }
 
-    public List<Product> findAll() {
+    public List<Clazz> findAll() {
         return null;
+    }
+
+    public List<Clazz> findByName(String name){
+        Criteria c = getCurrentSession().createCriteria(Clazz.class).add(Restrictions.eq("className",name));
+        List<Clazz> list = c.list();
+        return list;
     }
 
     public void persist(Clazz entity) {

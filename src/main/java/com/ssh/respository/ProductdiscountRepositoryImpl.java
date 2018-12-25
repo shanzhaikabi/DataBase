@@ -27,7 +27,7 @@ public class ProductdiscountRepositoryImpl implements ProductdiscountRepository{
         return (Productdiscount) getCurrentSession().get(Productdiscount.class,id);
     }
 
-    public List<Product> findAll() {
+    public List<Productdiscount> findAll() {
         return null;
     }
 
