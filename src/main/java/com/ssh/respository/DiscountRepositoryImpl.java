@@ -52,30 +52,30 @@ public class DiscountRepositoryImpl implements DiscountRepository{
         getCurrentSession().flush();
     }
 
-    public List<Discount> getAllForShop(String shopId) {
-        List<Discount> list = getCurrentSession().createQuery(
+    public List getAllForShop(String shopId) {
+        List list = getCurrentSession().createQuery(
                 "from Discount dis,Shopdiscount sd where dis.discountRule = 'shop' and dis.discountType = sd.discountType and sd.shopId = ?").setParameter(0,shopId).list();
         return list == null ? new ArrayList<>() : list;
     }
 
-    public List<Discount> getAllForClass(String classId) {
+    public List getAllForClass(String classId) {
         /*Criteria c = getCurrentSession().createCriteria(Discount.class)
                 .add(Restrictions.eq("discountRule","class"))
                 .createAlias("Classdiscount","cd")
                 .add(Restrictions.eq("cd.classId",classId));
         return c.list() == null ? new ArrayList<>() : c.list();*/
-        List<Discount> list = getCurrentSession().createQuery(
+        List list = getCurrentSession().createQuery(
                 "from Discount dis,Classdiscount sd where dis.discountRule = 'class' and dis.discountType = sd.discountType and sd.classId = ?").setParameter(0,classId).list();
         return list == null ? new ArrayList<>() : list;
     }
 
-    public List<Discount> getAllForProduct(String productId) {
+    public List getAllForProduct(String productId) {
         /*Criteria c = getCurrentSession().createCriteria(Product.class)
                 .add(Restrictions.eq("discountRule","product"))
                 .createAlias("productdiscount","pd")
                 .add(Restrictions.eq("pd.classId",productId));
         return c.list() == null ? new ArrayList<>() : c.list();*/
-        List<Discount> list = getCurrentSession().createQuery(
+        List list = getCurrentSession().createQuery(
                 "from Discount dis,Productdiscount sd where dis.discountRule = 'product' and dis.discountType = sd.discountType and sd.productId = ?").setParameter(0,productId).list();
         return list == null ? new ArrayList<>() : list;
     }

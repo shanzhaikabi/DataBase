@@ -37,6 +37,7 @@ public class ProductServiceImpl implements ProductService{
         discountList.addAll(discountService.getDiscountForShop(shop.getShopId()));
         discountList.addAll(discountService.getDiscountForClass(clazz.getClassId()));
         discountList.addAll(discountService.getDiscountForProduct(product.getProductId()));
+        System.out.println(discountList);
         list.add(3,discountList);
         return list;
     }
