@@ -2,11 +2,8 @@ package com.ssh.service;
 
 import com.ssh.entity.Clazz;
 import com.ssh.respository.ClazzRepositoryImpl;
-import com.ssh.utils.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -18,6 +15,11 @@ public class ClassServiceImpl implements ClassService{
     public List<Clazz> ShowClassByName(String name) {
         List classList = classRepository.findByName(name);
         return classList;
+    }
+
+    public String GetNameById(String id) {
+        Clazz clazz = classRepository.get(id);
+        return clazz == null ? null : clazz.getClassId();
     }
 
 

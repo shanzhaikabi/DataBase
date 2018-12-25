@@ -62,10 +62,10 @@ public class ProductServiceImpl implements ProductService{
     }
 
     public List<Product> ShowProductByClassId(String classId) {
-        return null;
+        return productRepository.findByClass(classId);
     }
 
     public List<Product> ShowProductByShopId(String shopId) {
-        return null;
+        return productRepository.findByShop(shopId);
     }
 }

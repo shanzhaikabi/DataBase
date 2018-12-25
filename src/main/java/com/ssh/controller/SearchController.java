@@ -9,7 +9,6 @@ import com.ssh.service.ShopServiceImpl;
 import com.ssh.utils.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,31 +30,32 @@ public class SearchController {
     @RequestMapping(value = "/search.do",method = RequestMethod.POST)
     public ModelAndView search(String keyword,String searchCheck) throws Exception {
         ModelMap map=new ModelMap();
+        map.put("from",keyword + " 的搜索结果");
         if (searchCheck.equals("product")){
             List<Product> productList = productService.ShowProductByName(keyword);
             if (productList.size() > 0) {
-                map.put("result","抱歉，未能找到相关结果");
+                map.put("result", SearchUtils.search_result_product(productList));
             }
             else{
-                map.put("result", SearchUtils.search_result_product(productList));
+                map.put("result","抱歉，未能找到相关结果");
             }
         }
         else if (searchCheck.equals("class")){
             List<Clazz> classList = classService.ShowClassByName(keyword);
             if (classList.size() > 0) {
-                map.put("result","抱歉，未能找到相关结果");
+                map.put("result", SearchUtils.search_result_class(classList));
             }
             else{
-                map.put("result", SearchUtils.search_result_class(classList));
+                map.put("result","抱歉，未能找到相关结果");
             }
         }
         else if (searchCheck.equals("shop")){
             List<Shop> shopList = shopService.ShowShopByName(keyword);
             if (shopList.size() > 0) {
-                map.put("result","抱歉，未能找到相关结果");
+                map.put("result", SearchUtils.search_result_shop(shopList));
             }
             else{
-                map.put("result", SearchUtils.search_result_shop(shopList));
+                map.put("result","抱歉，未能找到相关结果");
             }
         }
         else{
@@ -69,10 +69,13 @@ public class SearchController {
         ModelMap map=new ModelMap();
         List<Product> productList = productService.ShowProductByShopId(id);
         if (productList.size() > 0) {
-            map.put("result","抱歉，未能找到相关结果");
+            map.put("result", SearchUtils.search_result_product(productList));
+            String shopName = shopService.GetNameById(id);
+            map.put("from",shopName);
         }
         else{
-            map.put("result", SearchUtils.search_result_product(productList));
+            map.put("result","抱歉，未能找到相关结果");
+            map.put("from","搜索结果");
         }
         return new ModelAndView("/search",map);
     }
@@ -82,10 +85,13 @@ public class SearchController {
         ModelMap map=new ModelMap();
         List<Product> productList = productService.ShowProductByClassId(id);
         if (productList.size() > 0) {
-            map.put("result","抱歉，未能找到相关结果");
+            map.put("result", SearchUtils.search_result_product(productList));
+            String className = classService.GetNameById(id);
+            map.put("from",className);
         }
         else{
-            map.put("result", SearchUtils.search_result_product(productList));
+            map.put("result","抱歉，未能找到相关结果");
+            map.put("from","搜索结果");
         }
         return new ModelAndView("/search",map);
     }

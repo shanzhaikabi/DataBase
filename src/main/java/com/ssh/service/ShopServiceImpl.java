@@ -16,4 +16,9 @@ public class ShopServiceImpl implements ShopService{
         List shopList = shopRepository.findByName(name);
         return shopList;
     }
+
+    public String GetNameById(String id) {
+        Shop shop = shopRepository.get(id);
+        return shop == null ? null : shop.getShopName();
+    }
 }
