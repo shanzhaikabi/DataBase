@@ -19,7 +19,7 @@ public class SearchUtils {
             ans = ans + "商品名：" + product.getProductName();
             ans = ans + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp价格：" + product.getProductPrice() + "<br>";
             //TODO:超链接到商品界面
-            ans = ans + "<a href='views/product?id=" + product.getProductId() + "'>查看商品详情</a><br>";
+            ans = ans + "<a href='product?id=" + product.getProductId() + "'>查看商品详情</a><br>";
         }
         return ans;
     }
