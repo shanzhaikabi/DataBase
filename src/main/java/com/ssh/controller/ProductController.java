@@ -5,6 +5,7 @@ import com.ssh.entity.Discount;
 import com.ssh.entity.Product;
 import com.ssh.entity.Shop;
 import com.ssh.service.ProductServiceImpl;
+import com.ssh.utils.DiscountUtils;
 import com.ssh.utils.ProductUtils;
 import com.ssh.utils.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,8 @@ public class ProductController {
         else if (targetList.size() == 4){
             targetList.add(new ArrayList());
         }
-        map.put("result", ProductUtils.detail_result_product((Product) targetList.get(0),(Clazz) targetList.get(1),(Shop)targetList.get(2),(List<Discount>)targetList.get(3),(List<Discount>)targetList.get(4)));
+        map.put("result", ProductUtils.produc_detail((Product) targetList.get(0),(Clazz) targetList.get(1),(Shop)targetList.get(2))
+        + DiscountUtils.discount_for_product((List<Discount>)targetList.get(3),(List<Discount>)targetList.get(4)));
         return new ModelAndView("/product",map);
     }
 }
