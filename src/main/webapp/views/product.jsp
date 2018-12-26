@@ -34,25 +34,7 @@
         <div class="space-6"></div>
         <%--${pageContext.request.contextPath }--%>
         <form action="${pageContext.request.contextPath}/search.do" method="POST">
-            <fieldset>
-                <div class="block input-icon input-icon-right">
-                    关键字<input type="text" name="keyword" class="form-control" placeholder="请输入关键字"/>
-                </div>
-                <div>
-                    <input type="radio" name="searchCheck" value="product" checked="checked"/>商品
-                    <input type="radio" name="searchCheck" value="class"/>商品类别
-                    <input type="radio" name="searchCheck" value="shop"/>商家
-                </div>
-                <div class="space"></div>
-                <div class="clearfix" style="text-align: center;">
-                    <input type="submit" value="搜索" style="width:100px;">
-                </div>
-                <div class="space-4"></div>
-            </fieldset>
-            <fieldset>
-                <legend>${from}</legend>
-                ${result}
-            </fieldset>
+            ${result}
         </form>
 
     </div>

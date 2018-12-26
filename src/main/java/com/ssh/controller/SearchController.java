@@ -31,7 +31,20 @@ public class SearchController {
     public ModelAndView search(String keyword,String searchCheck) throws Exception {
         ModelMap map=new ModelMap();
         if(keyword.equals("")){map.put("from","模糊搜索结果");}
-        else map.put("from",keyword + " 的搜索结果");
+        else {
+            if (searchCheck.equals("product")){
+                map.put("from","商品关键词 " + keyword + " 的搜索结果");
+            }
+            else if (searchCheck.equals("class")){
+                map.put("from","商品类别关键词 " + keyword + " 的搜索结果");
+            }
+            else if (searchCheck.equals("shop")){
+                map.put("from","商家关键词 " + keyword + " 的搜索结果");
+            }
+            else{
+                throw new Exception();
+            }
+        }
         if (searchCheck.equals("product")){
             List<Product> productList = productService.ShowProductByName(keyword);
             if (productList.size() > 0) {
@@ -69,15 +82,9 @@ public class SearchController {
     public ModelAndView searchProductByShop(String id){
         ModelMap map=new ModelMap();
         List<Product> productList = productService.ShowProductByShopId(id);
-        if (productList.size() > 0) {
-            map.put("result", SearchUtils.search_result_product(productList));
-            String shopName = shopService.GetNameById(id);
-            map.put("from",shopName);
-        }
-        else{
-            map.put("result","抱歉，未能找到相关结果");
-            map.put("from","搜索结果");
-        }
+        map.put("result", SearchUtils.search_result_product(productList));
+        String shopName = shopService.GetNameById(id);
+        map.put("from","商家 " + shopName + " 的搜索结果");
         return new ModelAndView("/search",map);
     }
 
@@ -85,15 +92,9 @@ public class SearchController {
     public ModelAndView searchProductByClass(String id){
         ModelMap map=new ModelMap();
         List<Product> productList = productService.ShowProductByClassId(id);
-        if (productList.size() > 0) {
-            map.put("result", SearchUtils.search_result_product(productList));
-            String className = classService.GetNameById(id);
-            map.put("from",className);
-        }
-        else{
-            map.put("result","抱歉，未能找到相关结果");
-            map.put("from","搜索结果");
-        }
+        map.put("result", SearchUtils.search_result_product(productList));
+        String className = classService.GetNameById(id);
+        map.put("from","商品类别 " + className + " 的搜索结果");
         return new ModelAndView("/search",map);
     }
 

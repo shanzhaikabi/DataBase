@@ -34,11 +34,11 @@ public class ProductUtils {
                 ans = ans + "满&nbsp" + tmp.getDiscountLeast().toString() +
                         "&nbsp减&nbsp" + tmp.getDiscountPrice().toString() + "&nbsp元<br>";
             //TODO:搜索优惠券适用的所有商品
-            if(tmp.getDiscountType().equals("shop"))
+            if(tmp.getDiscountRule().equals("shop"))
             {
 
             }
-            else if(tmp.getDiscountType().equals("class"))
+            else if(tmp.getDiscountRule().equals("class"))
             {
 
             }
@@ -68,9 +68,9 @@ public class ProductUtils {
                     ans = ans + "满&nbsp" + tmp.getDiscountLeast().toString() +
                             "&nbsp减&nbsp" + tmp.getDiscountPrice().toString() + "&nbsp元<br>";
                 //TODO:搜索优惠券适用的所有商品
-                if (tmp.getDiscountType().equals("shop")) {
+                if (tmp.getDiscountRule().equals("shop")) {
 
-                } else if (tmp.getDiscountType().equals("class")) {
+                } else if (tmp.getDiscountRule().equals("class")) {
 
                 } else {
 
