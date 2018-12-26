@@ -5,8 +5,8 @@ import com.ssh.entity.*;
 import java.util.List;
 
 public interface DiscountService {
-    Discount get(String id);
-    Discountdetail doCustomerHaveDiscount(String customerId,String discountType);
+    Discount get(int id);
+    Discountdetail doCustomerHaveDiscount(String customerId,int discountType);
     List<Discountdetail> getAvailableDiscountdetailFromUser(String customerId);
     List<Discountdetail> getUsedDiscountdetailFromUser(String customerId);
 
@@ -24,7 +24,7 @@ public interface DiscountService {
     List<Discount> getDiscountForProduct(String productId);
     List<Discount> getDiscountForShop(String shopId);
     List<Discount> getDiscountForClass(String classId);
-    List<Product> getProductByDiscount(String discountType);
-    boolean addDiscountToUser(String discountType,String customerId);
+    List<Product> getProductByDiscount(int discountType);
+    boolean addDiscountToUser(int discountType,String customerId);
     boolean addDiscountByShop(Discount discount);
 }

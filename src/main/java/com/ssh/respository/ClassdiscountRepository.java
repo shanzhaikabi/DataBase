@@ -6,5 +6,5 @@ import com.ssh.entity.Product;
 import java.util.List;
 
 public interface ClassdiscountRepository extends DomainRepository<Classdiscount,Integer> {
-    List<Product> getClassProductByDiscount(String discountType);
+    List<Product> getClassProductByDiscount(int discountType);
 }

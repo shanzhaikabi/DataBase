@@ -25,11 +25,11 @@ public class DiscountRepositoryImpl implements DiscountRepository{
     public Session getCurrentSession() {
         return this.sessionFactory.getCurrentSession();
     }
-    public Discount load(String id) {
+    public Discount load(Integer id) {
         return (Discount) getCurrentSession().load(Discount.class,id);
     }
 
-    public Discount get(String id) {
+    public Discount get(Integer id) {
         return (Discount) getCurrentSession().get(Discount.class,id);
     }
 
@@ -41,15 +41,15 @@ public class DiscountRepositoryImpl implements DiscountRepository{
         getCurrentSession().persist(entity);
     }
 
-    public String save(Discount entity) {
-        return (String) getCurrentSession().save(entity);
+    public Integer save(Discount entity) {
+        return (Integer) getCurrentSession().save(entity);
     }
 
     public void saveOrUpdate(Discount entity) {
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(String id) {
+    public void delete(Integer id) {
         getCurrentSession().delete(id);
     }
 

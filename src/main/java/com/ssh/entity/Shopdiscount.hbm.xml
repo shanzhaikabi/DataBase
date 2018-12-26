@@ -9,7 +9,7 @@
             <column name="id" sql-type="int(11)"/>
         </id>
         <property name="discountType">
-            <column name="discountType" sql-type="varchar(20)" length="20" not-null="true"/>
+            <column name="discountType" sql-type="int(11)" not-null="true"/>
         </property>
         <property name="shopId">
             <column name="shopId" sql-type="varchar(20)" length="20" not-null="true"/>

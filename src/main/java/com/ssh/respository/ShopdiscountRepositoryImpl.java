@@ -55,7 +55,7 @@ public class ShopdiscountRepositoryImpl implements ShopdiscountRepository{
         getCurrentSession().flush();
     }
 
-    public List<Product> getShopProductByDiscount(String discountType){
+    public List<Product> getShopProductByDiscount(int discountType){
         List<Product> list =
                 (List<Product>) getCurrentSession()
                         .createQuery("from Product p,Shopdiscount cd where p.shopId = cd.shopId and cd.discountType = ?").setParameter(0,discountType)

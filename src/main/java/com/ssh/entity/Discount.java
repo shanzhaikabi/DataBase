@@ -4,22 +4,21 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
 public class Discount {
-    private String discountType;
+    private Integer discountType;
     private Integer discountPrice;
     private Integer discountLeast;
     private String discountRule;
 
     @Id
-    @Column(name = "discountType", nullable = false, length = 20)
-    public String getDiscountType() {
+    @Column(name = "discountType", nullable = false)
+    public Integer getDiscountType() {
         return discountType;
     }
 
-    public void setDiscountType(String discountType) {
+    public void setDiscountType(Integer discountType) {
         this.discountType = discountType;
     }
 

@@ -55,7 +55,7 @@ public class ProductdiscountRepositoryImpl implements ProductdiscountRepository{
     }
 
     @Override
-    public List<Product> getProductByDiscount(String discountType) {
+    public List<Product> getProductByDiscount(int discountType) {
         List<Product> list =
                 (List<Product>) getCurrentSession()
                         .createQuery("from Product c,Productdiscount cd where c.productId = cd.productId and cd.discountType = ?").setParameter(0,discountType)
