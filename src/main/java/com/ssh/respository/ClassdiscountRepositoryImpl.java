@@ -2,15 +2,13 @@ package com.ssh.respository;
 
 import com.ssh.entity.Classdiscount;
 import com.ssh.entity.Clazz;
+import com.ssh.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Repository
@@ -54,10 +52,10 @@ public class ClassdiscountRepositoryImpl implements ClassdiscountRepository{
         getCurrentSession().flush();
     }
 
-    public List<Clazz> getClassByDiscount(String discountType) {
-        List<Clazz> list =
-                (List<Clazz>) getCurrentSession()
-                        .createQuery("from Clazz c,Classdiscount cd where c.classId = cd.classId and cd.discountType = ?").setParameter(0,discountType)
+    public List<Product> getClassProductByDiscount(String discountType) {
+        List<Product> list =
+                (List<Product>) getCurrentSession()
+                        .createQuery("from Product c,Classdiscount cd where c.classId = cd.classId and cd.discountType = ?").setParameter(0,discountType)
                         .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
         flush();
         return list;

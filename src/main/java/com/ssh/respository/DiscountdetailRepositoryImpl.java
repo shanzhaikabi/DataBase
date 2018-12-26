@@ -60,4 +60,14 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
         flush();
         return c.list();
     }
+
+    public Discountdetail getDiscountByTypeAndCustomer(String discountType, String customerId) {
+        Discountdetail discountdetail = (Discountdetail) getCurrentSession().createCriteria(Discountdetail.class)
+                .add(Restrictions.eq("customerId",customerId))
+                .add(Restrictions.eq("discountType",discountType))
+                .add(Restrictions.eq("discountStatus","yes"))
+                .uniqueResult();
+        flush();
+        return discountdetail;
+    }
 }

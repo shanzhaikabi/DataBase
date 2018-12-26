@@ -59,6 +59,7 @@ public class ProductdiscountRepositoryImpl implements ProductdiscountRepository{
                         .createQuery("from Product c,Productdiscount cd where c.productId = cd.productId and cd.discountType = ?").setParameter(0,discountType)
                         .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
         flush();
+        getCurrentSession().close();
         return list;
     }
 }

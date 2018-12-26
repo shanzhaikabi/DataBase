@@ -53,10 +53,10 @@ public class ShopdiscountRepositoryImpl implements ShopdiscountRepository{
         getCurrentSession().flush();
     }
 
-    public List<Shop> getShopByDiscount(String discountType){
-        List<Shop> list =
-                (List<Shop>) getCurrentSession()
-                        .createQuery("from Shop c,Shopdiscount cd where c.shopId = cd.shopId and cd.discountType = ?").setParameter(0,discountType)
+    public List<Product> getShopProductByDiscount(String discountType){
+        List<Product> list =
+                (List<Product>) getCurrentSession()
+                        .createQuery("from Product p,Shopdiscount cd where p.shopId = cd.shopId and cd.discountType = ?").setParameter(0,discountType)
                         .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
         flush();
         return list;

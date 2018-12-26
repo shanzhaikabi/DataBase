@@ -59,7 +59,7 @@ public class DiscountRepositoryImpl implements DiscountRepository{
         List list = (List) getCurrentSession().createQuery(
                 "from Discount dis,Shopdiscount sd where dis.discountRule = 'shop' and dis.discountType = sd.discountType and sd.shopId = ?").setParameter(0,shopId)
                 .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
-        getCurrentSession().flush();
+        flush();
         return list == null ? new ArrayList<>() : list;
     }
 
@@ -72,7 +72,7 @@ public class DiscountRepositoryImpl implements DiscountRepository{
         List list = (List) getCurrentSession().createQuery(
                 "from Discount dis,Classdiscount sd where dis.discountRule = 'class' and dis.discountType = sd.discountType and sd.classId = ?").setParameter(0,classId)
                 .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
-        getCurrentSession().flush();
+        flush();
         return list == null ? new ArrayList<>() : list;
     }
 
@@ -85,14 +85,14 @@ public class DiscountRepositoryImpl implements DiscountRepository{
         List list = (List) getCurrentSession().createQuery(
                 "from Discount dis,Productdiscount sd where dis.discountRule = 'product' and dis.discountType = sd.discountType and sd.productId = ?").setParameter(0,productId)
                 .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
-        getCurrentSession().flush();
+        flush();
         return list == null ? new ArrayList<>() : list;
     }
 
     public List<Discount> getAllForAll() {
         Criteria c = getCurrentSession().createCriteria(Product.class)
                 .add(Restrictions.eq("discountRule","all"));
-        getCurrentSession().flush();
+        flush();
         return c.list();
     }
 }

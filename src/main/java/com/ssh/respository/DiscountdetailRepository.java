@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface DiscountdetailRepository extends DomainRepository<Discountdetail, Integer>{
     List<Discountdetail> getDiscountDetailByCustomerId(String customerId);
+    Discountdetail getDiscountByTypeAndCustomer(String discountType,String customerId);
 }

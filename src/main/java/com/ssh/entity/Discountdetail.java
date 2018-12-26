@@ -5,13 +5,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Timestamp;
+import java.util.Objects;
 
 @Entity
 public class Discountdetail {
     private int discountId;
+    private String customerId;
+    private String discountType;
     private Timestamp discountDate;
     private String discountStatus;
-    private String discountType;
 
     @Id
     @Column(name = "discountId", nullable = false)
@@ -21,6 +23,26 @@ public class Discountdetail {
 
     public void setDiscountId(int discountId) {
         this.discountId = discountId;
+    }
+
+    @Basic
+    @Column(name = "customerId", nullable = true, length = 20)
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    @Basic
+    @Column(name = "discountType", nullable = true, length = 20)
+    public String getDiscountType() {
+        return discountType;
+    }
+
+    public void setDiscountType(String discountType) {
+        this.discountType = discountType;
     }
 
     @Basic
@@ -43,39 +65,20 @@ public class Discountdetail {
         this.discountStatus = discountStatus;
     }
 
-    @Basic
-    @Column(name = "discountType", nullable = true)
-    public String getDiscountType() {
-        return discountType;
-    }
-
-    public void setDiscountType(String discountDate) {
-        this.discountType = discountType;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Discountdetail that = (Discountdetail) o;
-
-        if (discountId != that.discountId) return false;
-        if (discountDate != null ? !discountDate.equals(that.discountDate) : that.discountDate != null) return false;
-        if (discountStatus != null ? !discountStatus.equals(that.discountStatus) : that.discountStatus != null)
-            return false;
-        if (discountType != null ? !discountType.equals(that.discountType) : that.discountType != null)
-            return false;
-
-        return true;
+        return discountId == that.discountId &&
+                Objects.equals(customerId, that.customerId) &&
+                Objects.equals(discountType, that.discountType) &&
+                Objects.equals(discountDate, that.discountDate) &&
+                Objects.equals(discountStatus, that.discountStatus);
     }
 
     @Override
     public int hashCode() {
-        int result = discountId;
-        result = 31 * result + (discountDate != null ? discountDate.hashCode() : 0);
-        result = 31 * result + (discountStatus != null ? discountStatus.hashCode() : 0);
-        result = 31 * result + (discountType != null ? discountType.hashCode() : 0);
-        return result;
+        return Objects.hash(discountId, customerId, discountType, discountDate, discountStatus);
     }
 }
