@@ -57,10 +57,24 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
         getCurrentSession().flush();
     }
 
-    public List<Discountdetail> getDiscountDetailByCustomerId(String customerId) {
-        Criteria c = getCurrentSession().createCriteria(Discountdetail.class)
-                .add(Restrictions.eq("customerId",customerId));
-        return c.list();
+    public List<Discountdetail> getDiscountdetailByCustomerId(String customerId) {
+        List list = getCurrentSession().createCriteria(Discountdetail.class)
+                .add(Restrictions.eq("customerId",customerId)).list();
+        return list;
+    }
+
+    public List<Discountdetail> getUsedDiscountdetailByCustomerId(String customerId){
+        List list = getCurrentSession().createCriteria(Discountdetail.class)
+                .add(Restrictions.eq("customerId",customerId))
+                .add(Restrictions.eq("discountStatus","no")).list();
+        return list;
+    }
+
+    public List<Discountdetail> getAvailableDiscountdetailByCustomerId(String customerId){
+        List list = getCurrentSession().createCriteria(Discountdetail.class)
+                .add(Restrictions.eq("customerId",customerId))
+                .add(Restrictions.eq("discountStatus","yes")).list();
+        return list;
     }
 
     public Discountdetail getDiscountByTypeAndCustomer(String discountType, String customerId) {
