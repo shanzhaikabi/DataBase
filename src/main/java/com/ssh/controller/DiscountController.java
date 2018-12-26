@@ -35,7 +35,7 @@ public class DiscountController {
         String status = "";
         if (customer == null) status = "login";
         else{
-            Discountdetail discountdetail = discountService.doCustomerHaveDiscount(customerId,id);
+            Discountdetail discountdetail = discountService.doCustomerHaveDiscount(id,customerId);
             if (discountdetail == null) status = "no";
             else status = "yes";
         }

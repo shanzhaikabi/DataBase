@@ -7,6 +7,29 @@ import java.util.Iterator;
 import java.util.List;
 
 public class DiscountUtils {
+
+    public static String mydiscount_have(List<Discount>list)
+    {
+        String ans = "<fieldset>";
+        ans = ans + "<legend>可用优惠券</legend>";
+        Iterator<Discount> iterator = list.iterator();
+        while(iterator.hasNext()) {
+            ans = ans + discount_detail(iterator.next(),"have");
+        }
+        ans = ans + "</fieldset>";
+        return ans;
+    }
+    public static String mydiscount_used(List<Discount>list)
+    {
+        String ans = "<fieldset>";
+        ans = ans + "<legend>已使用优惠券</legend>";
+        Iterator<Discount> iterator = list.iterator();
+        while(iterator.hasNext()) {
+            ans = ans + discount_detail(iterator.next(),"used");
+        }
+        ans = ans + "</fieldset>";
+        return ans;
+    }
     public static String discount_for_product(List<Discount> candis, List<Discount>havedis)
     {
         //candis
@@ -49,11 +72,11 @@ public class DiscountUtils {
         else
             ans = ans + "满&nbsp" + discount.getDiscountLeast().toString() +
                     "&nbsp减&nbsp" + discount.getDiscountPrice().toString() + "&nbsp元<br>";
-        if(str.equals("yes"))ans = ans + "已拥有该优惠券";
+        if(str.equals("yes"))ans = ans + "已拥有该优惠券<br>";
         //TODO:超链接到 领优惠券 和 登 录
-        else if(str.equals("no"))ans = ans + "领取优惠券";
-        else ans = ans + "请先登录";
-        ans = ans + "<br>";
+        else if(str.equals("no"))ans = ans + "领取优惠券<br>";
+        else if(str.equals("login"))ans = ans + "请先登录<br>";
+        //else if(str.equals("used"))ans = ans + "已使用<br>";
         ans = ans + "</fieldset>";
         return ans;
     }
