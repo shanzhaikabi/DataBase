@@ -28,7 +28,7 @@ public class CustomerController {
         List<Object[]> availableList = discountService.getAvailableDiscountAndDetailFromUser(id);
         List<Object[]> usedList = discountService.getUsedDiscountAndDetailFromUser(id);
         map.put("result", DiscountUtils.mydiscount_haveList(availableList)+DiscountUtils.mydiscount_used(usedList));
-        return new ModelAndView("/discount",map);
+        return new ModelAndView("/mydiscount",map);
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
