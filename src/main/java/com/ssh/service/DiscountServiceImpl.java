@@ -35,11 +35,13 @@ public class DiscountServiceImpl implements DiscountService{
 
     @Override
     public Discountdetail doCustomerHaveDiscount(String customerId, String discountType) {
-        return discountdetailRepository.getDiscountByTypeAndCustomer(discountType,customerId);
+        Discountdetail discountdetail = discountdetailRepository.getDiscountByTypeAndCustomer(discountType,customerId);
+        return discountdetail;
     }
 
     public List<Discountdetail> getCurrentDiscountdetailFromUser(String customerId) {
-        return discountdetailRepository.getDiscountDetailByCustomerId(customerId);
+        List<Discountdetail> list = discountdetailRepository.getDiscountDetailByCustomerId(customerId);
+        return list;
     }
 
     public List<Discount> getCurrentDiscountFromUser(String customerId) {
@@ -64,19 +66,23 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     public List<Product> getProductByDiscount(String discountType){
-        Transaction tx = discountRepository.getCurrentSession().beginTransaction();
         Discount discount = discountRepository.get(discountType);
         List<Product> list = new ArrayList<>();
         if (discount != null) {
             if (discount.getDiscountRule().equals("product")) {
+                //tx = productdiscountRepository.getCurrentSession().beginTransaction();
                 list = productdiscountRepository.getProductByDiscount(discountType);
+                //tx.commit();
             } else if (discount.getDiscountRule().equals("shop")) {
+                //tx = shopdiscountRepository.getCurrentSession().beginTransaction();
                 list = shopdiscountRepository.getShopProductByDiscount(discountType);
+                //tx.commit();
             } else if (discount.getDiscountRule().equals("class")) {
+                //tx = classdiscountRepository.getCurrentSession().beginTransaction();
                 list = classdiscountRepository.getClassProductByDiscount(discountType);
+                //tx.commit();
             }
         }
-        tx.commit();
         return list;
     }
 }

@@ -6,18 +6,20 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
+@Transactional
 public class ProductdiscountRepositoryImpl implements ProductdiscountRepository{
 
     @Autowired
     private SessionFactory sessionFactory;
 
     public Session getCurrentSession() {
-        return this.sessionFactory.openSession();
+        return this.sessionFactory.getCurrentSession();
     }
 
     public Productdiscount load(Integer id) {
@@ -58,8 +60,6 @@ public class ProductdiscountRepositoryImpl implements ProductdiscountRepository{
                 (List<Product>) getCurrentSession()
                         .createQuery("from Product c,Productdiscount cd where c.productId = cd.productId and cd.discountType = ?").setParameter(0,discountType)
                         .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
-        flush();
-        getCurrentSession().close();
         return list;
     }
 }

@@ -5,6 +5,7 @@ import com.ssh.entity.Discount;
 import com.ssh.entity.Product;
 import com.ssh.entity.Shop;
 import com.ssh.respository.ProductRepositoryImpl;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,9 +24,11 @@ public class ProductServiceImpl implements ProductService{
     private DiscountServiceImpl discountService;
 
     public List ShowProductDetail(String id){
+        //Transaction tx = productRepository.getCurrentSession().beginTransaction();
         List list = new ArrayList();
         Product product = productRepository.get(id);
         list.add(product);
+        //tx.commit();
         if (null == product) return null;
         Clazz clazz = classService.GetClassById(product.getClassId());
         if (null == clazz) return null;
@@ -51,14 +54,23 @@ public class ProductServiceImpl implements ProductService{
     }
 
     public List<Product> ShowProductByName(String name) {
-        return productRepository.findByName(name);
+        //Transaction tx = productRepository.getCurrentSession().beginTransaction();
+        List list = productRepository.findByName(name);
+        //tx.commit();
+        return list;
     }
 
     public List<Product> ShowProductByClassId(String classId) {
-        return productRepository.findByClass(classId);
+        //Transaction tx = productRepository.getCurrentSession().beginTransaction();
+        List list = productRepository.findByClass(classId);
+        //tx.commit();
+        return list;
     }
 
     public List<Product> ShowProductByShopId(String shopId) {
-        return productRepository.findByShop(shopId);
+        //Transaction tx = productRepository.getCurrentSession().beginTransaction();
+        List list = productRepository.findByShop(shopId);
+        //tx.commit();
+        return list;
     }
 }
