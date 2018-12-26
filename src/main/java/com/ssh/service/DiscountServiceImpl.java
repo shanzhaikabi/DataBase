@@ -2,11 +2,12 @@ package com.ssh.service;
 
 import com.ssh.entity.*;
 import com.ssh.respository.*;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,16 +16,12 @@ public class DiscountServiceImpl implements DiscountService{
 
     @Autowired
     DiscountRepositoryImpl discountRepository;
-
     @Autowired
     DiscountdetailRepositoryImpl discountdetailRepository;
-
     @Autowired
     ClassdiscountRepositoryImpl classdiscountRepository;
-
     @Autowired
     ProductdiscountRepositoryImpl productdiscountRepository;
-
     @Autowired
     ShopdiscountRepositoryImpl shopdiscountRepository;
 
@@ -39,13 +36,18 @@ public class DiscountServiceImpl implements DiscountService{
         return discountdetail;
     }
 
-    public List<Discountdetail> getCurrentDiscountdetailFromUser(String customerId) {
-        List<Discountdetail> list = discountdetailRepository.getDiscountDetailByCustomerId(customerId);
+    public List<Discountdetail> getAvailableDiscountdetailFromUser(String customerId) {
+        List<Discountdetail> list = discountdetailRepository.getDiscountdetailByCustomerId(customerId);
+        return list;
+    }
+
+    public List<Discountdetail> getUsedDiscountdetailFromUser(String customerId) {
+        List<Discountdetail> list = discountdetailRepository.getUsedDiscountdetailByCustomerId(customerId);
         return list;
     }
 
     public List<Discount> getCurrentDiscountFromUser(String customerId) {
-        List<Discountdetail> dis = getCurrentDiscountdetailFromUser(customerId);
+        List<Discountdetail> dis = discountdetailRepository.getDiscountdetailByCustomerId(customerId);
         List<Discount> list = dis.stream().map(user -> discountRepository.get(user.getDiscountType())).collect(Collectors.toList());
         return list;
     }
@@ -70,19 +72,32 @@ public class DiscountServiceImpl implements DiscountService{
         List<Product> list = new ArrayList<>();
         if (discount != null) {
             if (discount.getDiscountRule().equals("product")) {
-                //tx = productdiscountRepository.getCurrentSession().beginTransaction();
                 list = productdiscountRepository.getProductByDiscount(discountType);
-                //tx.commit();
             } else if (discount.getDiscountRule().equals("shop")) {
-                //tx = shopdiscountRepository.getCurrentSession().beginTransaction();
                 list = shopdiscountRepository.getShopProductByDiscount(discountType);
-                //tx.commit();
             } else if (discount.getDiscountRule().equals("class")) {
-                //tx = classdiscountRepository.getCurrentSession().beginTransaction();
                 list = classdiscountRepository.getClassProductByDiscount(discountType);
-                //tx.commit();
             }
         }
         return list;
     }
+
+    @Override
+    public boolean addDiscountToUser(String discountType, String customerId) {
+        Discountdetail discountdetail = new Discountdetail();
+        if(discountdetailRepository.getDiscountByTypeAndCustomer(discountType,customerId) != null) return false;
+        discountdetail.setCustomerId(customerId);
+        discountdetail.setDiscountStatus("yes");
+        discountdetail.setDiscountType(discountType);
+        discountdetail.setDiscountDate(new Timestamp(new Date().getTime()));
+        discountdetailRepository.save(discountdetail);
+        return true;
+    }
+
+    public boolean addDiscountByShop(Discount discount) {
+        discountRepository.save(discount);
+        return true;
+    }
+
+
 }

@@ -21,12 +21,13 @@ public class CustomerController {
     @RequestMapping(value = "/customer",method = RequestMethod.GET)
     public ModelAndView showMyDiscounts(String id){
         ModelMap map=new ModelMap();
-        List<Discountdetail> list = discountService.getCurrentDiscountdetailFromUser(id);
-        map.put("result",list);
+        List<Discountdetail> availableList = discountService.getAvailableDiscountdetailFromUser(id);
+        List<Discountdetail> usedList = discountService.getUsedDiscountdetailFromUser(id);
+        map.put("result",availableList);
         return new ModelAndView("/discount",map);
     }
 
-    @RequestMapping(value = "/customer.do",method = RequestMethod.GET)
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
     public ModelAndView becomeCustomer(HttpServletResponse response,String id){
         response.addCookie(new Cookie("customerId",id));
         return showMyDiscounts(id);

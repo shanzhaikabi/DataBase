@@ -14,23 +14,17 @@ public class ClassServiceImpl implements ClassService{
     ClazzRepositoryImpl classRepository;
 
     public List<Clazz> ShowClassByName(String name) {
-        //Transaction tx = classRepository.getCurrentSession().beginTransaction();
         List classList = classRepository.findByName(name);
-        //tx.commit();
         return classList;
     }
 
     public String GetNameById(String id) {
-        //Transaction tx = classRepository.getCurrentSession().beginTransaction();
         Clazz clazz = classRepository.get(id);
-        //tx.commit();
         return clazz == null ? null : clazz.getClassName();
     }
 
     public Clazz GetClassById(String id) {
-        //Transaction tx = classRepository.getCurrentSession().beginTransaction();
         Clazz clazz = classRepository.get(id);
-        //tx.commit();
         return clazz;
     }
 }

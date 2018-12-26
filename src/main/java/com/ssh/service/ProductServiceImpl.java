@@ -24,11 +24,9 @@ public class ProductServiceImpl implements ProductService{
     private DiscountServiceImpl discountService;
 
     public List ShowProductDetail(String id){
-        //Transaction tx = productRepository.getCurrentSession().beginTransaction();
         List list = new ArrayList();
         Product product = productRepository.get(id);
         list.add(product);
-        //tx.commit();
         if (null == product) return null;
         Clazz clazz = classService.GetClassById(product.getClassId());
         if (null == clazz) return null;

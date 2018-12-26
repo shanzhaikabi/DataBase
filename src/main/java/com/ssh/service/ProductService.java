@@ -7,8 +7,7 @@ import java.util.List;
 
 public interface ProductService {
     List<Product> ShowProductByName(String name);
-
     List<Product> ShowProductByClassId(String classId);
-
     List<Product> ShowProductByShopId(String shopId);
+    void addProduct(Product product);
 }
