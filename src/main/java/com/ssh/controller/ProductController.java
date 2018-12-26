@@ -34,7 +34,7 @@ public class ProductController {
         else if (targetList.size() == 4){
             targetList.add(new ArrayList());
         }
-        map.put("result", ProductUtils.produc_detail((Product) targetList.get(0),(Clazz) targetList.get(1),(Shop)targetList.get(2))
+        map.put("result", ProductUtils.product_detail((Product) targetList.get(0),(Clazz) targetList.get(1),(Shop)targetList.get(2))
         + DiscountUtils.discount_for_product((List<Discount>)targetList.get(3),(List<Discount>)targetList.get(4)));
         return new ModelAndView("/product",map);
     }

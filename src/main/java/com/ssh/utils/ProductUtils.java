@@ -10,7 +10,7 @@ import java.util.List;
 import static com.ssh.utils.DiscountUtils.discount_detail;
 
 public class ProductUtils {
-    public static String produc_detail(Product product, Clazz clazz, Shop shop)
+    public static String product_detail(Product product, Clazz clazz, Shop shop)
     {
         String ans = "<fieldset>";
         ans = ans + "<legend>商品详情</legend>";
