@@ -80,10 +80,11 @@ public class DiscountUtils {
         if(str.equals("yes"))ans = ans + "已拥有该优惠券<br>";
         //TODO:超链接到 领优惠券 和 登 录
         else if(str.equals("no"))ans = ans + "<a href = \"receivediscount?id=" + discount.getDiscountType() +
-                ">立即领取</a><br>"+ "</fieldset>";
+                "\">立即领取</a><br>"+ "</fieldset>";
         else if(str.equals("login"))ans = ans + "请先登录<br>"+ "</fieldset>";
         else if(str.equals("used"));
-        else if(str.equals("have")) ans = ans +"<br></fieldset>";
+        else if(str.equals("have")) ans = ans +"</fieldset>";
+        else ans = ans + "</fieldset>";
         return ans;
     }
 }

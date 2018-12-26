@@ -57,7 +57,7 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     public List<Discount> getCurrentDiscountFromUser(String customerId) {
-        List<Discountdetail> dis = discountdetailRepository.getDiscountdetailByCustomerId(customerId);
+        List<Discountdetail> dis = discountdetailRepository.getAvailableDiscountdetailByCustomerId(customerId);
         List<Discount> list = dis.stream().map(user -> discountRepository.get(user.getDiscountType())).collect(Collectors.toList());
         return list;
     }
