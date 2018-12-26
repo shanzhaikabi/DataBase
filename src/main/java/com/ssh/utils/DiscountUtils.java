@@ -50,7 +50,7 @@ public class DiscountUtils {
             ans = ans + "满&nbsp" + discount.getDiscountLeast().toString() +
                     "&nbsp减&nbsp" + discount.getDiscountPrice().toString() + "&nbsp元<br>";
         if(str.equals("yes"))ans = ans + "已拥有该优惠券";
-        //TODO:超链接到 领优惠券 和 登录
+        //TODO:超链接到 领优惠券 和 登 录
         else if(str.equals("no"))ans = ans + "领取优惠券";
         else ans = ans + "请先登录";
         ans = ans + "<br>";
