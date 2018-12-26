@@ -45,14 +45,14 @@ public class DiscountUtils {
         ans = ans + "</fieldset>";
         //havedis
         ans = ans + "<fieldset>";
-        ans = ans + "<legend>已拥有优惠券</legend>";
+        ans = ans + "<legend>已有优惠券</legend>";
         if(havedis==null){
             ans = ans + "请登录后查看已拥有的优惠券";
         }
         else {
             iterator = havedis.iterator();
             while (iterator.hasNext()) {
-                ans = ans +discount_detail(iterator.next(),"yes");
+                ans = ans +discount_detail(iterator.next(),"");
             }
         }
         ans = ans + "</fieldset>";

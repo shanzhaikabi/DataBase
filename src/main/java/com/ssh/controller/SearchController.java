@@ -46,7 +46,7 @@ public class SearchController {
             }
         }
         if (searchCheck.equals("product")){
-            List<Product> productList = productService.ShowProductByName(keyword);
+            List<Product> productList = productService.showProductByName(keyword);
             if (productList.size() > 0) {
                 map.put("result", SearchUtils.search_result_product(productList));
             }
@@ -81,7 +81,7 @@ public class SearchController {
     @RequestMapping(value = "/search.sp",method = RequestMethod.GET)
     public ModelAndView searchProductByShop(String id){
         ModelMap map=new ModelMap();
-        List<Product> productList = productService.ShowProductByShopId(id);
+        List<Product> productList = productService.showProductByShopId(id);
         map.put("result", SearchUtils.search_result_product(productList));
         String shopName = shopService.GetNameById(id);
         map.put("from","商家 " + shopName + " 的搜索结果");
@@ -91,7 +91,7 @@ public class SearchController {
     @RequestMapping(value = "/search.cl",method = RequestMethod.GET)
     public ModelAndView searchProductByClass(String id){
         ModelMap map=new ModelMap();
-        List<Product> productList = productService.ShowProductByClassId(id);
+        List<Product> productList = productService.showProductByClassId(id);
         map.put("result", SearchUtils.search_result_product(productList));
         String className = classService.GetNameById(id);
         map.put("from","商品类别 " + className + " 的搜索结果");
@@ -101,7 +101,7 @@ public class SearchController {
     @RequestMapping(value = "/search",method = RequestMethod.GET)
     public ModelAndView searchProduct(String id){
         ModelMap map=new ModelMap();
-        List<Product> productList = productService.ShowProductByName("");
+        List<Product> productList = productService.showProductByName("");
         map.put("result",SearchUtils.search_result_product(productList));
         map.put("from","商品列表");
         return new ModelAndView("/search",map);

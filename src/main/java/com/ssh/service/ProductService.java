@@ -6,9 +6,11 @@ import com.ssh.entity.Product;
 import java.util.List;
 
 public interface ProductService {
-    List<Product> ShowProductByName(String name);
+    List<Product> showProductByName(String name);
 
-    List<Product> ShowProductByClassId(String classId);
+    List<Product> showProductByClassId(String classId);
 
-    List<Product> ShowProductByShopId(String shopId);
+    List<Product> showProductByShopId(String shopId);
+
+    List<Product> showProductDetailHavingCustomer(String id,String CustomerId);
 }

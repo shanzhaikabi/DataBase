@@ -26,7 +26,7 @@
     <div class="widget-main">
         <h4 class="header blue lighter bigger">
             <i class="ace-icon fa fa-coffee green"></i>
-            ${status}
+            ${discountresult}
         </h4>
         <div class="space-6"></div>
         <%--${pageContext.request.contextPath }--%>

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -23,7 +24,7 @@ public class ProductServiceImpl implements ProductService{
     @Autowired
     private DiscountServiceImpl discountService;
 
-    public List ShowProductDetail(String id){
+    public List showProductDetail(String id){
         //Transaction tx = productRepository.getCurrentSession().beginTransaction();
         List list = new ArrayList();
         Product product = productRepository.get(id);
@@ -45,29 +46,31 @@ public class ProductServiceImpl implements ProductService{
         return list;
     }
 
-    public List ShowProductDetailHavingCustomer(String id,String CustomerId){
-        List list = ShowProductDetail(id);
+    public List showProductDetailHavingCustomer(String id,String CustomerId){
+        List list = showProductDetail(id);
         List<Discount> currentDiscountList = discountService.getCurrentDiscountFromUser(CustomerId);
-        currentDiscountList.retainAll((List)list.get(3));
+        currentDiscountList.retainAll((List) list.get(3));
+        ((List) list.get(3)).removeAll(currentDiscountList);
         list.add(currentDiscountList);
         return list;
     }
 
-    public List<Product> ShowProductByName(String name) {
+    public List<Product> showProductByName(String name) {
         //Transaction tx = productRepository.getCurrentSession().beginTransaction();
         List list = productRepository.findByName(name);
         //tx.commit();
         return list;
     }
 
-    public List<Product> ShowProductByClassId(String classId) {
+    public List<Product> showProductByClassId(String classId) {
         //Transaction tx = productRepository.getCurrentSession().beginTransaction();
         List list = productRepository.findByClass(classId);
         //tx.commit();
         return list;
     }
 
-    public List<Product> ShowProductByShopId(String shopId) {
+
+    public List<Product> showProductByShopId(String shopId) {
         //Transaction tx = productRepository.getCurrentSession().beginTransaction();
         List list = productRepository.findByShop(shopId);
         //tx.commit();

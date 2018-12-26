@@ -5,6 +5,7 @@ import com.ssh.respository.ProductRepositoryImpl;
 import com.ssh.service.CustomerServiceImpl;
 import com.ssh.service.DiscountServiceImpl;
 import com.ssh.service.ProductServiceImpl;
+import com.ssh.utils.DiscountUtils;
 import com.ssh.utils.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,9 +42,8 @@ public class DiscountController {
             else status = "yes";
         }
         List<Product> list = discountService.getProductByDiscount(id);
-        map.put("discount",discount);
-        map.put("status",status);
         map.put("result", SearchUtils.search_result_product(list));
+        map.put("discountresult", DiscountUtils.discount_detail(discount,status));
         return new ModelAndView("/discount",map);
     }
 }

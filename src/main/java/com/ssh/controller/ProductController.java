@@ -11,6 +11,7 @@ import com.ssh.utils.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,9 +26,11 @@ public class ProductController {
     ProductServiceImpl productService;
 
     @RequestMapping(value = "/product",method = RequestMethod.GET)
-    public ModelAndView showProduct(String id){
+    public ModelAndView showProduct(@CookieValue(value = "customerId",defaultValue = "") String customerId, String id){
         ModelMap map=new ModelMap();
-        List targetList = productService.ShowProductDetail(id);
+        List targetList = new ArrayList();
+        if (customerId.length() == 0) targetList = productService.showProductDetail(id);
+        else targetList = productService.showProductDetailHavingCustomer(id,customerId);
         if(targetList == null || targetList.size() < 4){
             return new ModelAndView("404 NOT FOUND");
         }
