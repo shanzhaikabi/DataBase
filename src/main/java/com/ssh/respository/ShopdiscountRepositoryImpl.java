@@ -1,6 +1,7 @@
 package com.ssh.respository;
 
 import com.ssh.entity.Product;
+import com.ssh.entity.Shop;
 import com.ssh.entity.Shopdiscount;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class ShopdiscountRepositoryImpl implements ShopdiscountRepository{
@@ -49,5 +51,14 @@ public class ShopdiscountRepositoryImpl implements ShopdiscountRepository{
 
     public void flush() {
         getCurrentSession().flush();
+    }
+
+    public List<Shop> getShopByDiscount(String discountType){
+        List<Shop> list =
+                (List<Shop>) getCurrentSession()
+                        .createQuery("from Shop c,Shopdiscount cd where c.shopId = cd.shopId and cd.discountType = ?").setParameter(0,discountType)
+                        .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
+        flush();
+        return list;
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class ProductdiscountRepositoryImpl implements ProductdiscountRepository{
@@ -49,5 +50,15 @@ public class ProductdiscountRepositoryImpl implements ProductdiscountRepository{
 
     public void flush() {
         getCurrentSession().flush();
+    }
+
+    @Override
+    public List<Product> getProductByDiscount(String discountType) {
+        List<Product> list =
+                (List<Product>) getCurrentSession()
+                        .createQuery("from Product c,Productdiscount cd where c.productId = cd.productId and cd.discountType = ?").setParameter(0,discountType)
+                        .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
+        flush();
+        return list;
     }
 }

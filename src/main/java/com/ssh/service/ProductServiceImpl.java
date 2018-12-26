@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService{
         Shop shop = shopService.GetShopById(product.getShopId());
         if (null == shop) return null;
         list.add(shop);
-        List<Discount> discountList = new ArrayList<Discount>();
+        List<Discount> discountList = new ArrayList<>();
         discountList.addAll(discountService.getDiscountForShop(shop.getShopId()));
         discountList.addAll(discountService.getDiscountForClass(clazz.getClassId()));
         discountList.addAll(discountService.getDiscountForProduct(product.getProductId()));

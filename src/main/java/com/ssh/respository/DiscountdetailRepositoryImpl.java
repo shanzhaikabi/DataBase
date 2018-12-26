@@ -57,6 +57,7 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
     public List<Discountdetail> getDiscountDetailByCustomerId(String customerId) {
         Criteria c = getCurrentSession().createCriteria(Discountdetail.class)
                 .add(Restrictions.eq("customerId",customerId));
+        flush();
         return c.list();
     }
 }
