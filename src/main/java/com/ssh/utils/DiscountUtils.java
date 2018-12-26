@@ -1,31 +1,35 @@
 package com.ssh.utils;
 
 import com.ssh.entity.Discount;
+import com.ssh.entity.Discountdetail;
 import com.ssh.entity.Product;
 
 import java.util.Iterator;
 import java.util.List;
 
 public class DiscountUtils {
-
-    public static String mydiscount_have(List<Discount>list)
+    public static String mydiscount_haveList(List<Object[]>list)
     {
         String ans = "<fieldset>";
         ans = ans + "<legend>可用优惠券</legend>";
-        Iterator<Discount> iterator = list.iterator();
+        Iterator<Object[]> iterator = list.iterator();
         while(iterator.hasNext()) {
-            ans = ans + discount_detail(iterator.next(),"have");
+            ans = ans + discount_detail((Discount)iterator.next()[0],"have");
         }
         ans = ans + "</fieldset>";
         return ans;
     }
-    public static String mydiscount_used(List<Discount>list)
+    public static String mydiscount_used(List<Object[]>list)
     {
         String ans = "<fieldset>";
         ans = ans + "<legend>已使用优惠券</legend>";
-        Iterator<Discount> iterator = list.iterator();
+        Iterator<Object[]> iterator = list.iterator();
         while(iterator.hasNext()) {
-            ans = ans + discount_detail(iterator.next(),"used");
+            Object[] tmp = iterator.next();
+            ans = ans + discount_detail((Discount) tmp[0],"used");
+            ans = ans + "使用日期：" + ((Discountdetail)tmp[1]).getDiscountDate() + "<br>";
+            ans = ans + "使用状态：" + ((Discountdetail)tmp[1]).getDiscountStatus() + "<br>";
+            ans = ans + "</fieldset>";
         }
         ans = ans + "</fieldset>";
         return ans;
@@ -59,7 +63,8 @@ public class DiscountUtils {
         ans = ans + "<input type=\"submit\" value=\"加入购物车\">";
         return ans;
     }
-    public static  String discount_detail(Discount discount,String str){
+
+    public static  String discount_detail(Discount discount, String str){
         String ans = "<fieldset><legend>优惠券信息</legend>";
         ans = ans + "优惠券类型：";
         String rule = discount.getDiscountRule();
@@ -74,10 +79,10 @@ public class DiscountUtils {
                     "&nbsp减&nbsp" + discount.getDiscountPrice().toString() + "&nbsp元<br>";
         if(str.equals("yes"))ans = ans + "已拥有该优惠券<br>";
         //TODO:超链接到 领优惠券 和 登 录
-        else if(str.equals("no"))ans = ans + "领取优惠券<br>";
-        else if(str.equals("login"))ans = ans + "请先登录<br>";
-        //else if(str.equals("used"))ans = ans + "已使用<br>";
-        ans = ans + "</fieldset>";
+        else if(str.equals("no"))ans = ans + "领取优惠券<br>"+ "</fieldset>";
+        else if(str.equals("login"))ans = ans + "请先登录<br>"+ "</fieldset>";
+        else if(str.equals("used"));
+        else if(str.equals("have"))ans = ans + "立即使用<br>"+ "</fieldset>";
         return ans;
     }
 }
