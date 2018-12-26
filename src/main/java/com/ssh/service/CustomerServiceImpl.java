@@ -2,6 +2,7 @@ package com.ssh.service;
 
 import com.ssh.entity.Customer;
 import com.ssh.respository.CustomerRepositoryImpl;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,10 @@ public class CustomerServiceImpl implements CustomerService {
     CustomerRepositoryImpl customerRepository;
 
     public Customer get(String customerId) {
-        return customerRepository.get(customerId);
+        //Transaction tx = customerRepository.getCurrentSession().beginTransaction();
+        Customer customer = customerRepository.get(customerId);
+
+        //tx.commit();
+        return customer;
     }
 }

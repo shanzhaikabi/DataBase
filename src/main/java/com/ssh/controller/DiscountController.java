@@ -30,6 +30,7 @@ public class DiscountController {
     @RequestMapping(value = "/discount",method = RequestMethod.GET)
     public ModelAndView showProduct(@CookieValue(value = "customerId",defaultValue = "") String customerId, String id){
         ModelMap map=new ModelMap();
+        if (id == null) return new ModelAndView("404 NOT FOUND");
         Discount discount = discountService.get(id);
         Customer customer = customerService.get(customerId);
         String status = "";

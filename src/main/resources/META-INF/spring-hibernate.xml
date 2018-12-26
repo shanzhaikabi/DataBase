@@ -1,12 +1,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <!-- Spring对com.xrom.ssh目录下的@Repository、@Service、@@Component注解标注的bean进行自动扫描 -->
+    <!-- Spring对com.ssh目录下的@Repository、@Service、@@Component注解标注的bean进行自动扫描 -->
     <context:component-scan base-package="com.ssh">
         <!-- 扫描时跳过 @Controller 注解的JAVA类（控制器） -->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -36,14 +38,18 @@
                 <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop> <!--hibernate根据实体自动生成数据库表-->
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>   <!--指定数据库方言-->
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>     <!--在控制台显示执行的数据库操作语句-->
-                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop><!--在控制台显示执行的数据哭操作语句（格式）-->
+                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
             </props>
         </property>
     </bean>
 
     <!-- 事物管理器配置  -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
+        <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
+
+    <tx:annotation-driven  transaction-manager="transactionManager" />
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
 
 </beans>

@@ -6,20 +6,23 @@ import com.ssh.entity.Product;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Repository
+@Transactional
 public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
 
     @Autowired
     private SessionFactory sessionFactory;
 
     public Session getCurrentSession() {
-        return this.sessionFactory.openSession();
+        return this.sessionFactory.getCurrentSession();
     }
 
     public Discountdetail load(Integer id) {
@@ -57,7 +60,6 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
     public List<Discountdetail> getDiscountDetailByCustomerId(String customerId) {
         Criteria c = getCurrentSession().createCriteria(Discountdetail.class)
                 .add(Restrictions.eq("customerId",customerId));
-        flush();
         return c.list();
     }
 
@@ -67,7 +69,6 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
                 .add(Restrictions.eq("discountType",discountType))
                 .add(Restrictions.eq("discountStatus","yes"))
                 .uniqueResult();
-        flush();
         return discountdetail;
     }
 }

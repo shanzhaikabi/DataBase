@@ -9,19 +9,21 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
+@Transactional
 public class DiscountRepositoryImpl implements DiscountRepository{
 
     @Autowired
     private SessionFactory sessionFactory;
 
     public Session getCurrentSession() {
-        return this.sessionFactory.openSession();
+        return this.sessionFactory.getCurrentSession();
     }
     public Discount load(String id) {
         return (Discount) getCurrentSession().load(Discount.class,id);
@@ -64,35 +66,22 @@ public class DiscountRepositoryImpl implements DiscountRepository{
     }
 
     public List getAllForClass(String classId) {
-        /*Criteria c = getCurrentSession().createCriteria(Discount.class)
-                .add(Restrictions.eq("discountRule","class"))
-                .createAlias("Classdiscount","cd")
-                .add(Restrictions.eq("cd.classId",classId));
-        return c.list() == null ? new ArrayList<>() : c.list();*/
         List list = (List) getCurrentSession().createQuery(
                 "from Discount dis,Classdiscount sd where dis.discountRule = 'class' and dis.discountType = sd.discountType and sd.classId = ?").setParameter(0,classId)
                 .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
-        flush();
         return list == null ? new ArrayList<>() : list;
     }
 
     public List getAllForProduct(String productId) {
-        /*Criteria c = getCurrentSession().createCriteria(Product.class)
-                .add(Restrictions.eq("discountRule","product"))
-                .createAlias("productdiscount","pd")
-                .add(Restrictions.eq("pd.classId",productId));
-        return c.list() == null ? new ArrayList<>() : c.list();*/
         List list = (List) getCurrentSession().createQuery(
                 "from Discount dis,Productdiscount sd where dis.discountRule = 'product' and dis.discountType = sd.discountType and sd.productId = ?").setParameter(0,productId)
                 .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
-        flush();
         return list == null ? new ArrayList<>() : list;
     }
 
     public List<Discount> getAllForAll() {
         Criteria c = getCurrentSession().createCriteria(Product.class)
                 .add(Restrictions.eq("discountRule","all"));
-        flush();
         return c.list();
     }
 }
