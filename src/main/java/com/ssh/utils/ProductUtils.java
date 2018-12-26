@@ -1,13 +1,9 @@
 package com.ssh.utils;
 
 import com.ssh.entity.Clazz;
-import com.ssh.entity.Discount;
 import com.ssh.entity.Product;
 import com.ssh.entity.Shop;
 
-import java.util.Iterator;
-import java.util.List;
-import static com.ssh.utils.DiscountUtils.discount_detail;
 
 public class ProductUtils {
     public static String product_detail(Product product, Clazz clazz, Shop shop)
