@@ -2,9 +2,14 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="darkHome@localhost" uuid="efb10e1e-07a9-40a6-8573-cc90d797e884">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <database-info product="MySQL" version="5.7.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )" dbms="MYSQL" exact-version="5.7.20">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
+      <introspection-schemas>*:@</introspection-schemas>
     </data-source>
     <data-source name="config" uuid="7fbba83e-6ac6-4346-8ffe-da113f5b4e0c">
       <database-info product="MySQL" version="5.7.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )" dbms="MYSQL" exact-version="5.7.20">

@@ -7,7 +7,6 @@ import com.ssh.entity.Shop;
 import com.ssh.service.ProductServiceImpl;
 import com.ssh.utils.DiscountUtils;
 import com.ssh.utils.ProductUtils;
-import com.ssh.utils.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

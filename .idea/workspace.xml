@@ -6,20 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="470eff69-21d5-4f19-b11c-7aa5d5374c7f" name="Default Changelist" comment="添加了repository">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountdetailRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountdetailRepositoryImpl.java" afterDir="false" />
+    <list default="true" id="470eff69-21d5-4f19-b11c-7aa5d5374c7f" name="Default Changelist" comment="把discountType改成int">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/receivediscount.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/DataBase.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efb10e1e-07a9-40a6-8573-cc90d797e884.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efb10e1e-07a9-40a6-8573-cc90d797e884.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/WEB-INF/classes/META-INF/Management.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/WEB-INF/classes/META-INF/spring-hibernate.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/WEB-INF/classes/META-INF/spring-mvc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/WEB-INF/classes/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/views/mainPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/views/register.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_Web_exploded/views/registerFail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shanzhai.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Shanzhai.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssh/controller/DiscountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssh/controller/DiscountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssh/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssh/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/discount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/discount.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/registerFail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-hibernate.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring-hibernate.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,88 +43,22 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="darkHome@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="darkHome@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="darkHome@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="class: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="classdiscount: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="customer: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="discount: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="discountdetail: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="ordermaster: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="product: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="productdiscount: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="shop: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="darkhome@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="darkhome: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="shopdiscount: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="sessionFactory/Hibernate" type="feb32156:DbDataSourceImpl" />
       </path>
     </expand>
     <select />
@@ -135,137 +69,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductdiscountRepositoryImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/DiscountController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#267#268#0" expanded="true" />
-                <element signature="e#323#324#0" expanded="true" />
-                <element signature="e#716#717#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-                <element signature="e#920#921#0" expanded="true" />
-                <element signature="e#971#972#0" expanded="true" />
-                <element signature="e#1022#1023#0" expanded="true" />
-                <element signature="e#1095#1096#0" expanded="true" />
-                <element signature="e#1151#1152#0" expanded="true" />
-                <element signature="e#1207#1208#0" expanded="true" />
-                <element signature="e#1237#1238#0" expanded="true" />
-                <element signature="e#1272#1273#0" expanded="true" />
-                <element signature="e#1310#1311#0" expanded="true" />
-                <element signature="e#1353#1354#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="139">
+              <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopRepositoryImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" selection-start-line="14" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#556#557#0" expanded="true" />
-                <element signature="e#583#584#0" expanded="true" />
-                <element signature="e#617#618#0" expanded="true" />
-                <element signature="e#644#645#0" expanded="true" />
-                <element signature="e#679#680#0" expanded="true" />
-                <element signature="e#706#707#0" expanded="true" />
-                <element signature="e#829#830#0" expanded="true" />
-                <element signature="e#898#899#0" expanded="true" />
-                <element signature="e#792#793#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#1028#1029#0" expanded="true" />
-                <element signature="e#1097#1098#0" expanded="true" />
-                <element signature="e#1121#1122#0" expanded="true" />
-                <element signature="e#1155#1156#0" expanded="true" />
-                <element signature="e#965#966#0" expanded="true" />
-                <element signature="e#1008#1009#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopdiscountRepositoryImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/receivediscount.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#586#587#0" expanded="true" />
-                <element signature="e#613#614#0" expanded="true" />
-                <element signature="e#656#657#0" expanded="true" />
-                <element signature="e#683#684#0" expanded="true" />
-                <element signature="e#726#727#0" expanded="true" />
-                <element signature="e#753#754#0" expanded="true" />
-                <element signature="e#891#892#0" expanded="true" />
-                <element signature="e#936#937#0" expanded="true" />
-                <element signature="e#856#857#0" expanded="true" />
-                <element signature="e#883#884#0" expanded="true" />
-                <element signature="e#1108#1109#0" expanded="true" />
-                <element signature="e#1164#1165#0" expanded="true" />
-                <element signature="e#1202#1203#0" expanded="true" />
-                <element signature="e#1248#1249#0" expanded="true" />
-                <element signature="e#930#931#0" expanded="true" />
-                <element signature="e#973#974#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitattributes">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/CustomerRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductdiscountRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="92" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/OrdermasterRepositoryImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#553#554#0" expanded="true" />
-                <element signature="e#635#636#0" expanded="true" />
-                <element signature="e#873#874#0" expanded="true" />
-                <element signature="e#924#925#0" expanded="true" />
-                <element signature="e#970#971#0" expanded="true" />
-                <element signature="e#1034#1035#0" expanded="true" />
-                <element signature="e#1086#1087#0" expanded="true" />
-                <element signature="e#1142#1143#0" expanded="true" />
-                <element signature="e#1179#1180#0" expanded="true" />
-                <element signature="e#1225#1226#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Clazz.hbm.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="86" selection-start-line="11" selection-start-column="86" selection-end-line="11" selection-end-column="86" />
+            <state relative-caret-position="282">
+              <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -288,7 +113,19 @@
       <find>　　　　</find>
       <find>　　</find>
       <find>classpath</find>
+      <find>data</find>
+      <find>autoproxy</find>
+      <find>Tr</find>
+      <find>Transaction</find>
+      <find>tx.</find>
+      <find>String id</find>
     </findStrings>
+    <replaceStrings>
+      <replace>//Tr</replace>
+      <replace>//Transaction</replace>
+      <replace>//tx.</replace>
+      <replace>Integer id</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -296,52 +133,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring-mvc.xml.tld" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/test.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/TestService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/TestServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Character.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/DomainRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring-hibernate.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/utils/UserUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/UserCharacter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/CharacterFunctionOperation.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/registerFail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/register.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/mainPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/RegisterController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/MainPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Clazz.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/search.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/SearchController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/ClassService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/utils/SearchUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/discount.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/utils/ProductUtils.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/UserRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/CostomerRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/Ordermaster.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/OrdermasterRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductdiscountRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ClazzRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/CustomerRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductdiscountRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopdiscountRepository.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring-hibernate.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/OrdermasterRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/ClassServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/ProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/ShopServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/ShopService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/utils/DiscountUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/ShopController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/CustomerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Discount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Classdiscount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Classdiscount.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Discount.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Discountdetail.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Discountdetail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Productdiscount.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Productdiscount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Shopdiscount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/entity/Shopdiscount.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/DiscountServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountdetailRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountdetailRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductdiscountRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductdiscountRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ClassdiscountRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ClassdiscountRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopdiscountRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopdiscountRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/service/DiscountService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssh/controller/DiscountController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/receivediscount.jsp" />
       </list>
     </option>
   </component>
@@ -371,17 +213,19 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1532" />
-    <option name="y" value="98" />
+    <option name="x" value="1634" />
+    <option name="y" value="207" />
     <option name="width" value="1440" />
-    <option name="height" value="877" />
+    <option name="height" value="810" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <showExcludedFiles Scope="true" ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -422,7 +266,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ssh" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DataBase" type="b2602c69:ProjectViewProjectNode" />
@@ -431,7 +275,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ssh" type="462c0819:PsiDirectoryNode" />
-              <item name="respository" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DataBase" type="b2602c69:ProjectViewProjectNode" />
@@ -457,37 +301,50 @@
             </path>
             <path>
               <item name="DataBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="JPA.DatabaseSchemaImportDialog" value="c0115146-dbf8-477f-9dcb-9aab44055055" />
+    <property name="JPA.DatabaseSchemaImportDialog" value="efb10e1e-07a9-40a6-8573-cc90d797e884" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545658507426" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545845893521" />
     <property name="database.console.LAST_STATE" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/views" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="" />
       <recent name="com.ssh.entity" />
+      <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/ssh/controller" />
@@ -554,7 +411,6 @@
     </configuration>
     <configuration name="Tomcat 9.0.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/DataBase/" />
-      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Shanzhai:Web exploded">
           <settings>
@@ -649,7 +505,10 @@
       <workItem from="1545134898367" duration="13320000" />
       <workItem from="1545566472887" duration="3802000" />
       <workItem from="1545643895705" duration="7241000" />
-      <workItem from="1545656239621" duration="2251000" />
+      <workItem from="1545656239621" duration="6571000" />
+      <workItem from="1545663039791" duration="35711000" />
+      <workItem from="1545802310087" duration="6849000" />
+      <workItem from="1545817646648" duration="16855000" />
     </task>
     <task id="LOCAL-00001" summary="重构了entity">
       <created>1545655395307</created>
@@ -672,11 +531,130 @@
       <option name="project" value="LOCAL" />
       <updated>1545657924134</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加了repository">
+      <created>1545658529954</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1545658529954</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1">
+      <created>1545663871616</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1545663871616</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Product 第一次更新。">
+      <created>1545721089918</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1545721089918</updated>
+    </task>
+    <task id="LOCAL-00007" summary="添加了repository">
+      <created>1545725982825</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1545725982825</updated>
+    </task>
+    <task id="LOCAL-00008" summary="添加了一些功能">
+      <created>1545729345937</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1545729345938</updated>
+    </task>
+    <task id="LOCAL-00009" summary="修改了部分内容">
+      <created>1545740716086</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1545740716087</updated>
+    </task>
+    <task id="LOCAL-00010" summary="修修补补了Search相关的东西">
+      <created>1545742134409</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1545742134409</updated>
+    </task>
+    <task id="LOCAL-00011" summary="1">
+      <created>1545742990128</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1545742990128</updated>
+    </task>
+    <task id="LOCAL-00012" summary="不知道改了啥就错了">
+      <created>1545751303913</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1545751303914</updated>
+    </task>
+    <task id="LOCAL-00013" summary="终于tmd好了">
+      <created>1545752562492</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1545752562492</updated>
+    </task>
+    <task id="LOCAL-00014" summary="加入了discount相关显示后端.gbf&#10;&#10;点击助力古战场=&gt;game.granbluefantasy.jp=&lt;点击助力古战场">
+      <created>1545794118265</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1545794118265</updated>
+    </task>
+    <task id="LOCAL-00015" summary="我tm吓尿了">
+      <created>1545808423778</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1545808423779</updated>
+    </task>
+    <task id="LOCAL-00016" summary="加入了">
+      <created>1545808822297</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1545808822297</updated>
+    </task>
+    <task id="LOCAL-00017" summary="改了一坨">
+      <created>1545828068973</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1545828068974</updated>
+    </task>
+    <task id="LOCAL-00018" summary="不知道改了啥总之先commit一下">
+      <created>1545834567456</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1545834567456</updated>
+    </task>
+    <task id="LOCAL-00019" summary="要来了">
+      <created>1545836121613</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1545836121613</updated>
+    </task>
+    <task id="LOCAL-00020" summary="把discountType改成int">
+      <created>1545843392225</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1545843392225</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40215000" />
+    <option name="totallyTimeSpent" value="103950000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -688,38 +666,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1532" y="98" width="1440" height="877" extended-state="0" />
+    <frame x="1634" y="207" width="1440" height="810" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4955414" visible="true" weight="0.2639485" />
-      <window_info id="Structure" order="1" sideWeight="0.5013928" side_tool="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.490099" visible="true" weight="0.2746781" />
+      <window_info id="Structure" order="1" sideWeight="0.509901" side_tool="true" visible="true" weight="0.2746781" />
       <window_info id="Designer" order="2" />
-      <window_info id="Persistence" order="3" sideWeight="0.5044586" side_tool="true" visible="true" weight="0.2639485" />
+      <window_info id="Persistence" order="3" sideWeight="0.51033056" side_tool="true" weight="0.2746781" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info id="Favorites" order="7" sideWeight="0.5013928" side_tool="true" weight="0.24964234" />
       <window_info id="Web" order="8" sideWeight="0.5013928" side_tool="true" weight="0.24964234" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32611465" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286908" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32729805" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32866243" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32611465" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49928468" weight="0.3286908" />
+      <window_info anchor="bottom" id="Application Servers" order="2" sideWeight="0.4985694" weight="0.32729805" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.48855507" weight="0.3259053" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49785408" weight="0.4373259" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.4985694" weight="0.32729805" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50214595" side_tool="true" visible="true" weight="0.4373259" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49785408" weight="0.3259053" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4985694" weight="0.32729805" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32729805" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32729805" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" weight="0.32729805" />
-      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.49785408" weight="0.32729805" />
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.32611465" />
       <window_info anchor="bottom" id="Hibernate Console" order="17" weight="0.3299363" />
+      <window_info anchor="bottom" id="Duplicate detector" order="18" weight="0.3299363" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.17310444" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.3297568" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -732,151 +711,240 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="重构了entity" />
     <MESSAGE value="repository的例子" />
+    <MESSAGE value="Product 第一次更新。" />
     <MESSAGE value="添加了repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了repository" />
+    <MESSAGE value="添加了一些功能" />
+    <MESSAGE value="修改了部分内容" />
+    <MESSAGE value="修修补补了Search相关的东西" />
+    <MESSAGE value="1" />
+    <MESSAGE value="不知道改了啥就错了" />
+    <MESSAGE value="终于tmd好了" />
+    <MESSAGE value="加入了discount相关显示后端.gbf&#10;&#10;点击助力古战场=&gt;game.granbluefantasy.jp=&lt;点击助力古战场" />
+    <MESSAGE value="我tm吓尿了" />
+    <MESSAGE value="加入了" />
+    <MESSAGE value="改了一坨" />
+    <MESSAGE value="不知道改了啥总之先commit一下" />
+    <MESSAGE value="要来了" />
+    <MESSAGE value="把discountType改成int" />
+    <option name="LAST_COMMIT_MESSAGE" value="把discountType改成int" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/UserCharacter.hbm.xml" />
-    <entry file="das://bcae2a63-0a45-40ca-bf35-b65e4de132e4/schema/mysys/table/user_character">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/OrdermasterRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/User.hbm.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/UserCharacter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/User.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/CharacterFunctionOperation.hbm.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/CharacterFunctionOperation.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Character.hbm.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/TestService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/registerFail.jsp">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.1.RELEASE/spring-beans-4.3.1.RELEASE-sources.jar!/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="25" />
+        <state relative-caret-position="147">
+          <caret line="568" selection-start-line="568" selection-end-line="568" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/login.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-mvc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="84">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.1.RELEASE/spring-webmvc-4.3.1.RELEASE-sources.jar!/org/springframework/web/servlet/ModelAndView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="99" column="29" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3068#3069#0" expanded="true" />
-            <element signature="e#3117#3118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/MainPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/mainPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        <state relative-caret-position="367">
+          <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+        <state relative-caret-position="117">
+          <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="das://c0115146-dbf8-477f-9dcb-9aab44055055/schema/darkhome/table/classdiscount">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c0115146-dbf8-477f-9dcb-9aab44055055/schema/darkhome/table/class">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c0115146-dbf8-477f-9dcb-9aab44055055/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/OrdermasterRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        <state relative-caret-position="26">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/DomainRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1312#1313#0" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ClazzRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-hibernate.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-258">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/CustomerRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/ClassServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Ordermaster.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/CustomerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/ShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/utils/SearchUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="85" lean-forward="true" selection-start-line="19" selection-start-column="85" selection-end-line="19" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/ShopServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Discount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-438">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/ShopController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://efb10e1e-07a9-40a6-8573-cc90d797e884/schema/darkhome/table/discount">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Classdiscount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Classdiscount.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="60" lean-forward="true" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Discount.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -887,270 +955,204 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Productdiscount.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="47" />
+        <state relative-caret-position="187">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1155#1156#0" expanded="true" />
-            <element signature="e#1206#1207#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-mvc.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Shopdiscount.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <caret line="14" column="60" lean-forward="true" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-hibernate.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountdetailRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Classdiscount.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Classdiscount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Clazz.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="86" selection-start-line="11" selection-start-column="86" selection-end-line="11" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/OrdermasterRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="84" lean-forward="true" selection-start-line="4" selection-start-column="84" selection-end-line="4" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductdiscountRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="92" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/OrdermasterRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#635#636#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#970#971#0" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/CustomerRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/CustomerRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1186#1187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="52" />
+        <state relative-caret-position="204">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Discountdetail.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="238">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductdiscountRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+        <state relative-caret-position="578">
+          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductdiscountRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ClassdiscountRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#971#972#0" expanded="true" />
-            <element signature="e#1022#1023#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1151#1152#0" expanded="true" />
-            <element signature="e#1207#1208#0" expanded="true" />
-            <element signature="e#1237#1238#0" expanded="true" />
-            <element signature="e#1272#1273#0" expanded="true" />
-            <element signature="e#1310#1311#0" expanded="true" />
-            <element signature="e#1353#1354#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ProductRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ClassdiscountRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopdiscountRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="85" selection-start-line="4" selection-start-column="85" selection-end-line="4" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar!/javax/persistence/criteria/CriteriaBuilder.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountdetailRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="86" lean-forward="true" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountdetailRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#746#747#0" expanded="true" />
-            <element signature="e#773#774#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
-            <element signature="e#990#991#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1200#1201#0" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#1003#1004#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#1073#1074#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#556#557#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-            <element signature="e#1097#1098#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1155#1156#0" expanded="true" />
-            <element signature="e#965#966#0" expanded="true" />
-            <element signature="e#1008#1009#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopdiscountRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="283">
+          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/ShopdiscountRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Shopdiscount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/DiscountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="8" column="76" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#586#587#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#891#892#0" expanded="true" />
-            <element signature="e#936#937#0" expanded="true" />
-            <element signature="e#856#857#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-            <element signature="e#1164#1165#0" expanded="true" />
-            <element signature="e#1202#1203#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Discountdetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountdetailRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="89" column="45" lean-forward="true" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/utils/DiscountUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="79" column="18" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/mydiscount.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/service/DiscountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/entity/Productdiscount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/respository/DiscountRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding>
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#831#832#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1089#1090#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#1184#1185#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1340#1341#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/DiscountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssh/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/receivediscount.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1208,11 +1210,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Web|Shanzhai</last-edited>
+          <last-edited>Shanzhai</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

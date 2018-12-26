@@ -46,4 +46,20 @@ public class DiscountController {
         map.put("discountresult", DiscountUtils.discount_detail(discount,status));
         return new ModelAndView("/discount",map);
     }
+
+    @RequestMapping(value = "/receivediscount",method = RequestMethod.GET)
+    public ModelAndView addDiscount(@CookieValue(value = "customerId",defaultValue = "") String customerId, String id){
+        ModelMap map = new ModelMap();
+        if (id == null){
+            map.put("result","错误的请求");
+        }
+        else if (discountService.addDiscountToUser(Integer.valueOf(id),customerId)){
+            map.put("result","领取成功");
+            map.put("discount",DiscountUtils.discount_detail(discountService.get(Integer.valueOf(id)),""));
+        }
+        else{
+            map.put("result","领取失败");
+        }
+        return new ModelAndView("/receivediscount",map);
+    }
 }
