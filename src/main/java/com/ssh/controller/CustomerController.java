@@ -1,5 +1,6 @@
 package com.ssh.controller;
 
+import com.ssh.entity.Discount;
 import com.ssh.entity.Discountdetail;
 import com.ssh.service.DiscountServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Controller
@@ -21,8 +24,8 @@ public class CustomerController {
     @RequestMapping(value = "/customer",method = RequestMethod.GET)
     public ModelAndView showMyDiscounts(String id){
         ModelMap map=new ModelMap();
-        List<Discountdetail> availableList = discountService.getAvailableDiscountdetailFromUser(id);
-        List<Discountdetail> usedList = discountService.getUsedDiscountdetailFromUser(id);
+        List<Object[]> availableList = discountService.getAvailableDiscountAndDetailFromUser(id);
+        List<Object[]> usedList = discountService.getUsedDiscountAndDetailFromUser(id);
         map.put("result",availableList);
         return new ModelAndView("/discount",map);
     }

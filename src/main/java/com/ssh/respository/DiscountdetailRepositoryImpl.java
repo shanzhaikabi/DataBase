@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -74,6 +75,20 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
         List list = getCurrentSession().createCriteria(Discountdetail.class)
                 .add(Restrictions.eq("customerId",customerId))
                 .add(Restrictions.eq("discountStatus","yes")).list();
+        return list;
+    }
+
+    @Override
+    public List<Object[]> getUsedDiscountAndDetailByCustomerId(String customerId) {
+        List list = getCurrentSession().createQuery("from Discount d,Discountdetail dt where d.discountType = dt.discountType and dt.customerId = ? and dt.discountStatus = ?")
+                .setParameter(0,customerId).setParameter(1,"no").list();
+        return list;
+    }
+
+    @Override
+    public List<Object[]> getAvailableDiscountAndDetailByCustomerId(String customerId) {
+        List list = getCurrentSession().createQuery("from Discount d,Discountdetail dt where d.discountType = dt.discountType and dt.customerId = ? and dt.discountStatus = ?")
+                .setParameter(0,customerId).setParameter(1,"yes").list();
         return list;
     }
 

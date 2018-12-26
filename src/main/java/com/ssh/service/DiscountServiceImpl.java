@@ -37,13 +37,23 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     public List<Discountdetail> getAvailableDiscountdetailFromUser(String customerId) {
-        List<Discountdetail> list = discountdetailRepository.getDiscountdetailByCustomerId(customerId);
+        List<Discountdetail> list = discountdetailRepository.getAvailableDiscountdetailByCustomerId(customerId);
         return list;
     }
 
     public List<Discountdetail> getUsedDiscountdetailFromUser(String customerId) {
         List<Discountdetail> list = discountdetailRepository.getUsedDiscountdetailByCustomerId(customerId);
         return list;
+    }
+
+    @Override
+    public List<Object[]> getAvailableDiscountAndDetailFromUser(String customerId) {
+        return discountdetailRepository.getAvailableDiscountAndDetailByCustomerId(customerId);
+    }
+
+    @Override
+    public List<Object[]> getUsedDiscountAndDetailFromUser(String customerId) {
+        return discountdetailRepository.getUsedDiscountAndDetailByCustomerId(customerId);
     }
 
     public List<Discount> getCurrentDiscountFromUser(String customerId) {
