@@ -3,6 +3,7 @@ package com.ssh.controller;
 import com.ssh.entity.Discount;
 import com.ssh.entity.Discountdetail;
 import com.ssh.service.DiscountServiceImpl;
+import com.ssh.utils.DiscountUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -26,7 +27,7 @@ public class CustomerController {
         ModelMap map=new ModelMap();
         List<Object[]> availableList = discountService.getAvailableDiscountAndDetailFromUser(id);
         List<Object[]> usedList = discountService.getUsedDiscountAndDetailFromUser(id);
-        map.put("result",availableList);
+        map.put("result", DiscountUtils.mydiscount_haveList(availableList)+DiscountUtils.mydiscount_used(usedList));
         return new ModelAndView("/discount",map);
     }
 

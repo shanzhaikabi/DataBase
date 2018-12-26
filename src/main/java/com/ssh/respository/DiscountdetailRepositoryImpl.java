@@ -67,7 +67,7 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
     public List<Discountdetail> getUsedDiscountdetailByCustomerId(String customerId){
         List list = getCurrentSession().createCriteria(Discountdetail.class)
                 .add(Restrictions.eq("customerId",customerId))
-                .add(Restrictions.eq("discountStatus","no")).list();
+                .add(Restrictions.ne("discountStatus","yes")).list();
         return list;
     }
 
@@ -80,8 +80,8 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
 
     @Override
     public List<Object[]> getUsedDiscountAndDetailByCustomerId(String customerId) {
-        List list = getCurrentSession().createQuery("from Discount d,Discountdetail dt where d.discountType = dt.discountType and dt.customerId = ? and dt.discountStatus = ?")
-                .setParameter(0,customerId).setParameter(1,"no").list();
+        List list = getCurrentSession().createQuery("from Discount d,Discountdetail dt where d.discountType = dt.discountType and dt.customerId = ? and dt.discountStatus != ?")
+                .setParameter(0,customerId).setParameter(1,"yes").list();
         return list;
     }
 
