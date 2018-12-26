@@ -18,7 +18,6 @@ import java.util.List;
 public class DiscountController {
     @Autowired
     DiscountServiceImpl discountService;
-
     @RequestMapping(value = "/discount.class",method = RequestMethod.GET)
     public ModelAndView showClass(String id){
         ModelMap map=new ModelMap();
@@ -26,7 +25,6 @@ public class DiscountController {
         map.put("result",list);
         return new ModelAndView("/discount",map);
     }
-
     @RequestMapping(value = "/discount.shop",method = RequestMethod.GET)
     public ModelAndView showShop(String id){
         ModelMap map=new ModelMap();
@@ -34,7 +32,6 @@ public class DiscountController {
         map.put("result",list);
         return new ModelAndView("/discount",map);
     }
-
     @RequestMapping(value = "/discount.product",method = RequestMethod.GET)
     public ModelAndView showProduct(String id){
         ModelMap map=new ModelMap();
