@@ -1,18 +1,13 @@
 package com.ssh.respository;
 
-import com.ssh.entity.Discount;
 import com.ssh.entity.Discountdetail;
-import com.ssh.entity.Product;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -92,7 +87,7 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
         return list;
     }
 
-    public Discountdetail getDiscountByTypeAndCustomer(String discountType, String customerId) {
+    public Discountdetail getDiscountByTypeAndCustomer(int discountType, String customerId) {
         Discountdetail discountdetail = (Discountdetail) getCurrentSession().createCriteria(Discountdetail.class)
                 .add(Restrictions.eq("customerId",customerId))
                 .add(Restrictions.eq("discountType",discountType))

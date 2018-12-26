@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Discountdetail {
     private int discountId;
     private String customerId;
-    private String discountType;
+    private int discountType;
     private Timestamp discountDate;
     private String discountStatus;
 
@@ -37,11 +37,11 @@ public class Discountdetail {
 
     @Basic
     @Column(name = "discountType", nullable = true, length = 20)
-    public String getDiscountType() {
+    public int getDiscountType() {
         return discountType;
     }
 
-    public void setDiscountType(String discountType) {
+    public void setDiscountType(int discountType) {
         this.discountType = discountType;
     }
 

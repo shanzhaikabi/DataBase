@@ -26,12 +26,12 @@ public class DiscountServiceImpl implements DiscountService{
     ShopdiscountRepositoryImpl shopdiscountRepository;
 
     @Override
-    public Discount get(String id) {
+    public Discount get(int id) {
         return discountRepository.get(id);
     }
 
     @Override
-    public Discountdetail doCustomerHaveDiscount(String customerId, String discountType) {
+    public Discountdetail doCustomerHaveDiscount(String customerId, int discountType) {
         Discountdetail discountdetail = discountdetailRepository.getDiscountByTypeAndCustomer(discountType,customerId);
         return discountdetail;
     }
@@ -77,7 +77,7 @@ public class DiscountServiceImpl implements DiscountService{
         return list == null ? new ArrayList<>() : list;
     }
 
-    public List<Product> getProductByDiscount(String discountType){
+    public List<Product> getProductByDiscount(int discountType){
         Discount discount = discountRepository.get(discountType);
         List<Product> list = new ArrayList<>();
         if (discount != null) {
@@ -93,7 +93,7 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     @Override
-    public boolean addDiscountToUser(String discountType, String customerId) {
+    public boolean addDiscountToUser(int discountType, String customerId) {
         Discountdetail discountdetail = new Discountdetail();
         if(discountdetailRepository.getDiscountByTypeAndCustomer(discountType,customerId) != null) return false;
         discountdetail.setCustomerId(customerId);

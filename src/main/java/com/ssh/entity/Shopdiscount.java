@@ -9,7 +9,7 @@ import java.util.Objects;
 @Entity
 public class Shopdiscount {
     private int id;
-    private String discountType;
+    private int discountType;
     private String shopId;
 
     @Id
@@ -24,11 +24,11 @@ public class Shopdiscount {
 
     @Basic
     @Column(name = "discountType", nullable = true, length = 20)
-    public String getDiscountType() {
+    public int getDiscountType() {
         return discountType;
     }
 
-    public void setDiscountType(String discountType) {
+    public void setDiscountType(int discountType) {
         this.discountType = discountType;
     }
 

@@ -32,16 +32,16 @@ public class DiscountController {
     public ModelAndView showDiscountDetail(@CookieValue(value = "customerId",defaultValue = "") String customerId, String id){
         ModelMap map=new ModelMap();
         if (id == null) return new ModelAndView("404 NOT FOUND");
-        Discount discount = discountService.get(id);
+        Discount discount = discountService.get(Integer.valueOf(id));
         Customer customer = customerService.get(customerId);
         String status = "";
         if (customer == null) status = "login";
         else{
-            Discountdetail discountdetail = discountService.doCustomerHaveDiscount(id,customerId);
+            Discountdetail discountdetail = discountService.doCustomerHaveDiscount(customerId,Integer.valueOf(id));
             if (discountdetail == null) status = "no";
             else status = "yes";
         }
-        List<Product> list = discountService.getProductByDiscount(id);
+        List<Product> list = discountService.getProductByDiscount(Integer.valueOf(id));
         map.put("result", SearchUtils.search_result_product(list));
         map.put("discountresult", DiscountUtils.discount_detail(discount,status));
         return new ModelAndView("/discount",map);

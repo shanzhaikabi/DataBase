@@ -8,17 +8,17 @@ import java.util.Objects;
 
 @Entity
 public class Productdiscount {
-    private String discountType;
+    private int discountType;
     private String productId;
     private int id;
 
     @Basic
     @Column(name = "discountType", nullable = true, length = 20)
-    public String getDiscountType() {
+    public int getDiscountType() {
         return discountType;
     }
 
-    public void setDiscountType(String discountType) {
+    public void setDiscountType(int discountType) {
         this.discountType = discountType;
     }
 

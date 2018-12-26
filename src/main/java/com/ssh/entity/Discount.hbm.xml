@@ -6,7 +6,7 @@
 
     <class name="com.ssh.entity.Discount" table="discount" schema="darkhome">
         <id name="discountType">
-            <column name="discountType" sql-type="varchar(20)" length="20"/>
+            <column name="discountType" sql-type="int(11)"/>
         </id>
         <property name="discountPrice">
             <column name="discountPrice" sql-type="decimal(10)" precision="10" not-null="true"/>

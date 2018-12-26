@@ -54,7 +54,7 @@ public class ClassdiscountRepositoryImpl implements ClassdiscountRepository{
         getCurrentSession().flush();
     }
 
-    public List<Product> getClassProductByDiscount(String discountType) {
+    public List<Product> getClassProductByDiscount(int discountType) {
         List<Product> list =
                 (List<Product>) getCurrentSession()
                         .createQuery("from Product c,Classdiscount cd where c.classId = cd.classId and cd.discountType = ?").setParameter(0,discountType)
