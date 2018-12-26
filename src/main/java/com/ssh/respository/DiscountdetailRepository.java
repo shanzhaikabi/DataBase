@@ -9,5 +9,7 @@ public interface DiscountdetailRepository extends DomainRepository<Discountdetai
     List<Discountdetail> getDiscountdetailByCustomerId(String customerId);
     List<Discountdetail> getUsedDiscountdetailByCustomerId(String customerId);
     List<Discountdetail> getAvailableDiscountdetailByCustomerId(String customerId);
+    List<Object[]> getUsedDiscountAndDetailByCustomerId(String customerId);
+    List<Object[]> getAvailableDiscountAndDetailByCustomerId(String customerId);
     Discountdetail getDiscountByTypeAndCustomer(String discountType,String customerId);
 }
