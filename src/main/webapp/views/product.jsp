@@ -33,7 +33,7 @@
         </h4>
         <div class="space-6"></div>
         <%--${pageContext.request.contextPath }--%>
-        <form action="${pageContext.request.contextPath}/search.do" method="POST">
+        <form action="${pageContext.request.contextPath}/addcart.do" method="GET">
             ${result}
         </form>
     </div>

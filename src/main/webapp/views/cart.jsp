@@ -26,6 +26,7 @@
     <div class="widget-main">
         <div class="space-6"></div>
         <%--${pageContext.request.contextPath }--%>
+        ${cartresult}
         <form action="${pageContext.request.contextPath}/search.do" method="POST">
             ${result}
         </form>

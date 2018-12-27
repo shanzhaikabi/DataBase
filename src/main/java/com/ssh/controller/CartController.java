@@ -13,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+import static com.ssh.utils.CartUtils.showcart;
+
 @Controller
 public class CartController {
     @Autowired
@@ -20,8 +22,7 @@ public class CartController {
 
     @Autowired
     CustomerServiceImpl customerService;
-
-    @RequestMapping(value = "/addcart",method = RequestMethod.GET)
+    @RequestMapping(value = "/addcart.do",method = RequestMethod.GET)
     public ModelAndView showMyDiscounts(@CookieValue(value = "customerId",defaultValue = "") String customerId, String productId, Integer quantity){
         ModelMap map=new ModelMap();
         Customer customer = customerService.get(customerId);
@@ -29,8 +30,9 @@ public class CartController {
             return new ModelAndView("/login");
         }
         String result = cartService.addCart(customerId,productId,quantity);
-        map.put("result", result);
-        return new ModelAndView("/showcart",map);
+        if(result.equals("success"))map.put("cartresult","添加购物车成功！");
+        else map.put("cartresult","添加购物车失败！");
+        return new ModelAndView("forward:showcart",map);
     }
 
     @RequestMapping(value = "/showcart",method = RequestMethod.GET)
@@ -41,7 +43,7 @@ public class CartController {
             return new ModelAndView("/login");
         }
         List<Object[]> result = cartService.showCart(customerId);
-        map.put("result", result);
-        return new ModelAndView("/mycart",map);
+        map.put("result", showcart(result));
+        return new ModelAndView("cart",map);
     }
 }

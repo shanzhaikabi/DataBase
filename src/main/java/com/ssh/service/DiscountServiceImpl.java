@@ -108,6 +108,4 @@ public class DiscountServiceImpl implements DiscountService{
         discountRepository.save(discount);
         return true;
     }
-
-
 }

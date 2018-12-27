@@ -60,7 +60,6 @@ public class DiscountUtils {
             }
         }
         ans = ans + "</fieldset>";
-        ans = ans + "<input type=\"submit\" value=\"加入购物车\">";
         return ans;
     }
 

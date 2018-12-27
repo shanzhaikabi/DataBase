@@ -20,4 +20,13 @@ public class ProductUtils {
         ans = ans + "</fieldset>";
         return ans;
     }
+    public static String product_into_cart(Product product)
+    {
+        String ans;
+        if(product.getProductStock()==0)ans = "该商品已售罄！";
+        else ans =  "<input type=\"number\" name=\"quantity\" defaultValue=\"1\" min=\"1\" max=\"" +
+                (product.getProductStock()).toString() + "\" />"+
+                "<input type=\"submit\" value=\"加入购物车\">";
+        return ans+"<input type=\"hidden\" name=\"productId\" value=\""+ product.getProductId() + "\">";
+    }
 }

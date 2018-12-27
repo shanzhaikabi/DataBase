@@ -44,7 +44,7 @@
                 </div>
                 <div class="space"></div>
                 <div class="clearfix" style="text-align: center;">
-                    <input type="submit" value="搜索" style="width:100px;">
+                    <input type="submit" value="搜索" style="width:100px;"/>
                 </div>
                 <div class="space-4"></div>
             </fieldset>
