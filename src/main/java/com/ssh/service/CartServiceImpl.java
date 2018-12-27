@@ -37,4 +37,22 @@ public class CartServiceImpl implements CartService {
         List<Object[]> list = cartRepository.getCartByCustomerId(customerId);
         return list;
     }
+
+    @Override
+    public String editCart(String customerId, String productId, int quantity) {
+        Cart cart = cartRepository.getCartByCustomerIdAndProductId(customerId,productId);
+        if (cart == null) return "cart not exist";
+        if (quantity == 0){
+            cartRepository.delete(cart.getId());
+            return "delete";
+        }
+        cart.setQuantity(quantity);
+        cartRepository.saveOrUpdate(cart);
+        return "edit";
+    }
+
+    @Override
+    public void cleanCart(String customerId) {
+        showCart(customerId).forEach(objects -> cartRepository.delete(((Cart) objects[1]).getId()));
+    }
 }
