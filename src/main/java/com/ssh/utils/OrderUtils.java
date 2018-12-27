@@ -19,6 +19,7 @@ public class OrderUtils {
             cnt++;
             Object[] tmp = it.next();
             ans = ans + product_order(cnt,(Product)tmp[0],(Cart)tmp[1]);
+            ans = ans + "</fieldset>";
         }
         ans = ans + "</fieldset>";
         return ans;
@@ -38,11 +39,10 @@ public class OrderUtils {
     }
     public static String confirm_order_total(Integer sum,Integer dis)
     {
-        String ans = "<fieldset><legend>结算页<legend>";
+        String ans = "</fieldset><fieldset><legend>结算页</legend>";
         ans = ans + "总价：" + ((Integer)(sum-dis)).toString();
         ans = ans + "<br>已节省：" + dis.toString();
-        ans = ans + "<input type = \"submit\" value = \"确认无误，下单\">";
-        ans = ans + "</fieldset>";
+        ans = ans + "<br><input type = \"submit\" value = \"确认无误，下单\">";
         ans = ans + "</fieldset>";
         return ans;
     }
