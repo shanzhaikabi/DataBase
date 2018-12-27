@@ -6,6 +6,8 @@ import com.ssh.entity.Ordermaster;
 import com.ssh.entity.Product;
 import com.ssh.respository.OrderdetailRepositoryImpl;
 import com.ssh.respository.OrdermasterRepositoryImpl;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,10 +30,10 @@ public class OrderServiceImpl implements OrderService{
         ordermaster.setOrderDate(new Timestamp(new Date().getTime()));
         ordermaster.setOrderStatus("remaining");
         ordermaster.setOrderSum(tot);
-        Integer orderId = ordermasterRepository.save(ordermaster);
+        ordermasterRepository.save(ordermaster);
         list.forEach(objects -> {
             Orderdetail orderdetail = new Orderdetail();
-            orderdetail.setOrderId(orderId);
+            orderdetail.setOrderId(ordermaster.getOrderId());
             orderdetail.setProductId(((Product)objects[0]).getProductId());
             orderdetail.setPrice(((Product)objects[0]).getProductPrice());
             orderdetail.setQuantity(((Cart) objects[1]).getQuantity());
