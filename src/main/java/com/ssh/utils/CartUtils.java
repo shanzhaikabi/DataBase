@@ -24,7 +24,6 @@ public class CartUtils {
         String ans = "<fieldset>";
         ans = ans + "总价：" + sum.toString();
         ans = ans + "<br>已节省：" + discount.toString();
-        ans = ans + "<br><input type = \"submit\" value = \"下单\"/>";
         ans = ans + "</fieldset>";
         return ans;
     }
@@ -44,7 +43,7 @@ public class CartUtils {
                 sum += tmp1.getProductPrice() * tmp2.getQuantity();
         }
         ans = ans + "</fieldset>";
-        ans = ans + showsum(sum,0);
+        ans = ans + "<br><input type = \"submit\" value = \"下单\"/>";
         return ans;
     }
 }
