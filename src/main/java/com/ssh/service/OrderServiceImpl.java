@@ -7,11 +7,13 @@ import com.ssh.entity.Product;
 import com.ssh.respository.OrderdetailRepositoryImpl;
 import com.ssh.respository.OrdermasterRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class OrderServiceImpl implements OrderService{
     @Autowired
     OrdermasterRepositoryImpl ordermasterRepository;
