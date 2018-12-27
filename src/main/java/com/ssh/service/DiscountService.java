@@ -30,5 +30,6 @@ public interface DiscountService {
     List<Shop> getShopFromDiscount(int discountType);
     boolean addDiscountToUser(int discountType,String customerId);
     void useDiscount(List<Discount> discountList,String customerId,Integer orderId);
+    void returnDiscount(String customerId, Integer orderId);
     boolean addDiscountByShop(Discount discount,String shopId);
 }
