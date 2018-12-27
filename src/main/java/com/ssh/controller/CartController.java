@@ -1,8 +1,10 @@
 package com.ssh.controller;
 
 import com.ssh.entity.Customer;
+import com.ssh.entity.Discount;
 import com.ssh.service.CartServiceImpl;
 import com.ssh.service.CustomerServiceImpl;
+import com.ssh.service.DiscountServiceImpl;
 import com.ssh.service.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,8 @@ public class CartController {
     CustomerServiceImpl customerService;
     @Autowired
     OrderServiceImpl orderService;
+    @Autowired
+    DiscountServiceImpl discountService;
 
     @RequestMapping(value = "/addcart.do",method = RequestMethod.GET)
     public ModelAndView addThatToMyCart(@CookieValue(value = "customerId",defaultValue = "") String customerId, String productId, Integer quantity){
@@ -61,13 +65,16 @@ public class CartController {
         }
         List<Integer> list = new ArrayList<>();
         for (String s : cartId) {
-            list.add(Integer.valueOf(s));
+            s = s.replace(" ","");
+            System.out.println(s);
+            list.add(Integer.parseInt(s));
         }
         cartService.changeStatus(customerId,list);
         List<Object> iNeedThatList = cartService.calculateCart(customerId);
         map.put("result",iNeedThatList);
         int tot = (int)iNeedThatList.get(0) - (int)iNeedThatList.get(1);
-        orderService.createOrder(customerId, (List<Object[]>) iNeedThatList.get(3),tot);
+        Integer orderId = orderService.createOrder(customerId, (List<Object[]>) iNeedThatList.get(3),tot);
+        discountService.useDiscount((List<Discount>) iNeedThatList.get(2),customerId,orderId);
         return new ModelAndView("showOrder",map);
     }
 

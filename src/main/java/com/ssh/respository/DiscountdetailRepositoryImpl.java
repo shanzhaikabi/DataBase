@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 @Transactional
@@ -98,12 +99,28 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
     }
 
     @Override
-    public void useDiscount(List<Discount> discountList, String customerId) {
+    public void useDiscount(List<Discount> discountList, String customerId,Integer orderId) {
+        List<Integer> discountTypeList = discountList.stream().map(discount -> discount.getDiscountType()).collect(Collectors.toList());
         List<Discountdetail> discountdetailList = getAvailableDiscountdetailByCustomerId(customerId);
-        discountdetailList.removeIf(discountdetail -> !discountList.contains(discountdetail.getDiscountType()));
         discountdetailList.forEach(discountdetail -> {
-            discountdetail.setDiscountStatus("no");
-            save(discountdetail);
+            if (discountTypeList.contains(discountdetail.getDiscountType())) {
+                discountdetail.setDiscountStatus(orderId.toString());
+                saveOrUpdate(discountdetail);
+            }
+        });
+    }
+
+    @Override
+    public void returnDiscount(String customerId, Integer orderId) {
+        List<Integer> avaList = getAvailableDiscountdetailByCustomerId(customerId).stream().map(discountdetail -> discountdetail.getDiscountType()).collect(Collectors.toList());
+        List<Discountdetail> list = getCurrentSession().createCriteria(Discountdetail.class)
+                .add(Restrictions.eq("customerId",customerId))
+                .add(Restrictions.eq("discountStatus",orderId.toString())).list();
+        list.forEach(discountdetail -> {
+            if (!avaList.contains(discountdetail.getDiscountType())){
+                discountdetail.setDiscountStatus("yes");
+                saveOrUpdate(discountdetail);
+            }
         });
     }
 }

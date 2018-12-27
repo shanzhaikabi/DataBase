@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Discountdetail {
     private int discountId;
     private String customerId;
-    private int discountType;
+    private Integer discountType;
     private Timestamp discountDate;
     private String discountStatus;
 
@@ -80,5 +80,10 @@ public class Discountdetail {
     @Override
     public int hashCode() {
         return Objects.hash(discountId, customerId, discountType, discountDate, discountStatus);
+    }
+
+    @Override
+    public String toString(){
+        return "did:" + discountId;
     }
 }
