@@ -79,4 +79,9 @@ public class Discount {
         result = 31 * result + (discountRule != null ? discountRule.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString(){
+        return "dT:" + discountType.toString();
+    }
 }

@@ -129,7 +129,7 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     @Override
-    public void useDiscount(List<Discount> discountList, String customerId){
-        discountdetailRepository.useDiscount(discountList,customerId);
+    public void useDiscount(List<Discount> discountList, String customerId,Integer orderId){
+        discountdetailRepository.useDiscount(discountList,customerId,orderId);
     }
 }

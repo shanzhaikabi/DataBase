@@ -1,9 +1,6 @@
 package com.ssh.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
@@ -16,6 +13,7 @@ public class Ordermaster {
     private String customerId;
 
     @Id
+    @GeneratedValue
     @Column(name = "orderId", nullable = false)
     public int getOrderId() {
         return orderId;

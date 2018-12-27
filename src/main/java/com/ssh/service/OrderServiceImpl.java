@@ -6,8 +6,6 @@ import com.ssh.entity.Ordermaster;
 import com.ssh.entity.Product;
 import com.ssh.respository.OrderdetailRepositoryImpl;
 import com.ssh.respository.OrdermasterRepositoryImpl;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +21,7 @@ public class OrderServiceImpl implements OrderService{
     OrderdetailRepositoryImpl orderdetailRepository;
 
     @Override
-    public void createOrder(String customerId, List<Object[]> list,int tot) {
+    public Integer createOrder(String customerId, List<Object[]> list,int tot) {
         Ordermaster ordermaster = new Ordermaster();
         ordermaster.setCustomerId(customerId);
         ordermaster.setInvoiceNo("wtf");
@@ -31,14 +29,16 @@ public class OrderServiceImpl implements OrderService{
         ordermaster.setOrderStatus("remaining");
         ordermaster.setOrderSum(tot);
         ordermasterRepository.save(ordermaster);
-        list.forEach(objects -> {
+        int orderId = ordermaster.getOrderId();
+        list.forEach(objects ->  {
             Orderdetail orderdetail = new Orderdetail();
-            orderdetail.setOrderId(ordermaster.getOrderId());
+            orderdetail.setOrderId(orderId);
             orderdetail.setProductId(((Product)objects[0]).getProductId());
             orderdetail.setPrice(((Product)objects[0]).getProductPrice());
             orderdetail.setQuantity(((Cart) objects[1]).getQuantity());
             orderdetailRepository.save(orderdetail);
         });
+        return orderId;
     }
 
     @Override
