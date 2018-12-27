@@ -2,7 +2,6 @@ package com.ssh.service;
 
 import com.ssh.entity.Shop;
 import com.ssh.respository.ShopRepositoryImpl;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

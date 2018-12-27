@@ -21,11 +21,11 @@ public class OrdermasterRepositoryImpl implements OrdermasterRepository{
         return this.sessionFactory.getCurrentSession();
     }
 
-    public Ordermaster load(String id) {
+    public Ordermaster load(Integer id) {
         return (Ordermaster)getCurrentSession().load(Ordermaster.class,id);
     }
 
-    public Ordermaster get(String id) {
+    public Ordermaster get(Integer id) {
         return (Ordermaster)getCurrentSession().get(Ordermaster.class,id);
     }
 
@@ -37,15 +37,15 @@ public class OrdermasterRepositoryImpl implements OrdermasterRepository{
         getCurrentSession().persist(entity);
     }
 
-    public String save(Ordermaster entity) {
-        return (String) getCurrentSession().save(entity);
+    public Integer save(Ordermaster entity) {
+        return (Integer) getCurrentSession().save(entity);
     }
 
     public void saveOrUpdate(Ordermaster entity) {
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(String id) {
+    public void delete(Integer id) {
         getCurrentSession().delete(id);
     }
 

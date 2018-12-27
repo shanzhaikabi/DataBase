@@ -55,10 +55,17 @@ public class ClassdiscountRepositoryImpl implements ClassdiscountRepository{
     }
 
     public List<Product> getClassProductByDiscount(int discountType) {
-        List<Product> list =
-                (List<Product>) getCurrentSession()
+        List<Product> list = (List<Product>) getCurrentSession()
                         .createQuery("from Product c,Classdiscount cd where c.classId = cd.classId and cd.discountType = ?").setParameter(0,discountType)
                         .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
+        return list;
+    }
+
+    @Override
+    public List<Clazz> getClassByDiscount(int discountType){
+        List<Clazz> list = (List<Clazz>) getCurrentSession()
+                .createQuery("from Clazz c,Classdiscount cd where c.classId = cd.classId and cd.discountType = ?").setParameter(0,discountType)
+                .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
         return list;
     }
 }

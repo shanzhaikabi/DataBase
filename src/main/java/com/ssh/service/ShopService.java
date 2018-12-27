@@ -1,5 +1,6 @@
 package com.ssh.service;
 
+import com.ssh.entity.Product;
 import com.ssh.entity.Shop;
 
 import java.util.List;

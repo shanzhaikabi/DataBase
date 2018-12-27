@@ -62,4 +62,12 @@ public class ShopdiscountRepositoryImpl implements ShopdiscountRepository{
                         .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
         return list;
     }
+
+    public List<Shop> getShopByDiscount(int discountType){
+        List<Shop> list =
+                (List<Shop>) getCurrentSession()
+                        .createQuery("from Shop p,Shopdiscount cd where p.shopId = cd.shopId and cd.discountType = ?").setParameter(0,discountType)
+                        .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
+        return list;
+    }
 }

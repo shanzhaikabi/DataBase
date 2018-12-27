@@ -1,5 +1,6 @@
 package com.ssh.respository;
 
+import com.ssh.entity.Discount;
 import com.ssh.entity.Discountdetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -94,5 +95,15 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
                 .add(Restrictions.eq("discountStatus","yes"))
                 .uniqueResult();
         return discountdetail;
+    }
+
+    @Override
+    public void useDiscount(List<Discount> discountList, String customerId) {
+        List<Discountdetail> discountdetailList = getAvailableDiscountdetailByCustomerId(customerId);
+        discountdetailList.removeIf(discountdetail -> !discountList.contains(discountdetail.getDiscountType()));
+        discountdetailList.forEach(discountdetail -> {
+            discountdetail.setDiscountStatus("no");
+            save(discountdetail);
+        });
     }
 }

@@ -55,6 +55,30 @@ public class ProductServiceImpl implements ProductService{
         return list;
     }
 
+    @Override
+    public Product get(String id) {
+        return productRepository.get(id);
+    }
+
+    @Override
+    public String editProduct(Product product) {
+        productRepository.saveOrUpdate(product);
+        return "edit";
+    }
+
+    @Override
+    public String deleteProduct(String id) {
+        productRepository.delete(id);
+        return "delete";
+    }
+
+    @Override
+    public String addProduct(Product product) {
+        if (productRepository.get(product.getProductId()) != null) return "fail";
+        productRepository.save(product);
+        return "success";
+    }
+
     public List<Product> showProductByName(String name) {
         //Transaction tx = productRepository.getCurrentSession().beginTransaction();
         List list = productRepository.findByName(name);

@@ -93,6 +93,21 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     @Override
+    public List<Clazz> getClassFromDiscount(int discountType) {
+        return classdiscountRepository.getClassByDiscount(discountType);
+    }
+
+    @Override
+    public List<Product> getProductFromDiscount(int discountType) {
+        return productdiscountRepository.getProductByDiscount(discountType);
+    }
+
+    @Override
+    public List<Shop> getShopFromDiscount(int discountType) {
+        return shopdiscountRepository.getShopByDiscount(discountType);
+    }
+
+    @Override
     public boolean addDiscountToUser(int discountType, String customerId) {
         Discountdetail discountdetail = new Discountdetail();
         if(discountdetailRepository.getDiscountByTypeAndCustomer(discountType,customerId) != null) return false;
@@ -104,8 +119,17 @@ public class DiscountServiceImpl implements DiscountService{
         return true;
     }
 
-    public boolean addDiscountByShop(Discount discount) {
-        discountRepository.save(discount);
+    public boolean addDiscountByShop(Discount discount,String shopId) {
+        int discountType = discountRepository.save(discount);
+        Shopdiscount sd = new Shopdiscount();
+        sd.setDiscountType(discountType);
+        sd.setShopId(shopId);
+        shopdiscountRepository.save(sd);
         return true;
+    }
+
+    @Override
+    public void useDiscount(List<Discount> discountList, String customerId){
+        discountdetailRepository.useDiscount(discountList,customerId);
     }
 }

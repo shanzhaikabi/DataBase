@@ -1,5 +1,6 @@
 package com.ssh.respository;
 
+import com.ssh.entity.Discount;
 import com.ssh.entity.Discountdetail;
 
 import java.util.List;
@@ -11,4 +12,5 @@ public interface DiscountdetailRepository extends DomainRepository<Discountdetai
     List<Object[]> getUsedDiscountAndDetailByCustomerId(String customerId);
     List<Object[]> getAvailableDiscountAndDetailByCustomerId(String customerId);
     Discountdetail getDiscountByTypeAndCustomer(int discountType,String customerId);
+    void useDiscount(List<Discount> discountList,String customerId);
 }
