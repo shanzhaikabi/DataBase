@@ -9,12 +9,7 @@ import java.util.List;
 public class CartUtils {
     public static String onecart(Product p, Cart c,Integer x)
     {
-        String ans = "<fieldset><legend>商品"+x.toString()+"信息</legend>";
-        ans = ans + "商品名称：" + p.getProductName() + "<br>";
-        ans = ans + "数量：" + c.getQuantity().toString() + "&nbsp&nbsp&nbsp&nbsp";
-        ans = ans + "单价：" + p.getProductPrice().toString() + "<br>";
-        Integer sum = (c.getQuantity()*p.getProductPrice());
-        ans = ans + "总价：" + sum.toString() + "<br>";
+        String ans = OrderUtils.product_order(x,p,c);
         ans = ans + "<input type=\"checkbox\" name=\"cartId\" value =\" " + ((Integer)c.getId()).toString();
         if(c.getStatus().equals("yes"))
             ans = ans + "\"checked=\"checked";

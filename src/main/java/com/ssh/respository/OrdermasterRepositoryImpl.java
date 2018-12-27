@@ -17,6 +17,10 @@ public class OrdermasterRepositoryImpl implements OrdermasterRepository{
     @Autowired
     private SessionFactory sessionFactory;
 
+    public Session openSession() {
+        return this.sessionFactory.openSession();
+    }
+
     public Session getCurrentSession() {
         return this.sessionFactory.getCurrentSession();
     }

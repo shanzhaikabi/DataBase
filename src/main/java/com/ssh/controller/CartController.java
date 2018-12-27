@@ -1,9 +1,11 @@
 package com.ssh.controller;
 
 import com.ssh.entity.Customer;
+import com.ssh.entity.Discount;
 import com.ssh.service.CartServiceImpl;
 import com.ssh.service.CustomerServiceImpl;
 import com.ssh.service.OrderServiceImpl;
+import com.ssh.utils.OrderUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -65,7 +67,10 @@ public class CartController {
         }
         cartService.changeStatus(customerId,list);
         List<Object> iNeedThatList = cartService.calculateCart(customerId);
-        map.put("result",iNeedThatList);
+        String ans = OrderUtils.confirm_order_product((List<Object[]>) iNeedThatList.get(3));
+        ans = ans + OrderUtils.confirm_order_discount((List<Discount>) iNeedThatList.get(2));
+        ans = ans + OrderUtils.confirm_order_total((Integer) iNeedThatList.get(0),(Integer) iNeedThatList.get(1));
+        map.put("result",ans);
         int tot = (int)iNeedThatList.get(0) - (int)iNeedThatList.get(1);
         orderService.createOrder(customerId, (List<Object[]>) iNeedThatList.get(3),tot);
         return new ModelAndView("showOrder",map);
