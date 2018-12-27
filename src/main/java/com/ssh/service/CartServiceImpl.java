@@ -62,6 +62,19 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
+    public void changeStatus(String customerId,List<Integer> cartId) {
+        cartRepository.getCartByCustomerId(customerId).forEach(objects ->
+        {
+            Cart cart = (Cart) objects[1];
+            if (cartId.contains(cart.getId())){
+                cart.setStatus("yes");
+            }
+            else cart.setStatus("no");
+            cartRepository.saveOrUpdate(cart);
+        });
+    }
+
+    @Override
     public List<Object> calculateCart(String customerId) {
         List<Object[]> productList = cartRepository.getCartByCustomerId(customerId);
         productList.removeIf(objects -> !((Cart)objects[1]).getStatus().equals("yes"));
@@ -115,6 +128,8 @@ public class CartServiceImpl implements CartService {
         ret.add(tot);
         ret.add(dis);
         ret.add(useDiscountList);
+        ret.add(productList);
+
         return ret;
     }
 }
