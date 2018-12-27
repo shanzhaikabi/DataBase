@@ -13,4 +13,12 @@ public interface ProductService {
     List<Product> showProductByShopId(String shopId);
 
     List<Product> showProductDetailHavingCustomer(String id,String CustomerId);
+
+    Product get(String id);
+
+    String editProduct(Product product);
+
+    String deleteProduct(String id);
+
+    String addProduct(Product product);
 }

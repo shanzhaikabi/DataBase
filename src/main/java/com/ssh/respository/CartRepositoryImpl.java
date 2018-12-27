@@ -1,7 +1,6 @@
 package com.ssh.respository;
 
 import com.ssh.entity.Cart;
-import com.ssh.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;

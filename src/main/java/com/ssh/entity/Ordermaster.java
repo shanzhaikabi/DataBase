@@ -13,6 +13,7 @@ public class Ordermaster {
     private Integer orderSum;
     private String invoiceNo;
     private String orderStatus;
+    private String customerId;
 
     @Id
     @Column(name = "orderId", nullable = false)
@@ -64,6 +65,16 @@ public class Ordermaster {
         this.orderStatus = orderStatus;
     }
 
+    @Basic
+    @Column(name = "customerId", nullable = true, length = 20)
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -76,6 +87,7 @@ public class Ordermaster {
         if (orderSum != null ? !orderSum.equals(that.orderSum) : that.orderSum != null) return false;
         if (invoiceNo != null ? !invoiceNo.equals(that.invoiceNo) : that.invoiceNo != null) return false;
         if (orderStatus != null ? !orderStatus.equals(that.orderStatus) : that.orderStatus != null) return false;
+        if (customerId != null ? !customerId.equals(that.customerId) : that.customerId != null) return false;
 
         return true;
     }
@@ -87,6 +99,7 @@ public class Ordermaster {
         result = 31 * result + (orderSum != null ? orderSum.hashCode() : 0);
         result = 31 * result + (invoiceNo != null ? invoiceNo.hashCode() : 0);
         result = 31 * result + (orderStatus != null ? orderStatus.hashCode() : 0);
+        result = 31 * result + (customerId != null ? customerId.hashCode() : 0);
         return result;
     }
 }

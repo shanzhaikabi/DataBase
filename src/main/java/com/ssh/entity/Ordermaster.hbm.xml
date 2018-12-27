@@ -20,5 +20,8 @@
         <property name="orderStatus">
             <column name="orderStatus" sql-type="varchar(20)" length="20" not-null="true"/>
         </property>
+        <property name="customerId">
+            <column name="customerId" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

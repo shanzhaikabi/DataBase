@@ -17,12 +17,11 @@ import java.util.List;
 public class CartController {
     @Autowired
     CartServiceImpl cartService;
-
     @Autowired
     CustomerServiceImpl customerService;
 
     @RequestMapping(value = "/addcart",method = RequestMethod.GET)
-    public ModelAndView showMyDiscounts(@CookieValue(value = "customerId",defaultValue = "") String customerId, String productId, Integer quantity){
+    public ModelAndView addCart(@CookieValue(value = "customerId",defaultValue = "") String customerId, String productId, Integer quantity){
         ModelMap map=new ModelMap();
         Customer customer = customerService.get(customerId);
         if (customer == null){//请先登录
@@ -34,7 +33,7 @@ public class CartController {
     }
 
     @RequestMapping(value = "/showcart",method = RequestMethod.GET)
-    public ModelAndView showMyDiscounts(@CookieValue(value = "customerId",defaultValue = "") String customerId){
+    public ModelAndView showCart(@CookieValue(value = "customerId",defaultValue = "") String customerId){
         ModelMap map=new ModelMap();
         Customer customer = customerService.get(customerId);
         if (customer == null){//请先登录
