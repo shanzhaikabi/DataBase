@@ -15,6 +15,10 @@ public class CartUtils {
         ans = ans + "单价：" + p.getProductPrice().toString() + "<br>";
         Integer sum = (c.getQuantity()*p.getProductPrice());
         ans = ans + "总价：" + sum.toString() + "<br>";
+        ans = ans + "<input type=\"checkbox\" name=\"cartId\" value =\" " + ((Integer)c.getId()).toString();
+        if(c.getStatus().equals("yes"))
+            ans = ans + "\"checked=\"checked";
+        ans = ans + "\"/>选中商品";
         ans = ans + "</fieldset>";
         return ans;
     }
