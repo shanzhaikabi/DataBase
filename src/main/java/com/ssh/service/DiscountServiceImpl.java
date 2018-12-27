@@ -132,4 +132,9 @@ public class DiscountServiceImpl implements DiscountService{
     public void useDiscount(List<Discount> discountList, String customerId,Integer orderId){
         discountdetailRepository.useDiscount(discountList,customerId,orderId);
     }
+
+    @Override
+    public void returnDiscount(String customerId, Integer orderId){
+        discountdetailRepository.returnDiscount(customerId,orderId);
+    }
 }

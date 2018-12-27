@@ -19,6 +19,8 @@ public class OrderServiceImpl implements OrderService{
     OrdermasterRepositoryImpl ordermasterRepository;
     @Autowired
     OrderdetailRepositoryImpl orderdetailRepository;
+    @Autowired
+    DiscountServiceImpl discountService;
 
     @Override
     public Integer createOrder(String customerId, List<Object[]> list,int tot) {
@@ -46,7 +48,9 @@ public class OrderServiceImpl implements OrderService{
         Ordermaster ordermaster = ordermasterRepository.get(id);
         ordermaster.setOrderStatus(status);
         ordermasterRepository.saveOrUpdate(ordermaster);
+        if (status == "cancel"){
+            discountService.returnDiscount(ordermaster.getCustomerId(),ordermaster.getOrderId());
+        }
     }
-
 
 }

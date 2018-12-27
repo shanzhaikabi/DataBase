@@ -113,7 +113,7 @@ public class CartServiceImpl implements CartService {
             }
             else if (discount.getDiscountRule().equals("product")){
                 discountService.getProductFromDiscount(discount.getDiscountType()).forEach(clazz -> {
-                    if (shopTot.containsKey(clazz.getProductId()) && discount.getDiscountLeast() <= productTot.get(clazz.getProductId()))
+                    if (productTot.containsKey(clazz.getProductId()) && discount.getDiscountLeast() <= productTot.get(clazz.getProductId()))
                         useDiscountList.add(discount);
                 });
             }
@@ -129,7 +129,6 @@ public class CartServiceImpl implements CartService {
         ret.add(dis);
         ret.add(useDiscountList);
         ret.add(productList);
-
         return ret;
     }
 }
