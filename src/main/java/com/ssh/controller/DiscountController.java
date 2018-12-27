@@ -29,33 +29,33 @@ public class DiscountController {
     CustomerServiceImpl customerService;
 
     @RequestMapping(value = "/discount",method = RequestMethod.GET)
-    public ModelAndView showDiscountDetail(@CookieValue(value = "customerId",defaultValue = "") String customerId, String id){
+    public ModelAndView showDiscountDetail(@CookieValue(value = "customerId",defaultValue = "") String customerId, Integer id){
         ModelMap map=new ModelMap();
-        if (id == null) return new ModelAndView("404 NOT FOUND");
-        Discount discount = discountService.get(Integer.valueOf(id));
+        Discount discount = discountService.get(id);
+        if (discount == null) return new ModelAndView("404 NOT FOUND");
         Customer customer = customerService.get(customerId);
         String status = "";
         if (customer == null) status = "login";
         else{
-            Discountdetail discountdetail = discountService.doCustomerHaveDiscount(customerId,Integer.valueOf(id));
+            Discountdetail discountdetail = discountService.doCustomerHaveDiscount(customerId,id);
             if (discountdetail == null) status = "no";
             else status = "yes";
         }
-        List<Product> list = discountService.getProductByDiscount(Integer.valueOf(id));
+        List<Product> list = discountService.getProductByDiscount(id);
         map.put("result", SearchUtils.search_result_product(list));
         map.put("discountresult", DiscountUtils.discount_detail(discount,status));
         return new ModelAndView("/discount",map);
     }
 
     @RequestMapping(value = "/receivediscount",method = RequestMethod.GET)
-    public ModelAndView addDiscount(@CookieValue(value = "customerId",defaultValue = "") String customerId, String id){
+    public ModelAndView addDiscount(@CookieValue(value = "customerId",defaultValue = "") String customerId, Integer id){
         ModelMap map = new ModelMap();
         if (id == null){
             map.put("result","错误的请求");
         }
-        else if (discountService.addDiscountToUser(Integer.valueOf(id),customerId)){
+        else if (discountService.addDiscountToUser(id,customerId)){
             map.put("result","领取成功");
-            map.put("discount",DiscountUtils.discount_detail(discountService.get(Integer.valueOf(id)),""));
+            map.put("discount",DiscountUtils.discount_detail(discountService.get(id),""));
         }
         else{
             map.put("result","领取失败");
