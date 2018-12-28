@@ -45,9 +45,11 @@ public class CustomerRepositoryImpl implements CustomerRepository{
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(String id) {
-        getCurrentSession().delete(id);
+    @Override
+    public void delete(Customer entity) {
+        getCurrentSession().delete(entity);
     }
+
 
     public void flush() {
         getCurrentSession().flush();

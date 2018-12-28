@@ -47,9 +47,11 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(Integer id) {
-        getCurrentSession().delete(id);
+    @Override
+    public void delete(Discountdetail entity) {
+        getCurrentSession().delete(entity);
     }
+
 
     public void flush() {
         getCurrentSession().flush();

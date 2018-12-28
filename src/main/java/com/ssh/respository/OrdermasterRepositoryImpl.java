@@ -50,8 +50,9 @@ public class OrdermasterRepositoryImpl implements OrdermasterRepository{
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(Integer id) {
-        getCurrentSession().delete(id);
+    @Override
+    public void delete(Ordermaster entity) {
+        getCurrentSession().delete(entity);
     }
 
     public void flush() {

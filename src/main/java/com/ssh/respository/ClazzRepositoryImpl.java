@@ -53,8 +53,9 @@ public class ClazzRepositoryImpl implements ClazzRepository {
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(String id) {
-        getCurrentSession().delete(id);
+    @Override
+    public void delete(Clazz entity) {
+        getCurrentSession().delete(entity);
     }
 
     public void flush() {

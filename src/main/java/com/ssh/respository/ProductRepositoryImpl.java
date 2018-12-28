@@ -63,8 +63,9 @@ public class ProductRepositoryImpl implements ProductRepository{
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(String id) {
-        getCurrentSession().delete(id);
+    @Override
+    public void delete(Product entity) {
+        getCurrentSession().delete(entity);
     }
 
     public void flush() {

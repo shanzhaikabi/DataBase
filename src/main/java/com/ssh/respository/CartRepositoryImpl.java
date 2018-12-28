@@ -51,8 +51,8 @@ public class CartRepositoryImpl implements CartRepository{
     }
 
     @Override
-    public void delete(Integer id) {
-        getCurrentSession().delete(id);
+    public void delete(Cart entity) {
+        getCurrentSession().delete(entity);
     }
 
     @Override

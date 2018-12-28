@@ -47,8 +47,8 @@ public class ClassdiscountRepositoryImpl implements ClassdiscountRepository{
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(Integer id) {
-        getCurrentSession().delete(id);
+    public void delete(Classdiscount entity) {
+        getCurrentSession().delete(entity);
     }
     public void flush() {
         getCurrentSession().flush();

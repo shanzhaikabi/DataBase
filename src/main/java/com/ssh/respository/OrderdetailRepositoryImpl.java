@@ -50,8 +50,8 @@ public class OrderdetailRepositoryImpl implements OrderdetailRepository {
     }
 
     @Override
-    public void delete(Integer id) {
-        getCurrentSession().delete(id);
+    public void delete(Orderdetail entity) {
+        getCurrentSession().delete(entity);
     }
 
     @Override

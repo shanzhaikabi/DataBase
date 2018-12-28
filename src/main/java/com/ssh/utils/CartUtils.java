@@ -10,7 +10,13 @@ public class CartUtils {
     public static String onecart(Product p, Cart c,Integer x)
     {
         String ans = OrderUtils.product_order(x,p,c);
-        ans = ans + "<input type=\"checkbox\" name=\"cartId\" value =\" " + ((Integer)c.getId()).toString();
+        ans = ans + "<form action = \"editcart.do\" method=\"GET\">" +
+                "<input type=\"number\" name=\"quantity\" value=\"" +
+            c.getQuantity().toString() + "\" min=\"0\" max=\"" +(p.getProductStock()).toString() + "\" />";
+        ans = ans + "<input type = \"submit\" value = \"修改\"/>" +
+                "<input type=\"hidden\" name=\"cartId\" value=\""+ ((Integer)c.getId()).toString() + "\">"
+                +"</form>";
+        ans = ans + "<br><input type=\"checkbox\" name=\"cartId\" value =\" " + ((Integer)c.getId()).toString();
         if(c.getStatus().equals("yes"))
             ans = ans + "\"checked=\"checked";
         ans = ans + "\"/>选中商品";
@@ -42,7 +48,8 @@ public class CartUtils {
                 sum += tmp1.getProductPrice() * tmp2.getQuantity();
         }
         ans = ans + "</fieldset>";
-        ans = ans + "<br><input type = \"submit\" value = \"下单\"/>";
+        ans = ans + "<br>" +
+                "<form action=\"commitcart.do\" method=\"POST\"><input type = \"submit\" value = \"下单\"/>";
         return ans;
     }
 }

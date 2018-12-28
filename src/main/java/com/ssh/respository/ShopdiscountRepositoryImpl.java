@@ -47,8 +47,9 @@ public class ShopdiscountRepositoryImpl implements ShopdiscountRepository{
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(Integer id) {
-        getCurrentSession().delete(id);
+    @Override
+    public void delete(Shopdiscount entity) {
+        getCurrentSession().delete(entity);
     }
 
     public void flush() {

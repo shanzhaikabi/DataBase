@@ -48,7 +48,7 @@ public class CartServiceImpl implements CartService {
         Cart cart = cartRepository.get(cartId);
         if (cart == null) return "cart not exist";
         if (quantity == 0){
-            cartRepository.delete(cart.getId());
+            cartRepository.delete(cart);
             return "delete";
         }
         cart.setQuantity(quantity);
@@ -58,7 +58,7 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public void cleanCart(String customerId) {
-        showCart(customerId).forEach(objects -> cartRepository.delete(((Cart) objects[1]).getId()));
+        showCart(customerId).forEach(objects -> cartRepository.delete((Cart) objects[1]));
     }
 
     @Override

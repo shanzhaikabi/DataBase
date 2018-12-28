@@ -52,8 +52,9 @@ public class ShopRepositoryImpl implements ShopRepository{
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(String id) {
-        getCurrentSession().delete(id);
+    @Override
+    public void delete(Shop entity) {
+        getCurrentSession().delete(entity);
     }
 
     public void flush() {

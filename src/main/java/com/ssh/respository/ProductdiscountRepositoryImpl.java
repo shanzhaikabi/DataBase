@@ -46,9 +46,11 @@ public class ProductdiscountRepositoryImpl implements ProductdiscountRepository{
         getCurrentSession().saveOrUpdate(entity);
     }
 
-    public void delete(Integer id) {
-        getCurrentSession().delete(id);
+    @Override
+    public void delete(Productdiscount entity) {
+        getCurrentSession().delete(entity);
     }
+
 
     public void flush() {
         getCurrentSession().flush();
