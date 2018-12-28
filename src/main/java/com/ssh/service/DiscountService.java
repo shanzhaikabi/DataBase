@@ -9,17 +9,9 @@ public interface DiscountService {
     Discountdetail doCustomerHaveDiscount(String customerId,int discountType);
     List<Discountdetail> getAvailableDiscountdetailFromUser(String customerId);
     List<Discountdetail> getUsedDiscountdetailFromUser(String customerId);
-
-    /**
-     * @param customerId
-     * @return Object[] where Object[0] is Discount and Object[1] is Discountdetail
-     */
     List<Object[]> getAvailableDiscountAndDetailFromUser(String customerId);
-    /**
-     * @param customerId
-     * @return Object[] where Object[0] is Discount and Object[1] is Discountdetail
-     */
     List<Object[]> getUsedDiscountAndDetailFromUser(String customerId);
+    List<Object[]> getDiscountAndDetailForShop(String shopId);
     List<Discount> getCurrentDiscountFromUser(String customerId);
     List<Discount> getDiscountForProduct(String productId);
     List<Discount> getDiscountForShop(String shopId);
@@ -33,6 +25,6 @@ public interface DiscountService {
     void useDiscount(List<Discount> discountList,String customerId,Integer orderId);
     void returnDiscount(String customerId, Integer orderId);
     boolean addDiscountByShop(Integer discountType,String shopId);
-    boolean addDiscountByProduct(Integer discountType,String productId);
+    boolean addDiscountByProducts(Integer discountType,String[] productId);
     void saveOrUpdate(Discount discount);
 }

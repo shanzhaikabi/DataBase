@@ -34,7 +34,7 @@ public class ShopController {
         ModelMap map=new ModelMap();
         Shop shop = shopService.getShopById(shopId);
         if (shop == null){//访客页面
-            return new ModelAndView("forward:search.sp",map);
+            return new ModelAndView("redirect:search.sp");
         }
         //管理页面
         List<Object[]> productList = shopService.showProductAndClazzByShopId(shopId);
@@ -49,30 +49,41 @@ public class ShopController {
         Product product = productService.get(id);
         List<Clazz> clz = shopService.getAll();
         if (shop == null || (product != null && !product.getShopId().equals(shopId))){//访客页面
-            return new ModelAndView("forward:search.sp",map);
+            return new ModelAndView("redirect:search.sp",map);
         }
         if (product == null){
             product = new Product();
             product.setShopId(shopId);
         }
         map.put("result",ShopUtils.shop_one_product(product)+ShopUtils.shop_class(clz));
-        //TODO:加入关于商品和优惠券的修改页面
         return new ModelAndView("editproduct",map);
     }
 
-    @RequestMapping(value = "/editdiscount",method = RequestMethod.GET)
+    @RequestMapping(value = "/adddiscount",method = RequestMethod.GET)
     public ModelAndView showMyShopProduct(@CookieValue(value = "shopId",defaultValue = "") String shopId,Integer discountType){
         ModelMap map=new ModelMap();
         Shop shop = shopService.getShopById(shopId);
         Discount discount = discountService.get(discountType);
         if (shop == null){//访客页面
-            return new ModelAndView("forward:search.sp",map);
+            return new ModelAndView("redirect:search.sp",map);
         }
+        List<Object[]> list = discountService.getDiscountAndDetailForShop(shopId);
         if (discount == null){
-            discount = new Discount();
+            if (discountType == -1){
+                //do something1
+                return new ModelAndView("editdiscount_shop",map);
+            }
+            else if (discountType == -2){
+                //do something2
+                return new ModelAndView("editdiscount_product",map);
+            }
         }
-        //TODO:加入关于商品和优惠券的修改页面
-        return new ModelAndView("editproduct",map);
+        if (discount.getDiscountRule() == "shop"){
+            //do something1
+            return new ModelAndView("editdiscount_shop",map);
+        }
+        //do something2
+        return new ModelAndView("editdiscount_product",map);
     }
 
     @RequestMapping(value = "/shop_discount",method = RequestMethod.GET)
@@ -80,7 +91,7 @@ public class ShopController {
         ModelMap map=new ModelMap();
         Shop shop = shopService.getShopById(shopId);
         if (shop == null){//访客页面
-            return new ModelAndView("forward:search.sp",map);
+            return new ModelAndView("redirect:search.sp",map);
         }
         //管理页面
         List<Discount> discountList = discountService.getDiscountForShop(shopId);

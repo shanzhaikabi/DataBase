@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -54,6 +52,22 @@ public class DiscountServiceImpl implements DiscountService{
     @Override
     public List<Object[]> getUsedDiscountAndDetailFromUser(String customerId) {
         return discountdetailRepository.getUsedDiscountAndDetailByCustomerId(customerId);
+    }
+
+    @Override
+    public List<Object[]> getDiscountAndDetailForShop(String shopId) {
+        List<Object[]> list = productdiscountRepository.getDiscountAndDetailForShop(shopId);
+        Map<Discount,List<Product>> tmpMap = new HashMap<>();
+        for (Object[] objects : list) {
+            Discount discount = (Discount) objects[0];
+            if (!tmpMap.containsKey(discount)){
+                tmpMap.put(discount,new ArrayList<>());
+            }
+            tmpMap.get(discount).add((Product) objects[1]);
+        }
+        List<Object[]> ret = new ArrayList<>();
+        tmpMap.forEach((discount, productList) -> ret.add(new Object[]{discount,productList}));
+        return ret;
     }
 
     public List<Discount> getCurrentDiscountFromUser(String customerId) {
@@ -133,11 +147,13 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     @Override
-    public boolean addDiscountByProduct(Integer discountType, String productId) {
-        Productdiscount pd = new Productdiscount();
-        pd.setDiscountType(discountType);
-        pd.setProductId(productId);
-        productdiscountRepository.save(pd);
+    public boolean addDiscountByProducts(Integer discountType, String[] productId) {
+        for (String s : productId) {
+            Productdiscount pd = new Productdiscount();
+            pd.setDiscountType(discountType);
+            pd.setProductId(s);
+            productdiscountRepository.save(pd);
+        }
         return true;
     }
 

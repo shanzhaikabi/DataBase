@@ -64,4 +64,9 @@ public class ProductdiscountRepositoryImpl implements ProductdiscountRepository{
                         .list().stream().map(user -> ((Object[])user)[0]).collect(Collectors.toList());
         return list;
     }
+
+    @Override
+    public List<Object[]> getDiscountAndDetailForShop(String shopId) {
+        return getCurrentSession().createQuery("from Product c,Productdiscount cd,Discount d where c.productId = cd.productId and cd.discountType = d.discountType and d.shopId = ?").setParameter(0,shopId).list();
+    }
 }
