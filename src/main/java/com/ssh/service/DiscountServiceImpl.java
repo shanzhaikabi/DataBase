@@ -151,7 +151,7 @@ public class DiscountServiceImpl implements DiscountService{
         for (String s : productId) {
             Productdiscount pd = new Productdiscount();
             pd.setDiscountType(discountType);
-            pd.setProductId(s);
+            pd.setProductId(s.replace(" ",""));
             productdiscountRepository.save(pd);
         }
         return true;

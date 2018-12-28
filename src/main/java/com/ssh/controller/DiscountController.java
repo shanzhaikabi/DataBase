@@ -77,7 +77,7 @@ public class DiscountController {
                 shopService.addDiscountForShop(shopId,discount.getDiscountLeast(),discount.getDiscountPrice());
             }
             else if (discount.getDiscountRule() == "product"){
-                shopService.addDiscountForProduct(productId,discount.getDiscountLeast(),discount.getDiscountPrice());
+                shopService.addDiscountForProducts(productId,discount.getDiscountLeast(),discount.getDiscountPrice());
             }
         }
         else discountService.saveOrUpdate(discount);
