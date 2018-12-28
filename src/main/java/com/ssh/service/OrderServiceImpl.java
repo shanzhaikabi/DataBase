@@ -63,5 +63,10 @@ public class OrderServiceImpl implements OrderService{
         return list;
     }
 
+    @Override
+    public List<Ordermaster> showMyOrder(String customerId) {
+        return ordermasterRepository.showMyOrder(customerId);
+    }
+
 
 }

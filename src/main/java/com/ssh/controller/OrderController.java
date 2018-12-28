@@ -48,9 +48,12 @@ public class OrderController {
         if (customer == null) {//请先登录
             return new ModelAndView("login");
         }
-        return new ModelAndView();
+        List<Ordermaster> list = orderService.showMyOrder(customerId);
+        String result = "";
+        for (Ordermaster ordermaster : list) {
+            result += OrderUtils.confirm_order_invoice(ordermaster,"all");
+        }
+        map.put("result",result);
+        return new ModelAndView("showorder",map);
     }
-    //todo: "我的订单/订单中心" showorder,jsp(.do);
-    // 单个订单：result = OrderUtils.confirm_order_invoice(ordermaster o,(String)"detail") + OrderUtils.confirm_order_product(list(cart,order))
-    // 订单总览: for(i,List<ordermaster>list){result += OrderUtils.confirm_order_invoice(list[i],"all")}
 }

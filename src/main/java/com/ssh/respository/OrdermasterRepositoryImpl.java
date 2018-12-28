@@ -4,6 +4,7 @@ import com.ssh.entity.Ordermaster;
 import com.ssh.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,5 +56,10 @@ public class OrdermasterRepositoryImpl implements OrdermasterRepository{
 
     public void flush() {
         getCurrentSession().flush();
+    }
+
+    @Override
+    public List<Ordermaster> showMyOrder(String customerId) {
+        return getCurrentSession().createCriteria(Ordermaster.class).add(Restrictions.eq("customerId",customerId)).list();
     }
 }
