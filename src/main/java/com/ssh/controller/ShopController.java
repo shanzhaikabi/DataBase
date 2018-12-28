@@ -6,6 +6,7 @@ import com.ssh.entity.Shop;
 import com.ssh.service.DiscountServiceImpl;
 import com.ssh.service.ProductServiceImpl;
 import com.ssh.service.ShopServiceImpl;
+import com.ssh.utils.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -32,12 +33,12 @@ public class ShopController {
         ModelMap map=new ModelMap();
         Shop shop = shopService.getShopById(id);
         List<Product> productList = productService.showProductByShopId(shopId);
-        List<Discount> discounts = discountService.getDiscountForShop(shopId);
+        List<Discount> discountList = discountService.getDiscountForShop(shopId);
         if (shop.getShopId().equals(shopId)){//管理页面
-
+            //TODO:加入关于商品和优惠券的修改页面
         }
         else{//访客页面
-
+            return new ModelAndView("forward:search.sp",map);
         }
         return new ModelAndView("/myshop",map);
     }

@@ -91,6 +91,7 @@ public class CartController {
         ans = ans + "<input type=\"hidden\" name=\"id\" value=\"" + orderId.toString() + "\">";
         map.put("result",ans);
         discountService.useDiscount((List<Discount>) iNeedThatList.get(2),customerId,orderId);
+        cartService.disCart(customerId);
         return new ModelAndView("showOrder",map);
     }
 

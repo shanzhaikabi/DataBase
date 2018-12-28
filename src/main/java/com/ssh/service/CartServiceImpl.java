@@ -62,6 +62,17 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
+    public void disCart(String customerId){
+        cartRepository.getCartByCustomerId(customerId).forEach(objects ->
+        {
+            Cart cart = (Cart) objects[1];
+            if (cart.getStatus() == "yes"){
+                cartRepository.delete(cart);
+            }
+        });
+    }
+
+    @Override
     public void changeStatus(String customerId,List<Integer> cartId) {
         cartRepository.getCartByCustomerId(customerId).forEach(objects ->
         {

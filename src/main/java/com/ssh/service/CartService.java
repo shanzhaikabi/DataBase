@@ -8,6 +8,7 @@ public interface CartService {
     List<Object[]> showCart(String customerId);
     String editCart(Integer cartId, int quantity);
     void cleanCart(String customerId);
+    void disCart(String customerId);
     void changeStatus(String customerId,List<Integer> cartId);
 
     /**
