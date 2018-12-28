@@ -72,12 +72,13 @@ public class CartController {
         }
         cartService.changeStatus(customerId,list);
         List<Object> iNeedThatList = cartService.calculateCart(customerId);
-        String ans = OrderUtils.confirm_order_product((List<Object[]>) iNeedThatList.get(3));
+        String ans = OrderUtils.confirm_cart_product((List<Object[]>) iNeedThatList.get(3));
         ans = ans + OrderUtils.confirm_order_discount((List<Discount>) iNeedThatList.get(2));
         ans = ans + OrderUtils.confirm_order_total((Integer) iNeedThatList.get(0),(Integer) iNeedThatList.get(1));
-        map.put("result",ans);
         int tot = (int)iNeedThatList.get(0) - (int)iNeedThatList.get(1);
         Integer orderId = orderService.createOrder(customerId, (List<Object[]>) iNeedThatList.get(3),tot);
+        ans = ans + "<input type=\"hidden\" name=\"id\" value=\"" + orderId.toString() + "\">";
+        map.put("result",ans);
         discountService.useDiscount((List<Discount>) iNeedThatList.get(2),customerId,orderId);
         return new ModelAndView("showOrder",map);
     }

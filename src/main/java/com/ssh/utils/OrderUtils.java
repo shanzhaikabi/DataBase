@@ -16,7 +16,23 @@ public class OrderUtils {
         {
             cnt++;
             Object[] tmp = it.next();
-            ans = ans + product_order(cnt,(Product)tmp[0],(Orderdetail)tmp[1]);
+            ans = ans + product_order(cnt,(Product)tmp[0],(Orderdetail) tmp[1]);
+            ans = ans + "</fieldset>";
+        }
+        ans = ans + "</fieldset>";
+        return ans;
+    }
+    public static String confirm_cart_product(List<Object[]>list)
+    {
+        String ans = "<fieldset><legend>订单确认</legend>";
+        ans = ans + "<fieldset><legend>商品清单</legend>";
+        Iterator<Object[]>it = list.iterator();
+        Integer cnt = 0;
+        while(it.hasNext())
+        {
+            cnt++;
+            Object[] tmp = it.next();
+            ans = ans + product_order(cnt,(Product)tmp[0],(Cart) tmp[1]);
             ans = ans + "</fieldset>";
         }
         ans = ans + "</fieldset>";

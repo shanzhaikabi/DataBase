@@ -26,7 +26,7 @@
     <div class="space-6"></div>
     <%--${pageContext.request.contextPath }--%>
     ${cartresult}
-    <form action="${pageContext.request.contextPath}/showOrder.do" method="POST">
+    <form action="${pageContext.request.contextPath}/showorder.do" method="GET">
         ${result}
     </form>
 </div>
