@@ -1,11 +1,12 @@
 package com.ssh.service;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public interface CartService {
     String addCart(String customerId,String productId,int quantity);
     List<Object[]> showCart(String customerId);
-    String editCart(String customerId,String productId,int quantity);
+    String editCart(Integer cartId, int quantity);
     void cleanCart(String customerId);
     void changeStatus(String customerId,List<Integer> cartId);
 

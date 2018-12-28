@@ -6,7 +6,7 @@ import com.ssh.entity.Shop;
 import java.util.List;
 
 public interface ShopService {
-    List<Shop> ShowShopByName(String name);
-    String GetNameById(String id);
-    Shop GetShopById(String id);
+    List<Shop> showShopByName(String name);
+    String getNameById(String id);
+    Shop getShopById(String id);
 }
