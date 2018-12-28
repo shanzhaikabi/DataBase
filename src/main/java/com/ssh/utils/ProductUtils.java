@@ -20,6 +20,17 @@ public class ProductUtils {
         ans = ans + "</fieldset>";
         return ans;
     }
+    public static String shop_product_simple(Product p,Clazz c)
+    {
+        String ans = "<fieldset>";
+        ans = ans + "商品名称：" + p.getProductName() + "<br>";
+        ans = ans + "商品类别：" + c.getClassName() + "<br>";
+        ans = ans + "价格：" + p.getProductPrice() + "<br>";
+        ans = ans + "库存：" + p.getProductStock() + "<br>";
+        ans = ans + "<a href='editproduct?id=\"" + p.getProductId() + "\">修改商品信息</a><br>";
+        ans = ans + "</fieldset>";
+        return ans;
+    }
     public static String product_into_cart(Product product)
     {
         String ans;
