@@ -1,5 +1,6 @@
 package com.ssh.service;
 
+import com.ssh.entity.Clazz;
 import com.ssh.entity.Product;
 import com.ssh.entity.Shop;
 
@@ -11,4 +12,6 @@ public interface ShopService {
     Shop getShopById(String id);
     void addDiscountForShop(String id,Integer least,Integer price);
     void addDiscountForProduct(String id,Integer least,Integer price);
+    List<Clazz> getAll();
+    List<Object[]> showProductAndClazzByShopId(String shopId);
 }

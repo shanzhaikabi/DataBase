@@ -77,6 +77,11 @@ public class ProductServiceImpl implements ProductService{
         return "success";
     }
 
+    @Override
+    public void saveOrUpdate(Product product) {
+        productRepository.saveOrUpdate(product);
+    }
+
     public List<Product> showProductByName(String name) {
         //Transaction tx = productRepository.getCurrentSession().beginTransaction();
         List list = productRepository.findByName(name);
@@ -91,11 +96,11 @@ public class ProductServiceImpl implements ProductService{
         return list;
     }
 
-
     public List<Product> showProductByShopId(String shopId) {
         //Transaction tx = productRepository.getCurrentSession().beginTransaction();
         List list = productRepository.findByShop(shopId);
         //tx.commit();
         return list;
     }
+
 }

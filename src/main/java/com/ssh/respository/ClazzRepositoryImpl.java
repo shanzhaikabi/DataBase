@@ -33,7 +33,7 @@ public class ClazzRepositoryImpl implements ClazzRepository {
     }
 
     public List<Clazz> findAll() {
-        return null;
+        return getCurrentSession().createCriteria(Clazz.class).list();
     }
 
     public List<Clazz> findByName(String name){
