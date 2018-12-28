@@ -1,9 +1,6 @@
 package com.ssh.utils;
 
-import com.ssh.entity.Cart;
-import com.ssh.entity.Discount;
-import com.ssh.entity.Ordermaster;
-import com.ssh.entity.Product;
+import com.ssh.entity.*;
 
 import java.util.Iterator;
 import java.util.List;
@@ -19,7 +16,7 @@ public class OrderUtils {
         {
             cnt++;
             Object[] tmp = it.next();
-            ans = ans + product_order(cnt,(Product)tmp[0],(Cart)tmp[1]);
+            ans = ans + product_order(cnt,(Product)tmp[0],(Orderdetail)tmp[1]);
             ans = ans + "</fieldset>";
         }
         ans = ans + "</fieldset>";
@@ -47,7 +44,16 @@ public class OrderUtils {
             ans = ans + "<br>订单状态：已完成";
             ans = ans + "<br>发票号：" + o.getInvoiceNo();
             ans = ans + "<br>实际支付：" + o.getOrderSum().toString();
-            if(s.equals("all"))ans = ans + "<br>查看订单详情";
+            if(s.equals("all"))ans = ans + "<br><a href = \"showorder.do?id="+((Integer)o.getOrderId()).toString()+"\">查看订单详情</a><br>";
+        }
+        else if(o.getOrderStatus().equals("remaining"))
+        {
+            ans = ans + "<br>订单状态：待付款";
+            //ans = ans + "<br>发票号：" + o.getInvoiceNo();
+            ans = ans + "<br>应支付：" + o.getOrderSum().toString();
+            if(s.equals("all"))ans = ans + "<br><a href = \"showorder.do?id="+((Integer)o.getOrderId()).toString()+"\">查看订单详情</a><br>";
+            ans = ans + "<br><a href = \"payorder.do?id="+((Integer)o.getOrderId()).toString()+"\">立即支付</a>&nbsp&nbsp&nbsp&nbsp";
+            ans = ans + "<a href = \"cancelorder.do?id="+((Integer)o.getOrderId()).toString()+"\">取消订单</a><br>";
         }
         else ans = ans + "<br>订单状态：已取消";
         ans = ans + "</fieldset>";
@@ -62,6 +68,18 @@ public class OrderUtils {
         ans = ans + "</fieldset>";
         return ans;
     }
+
+    public static String product_order(Integer x, Product p, Orderdetail c)
+    {
+        String ans = "<fieldset><legend>商品"+x.toString()+"信息</legend>";
+        ans = ans + "商品名称：" + p.getProductName() + "<br>";
+        ans = ans + "数量：" + c.getQuantity().toString() + "&nbsp&nbsp&nbsp&nbsp";
+        ans = ans + "单价：" + c.getPrice().toString() + "<br>";
+        Integer sum = (c.getQuantity()*p.getProductPrice());
+        ans = ans + "合计：" + sum.toString() + "<br>";
+        return ans;
+    }
+
     public static String product_order(Integer x, Product p, Cart c)
     {
         String ans = "<fieldset><legend>商品"+x.toString()+"信息</legend>";

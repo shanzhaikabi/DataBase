@@ -23,25 +23,25 @@ public class OrderController {
     @Autowired
     OrderServiceImpl orderService;
 
-    @RequestMapping(value = "/showorder.do",method = RequestMethod.POST)
-    public ModelAndView showOneOrder(@CookieValue(value = "customerId",defaultValue = "") String customerId,int orderId) {
+    @RequestMapping(value = "/showorder.do",method = RequestMethod.GET)
+    public ModelAndView showOneOrder(@CookieValue(value = "customerId",defaultValue = "") String customerId,Integer id) {
         ModelMap map = new ModelMap();
         Customer customer = customerService.get(customerId);
         if (customer == null) {//请先登录
             return new ModelAndView("login");
         }
-        List<Object> uNeedThisList = orderService.getOrderdetail(orderId);
+        List<Object> uNeedThisList = orderService.getOrderdetail(id);
         Ordermaster ordermaster = (Ordermaster) uNeedThisList.get(0);
-        if (ordermaster.getCustomerId() != customerId){//用户不一致
+        if (!ordermaster.getCustomerId().equals(customerId)){//用户不一致
             return new ModelAndView("login");
         }
         List<Object[]> productList = (List<Object[]>) uNeedThisList.get(1);
         String result = OrderUtils.confirm_order_invoice(ordermaster,"detail") + OrderUtils.confirm_order_product(productList);
         map.put("result",result);
-        return new ModelAndView("showorder",map);
+        return new ModelAndView("showOrder",map);
     }
 
-    @RequestMapping(value = "/showorder.do",method = RequestMethod.POST)
+    @RequestMapping(value = "/showorder",method = RequestMethod.GET)
     public ModelAndView showOrder(@CookieValue(value = "customerId",defaultValue = "") String customerId){
         ModelMap map = new ModelMap();
         Customer customer = customerService.get(customerId);
@@ -54,6 +54,6 @@ public class OrderController {
             result += OrderUtils.confirm_order_invoice(ordermaster,"all");
         }
         map.put("result",result);
-        return new ModelAndView("showorder",map);
+        return new ModelAndView("myOrder",map);
     }
 }

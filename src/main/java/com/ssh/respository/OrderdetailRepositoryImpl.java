@@ -62,6 +62,6 @@ public class OrderdetailRepositoryImpl implements OrderdetailRepository {
 
     @Override
     public List<Object[]> getOrderdetailByOrderId(Integer orderId) {
-        return (List<Object[]>) getCurrentSession().createQuery("from Product p,Orderdetail o where p.productId = o.productId and o.orderId = ?").setParameter(0,orderId);
+        return (List<Object[]>) getCurrentSession().createQuery("from Product p,Orderdetail o where p.productId = o.productId and o.orderId = ?").setParameter(0,orderId).list();
     }
 }
