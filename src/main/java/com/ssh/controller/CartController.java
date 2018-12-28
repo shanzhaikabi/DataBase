@@ -45,6 +45,17 @@ public class CartController {
         return new ModelAndView("forward:showcart",map);
     }
 
+    @RequestMapping(value = "/editcart.do",method = RequestMethod.GET)
+    public ModelAndView addThatToMyCart(@CookieValue(value = "customerId",defaultValue = "") String customerId, Integer cartId, Integer quantity){
+        ModelMap map=new ModelMap();
+        Customer customer = customerService.get(customerId);
+        if (customer == null){//请先登录
+            return new ModelAndView("login");
+        }
+        cartService.editCart(cartId,quantity);
+        return new ModelAndView("forward:showcart",map);
+    }
+
     @RequestMapping(value = "/showcart",method = RequestMethod.GET)
     public ModelAndView showMyCart(@CookieValue(value = "customerId",defaultValue = "") String customerId){
         ModelMap map=new ModelMap();

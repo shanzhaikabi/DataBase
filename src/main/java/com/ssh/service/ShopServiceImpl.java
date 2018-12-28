@@ -12,17 +12,17 @@ public class ShopServiceImpl implements ShopService{
     @Autowired
     ShopRepositoryImpl shopRepository;
 
-    public List<Shop> ShowShopByName(String name) {
+    public List<Shop> showShopByName(String name) {
         List shopList = shopRepository.findByName(name);
         return shopList;
     }
 
-    public String GetNameById(String id) {
+    public String getNameById(String id) {
         Shop shop = shopRepository.get(id);
         return shop == null ? null : shop.getShopName();
     }
 
-    public Shop GetShopById(String id) {
+    public Shop getShopById(String id) {
         Shop shop = shopRepository.get(id);
         return shop;
     }

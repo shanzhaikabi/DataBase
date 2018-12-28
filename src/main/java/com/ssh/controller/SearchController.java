@@ -64,7 +64,7 @@ public class SearchController {
             }
         }
         else if (searchCheck.equals("shop")){
-            List<Shop> shopList = shopService.ShowShopByName(keyword);
+            List<Shop> shopList = shopService.showShopByName(keyword);
             if (shopList.size() > 0) {
                 map.put("result", SearchUtils.search_result_shop(shopList));
             }
@@ -83,7 +83,7 @@ public class SearchController {
         ModelMap map=new ModelMap();
         List<Product> productList = productService.showProductByShopId(id);
         map.put("result", SearchUtils.search_result_product(productList));
-        String shopName = shopService.GetNameById(id);
+        String shopName = shopService.getNameById(id);
         map.put("from","商家 " + shopName + " 的搜索结果");
         return new ModelAndView("/search",map);
     }

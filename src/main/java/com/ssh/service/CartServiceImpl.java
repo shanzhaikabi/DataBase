@@ -44,8 +44,8 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public String editCart(String customerId, String productId, int quantity) {
-        Cart cart = cartRepository.getCartByCustomerIdAndProductId(customerId,productId);
+    public String editCart(Integer cartId, int quantity) {
+        Cart cart = cartRepository.get(cartId);
         if (cart == null) return "cart not exist";
         if (quantity == 0){
             cartRepository.delete(cart.getId());

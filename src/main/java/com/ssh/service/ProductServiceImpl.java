@@ -5,12 +5,10 @@ import com.ssh.entity.Discount;
 import com.ssh.entity.Product;
 import com.ssh.entity.Shop;
 import com.ssh.respository.ProductRepositoryImpl;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -34,7 +32,7 @@ public class ProductServiceImpl implements ProductService{
         Clazz clazz = classService.GetClassById(product.getClassId());
         if (null == clazz) return null;
         list.add(clazz);
-        Shop shop = shopService.GetShopById(product.getShopId());
+        Shop shop = shopService.getShopById(product.getShopId());
         if (null == shop) return null;
         list.add(shop);
         List<Discount> discountList = new ArrayList<>();
