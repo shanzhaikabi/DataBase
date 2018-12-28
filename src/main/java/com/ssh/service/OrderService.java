@@ -9,4 +9,5 @@ public interface OrderService {
     void changeStatus(Integer id,String status);
     List<Object> getOrderdetail(Integer id);
     List<Ordermaster> showMyOrder(String customerId);
+    Ordermaster getOrdermaster(Integer id);
 }

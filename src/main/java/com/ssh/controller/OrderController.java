@@ -23,7 +23,7 @@ public class OrderController {
     @Autowired
     OrderServiceImpl orderService;
 
-    @RequestMapping(value = "/showorder.do",method = RequestMethod.POST)
+    @RequestMapping(value = "/showorder.do",method = RequestMethod.GET)
     public ModelAndView showOneOrder(@CookieValue(value = "customerId",defaultValue = "") String customerId,int orderId) {
         ModelMap map = new ModelMap();
         Customer customer = customerService.get(customerId);
@@ -41,7 +41,7 @@ public class OrderController {
         return new ModelAndView("showorder",map);
     }
 
-    @RequestMapping(value = "/showorder.do",method = RequestMethod.POST)
+    @RequestMapping(value = "/showorder",method = RequestMethod.GET)
     public ModelAndView showOrder(@CookieValue(value = "customerId",defaultValue = "") String customerId){
         ModelMap map = new ModelMap();
         Customer customer = customerService.get(customerId);
@@ -55,5 +55,37 @@ public class OrderController {
         }
         map.put("result",result);
         return new ModelAndView("showorder",map);
+    }
+
+    @RequestMapping(value = "/cancelorder.do",method = RequestMethod.GET)
+    public ModelAndView cancelOrder(@CookieValue(value = "customerId",defaultValue = "") String customerId,Integer id) {
+        ModelMap map = new ModelMap();
+        Customer customer = customerService.get(customerId);
+        if (customer == null) {//请先登录
+            return new ModelAndView("login");
+        }
+        Ordermaster ordermaster = orderService.getOrdermaster(id);
+        if (ordermaster.getCustomerId() != customerId){//用户不一致
+            return new ModelAndView("login");
+        }
+        orderService.changeStatus(id,"cancel");
+        map.put("status","订单已取消");
+        return new ModelAndView("forward:showorder.do",map);
+    }
+
+    @RequestMapping(value = "/payorder.do",method = RequestMethod.GET)
+    public ModelAndView payOrder(@CookieValue(value = "customerId",defaultValue = "") String customerId,Integer id) {
+        ModelMap map = new ModelMap();
+        Customer customer = customerService.get(customerId);
+        if (customer == null) {//请先登录
+            return new ModelAndView("login");
+        }
+        Ordermaster ordermaster = orderService.getOrdermaster(id);
+        if (ordermaster.getCustomerId() != customerId){//用户不一致
+            return new ModelAndView("login");
+        }
+        orderService.changeStatus(id,"yes");
+        map.put("status","订单已支付");
+        return new ModelAndView("forward:showorder.do",map);
     }
 }

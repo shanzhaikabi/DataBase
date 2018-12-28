@@ -45,10 +45,13 @@ public class OrderServiceImpl implements OrderService{
     public void changeStatus(Integer id, String status) {
         Ordermaster ordermaster = ordermasterRepository.get(id);
         ordermaster.setOrderStatus(status);
-        ordermasterRepository.saveOrUpdate(ordermaster);
         if (status == "cancel"){
             discountService.returnDiscount(ordermaster.getCustomerId(),ordermaster.getOrderId());
         }
+        else if (status == "yes"){
+            ordermaster.setInvoiceNo("I" + new Date().getTime());
+        }
+        ordermasterRepository.saveOrUpdate(ordermaster);
     }
 
     @Override
@@ -68,5 +71,8 @@ public class OrderServiceImpl implements OrderService{
         return ordermasterRepository.showMyOrder(customerId);
     }
 
-
+    @Override
+    public Ordermaster getOrdermaster(Integer id) {
+        return ordermasterRepository.get(id);
+    }
 }
