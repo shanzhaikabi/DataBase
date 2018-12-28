@@ -24,16 +24,18 @@
 
 <body class="login-layout">
 
-<div class="widget-body" style="width:500px;margin-left: 33%;">
+<div class="widget-body" style="margin-left: 30%;margin-right: 30%">
     <div class="widget-main">
-        <h4 class="header blue lighter bigger">
-            <i class="ace-icon fa fa-coffee green"></i>
-            ${failReason}
-        </h4>
+        <fieldset><legend>菜单</legend>
+            <a href = "search">搜索商品</a>&nbsp&nbsp
+            <a href = "showcart">我的购物车</a>&nbsp&nbsp
+            <a href = "mydiscount">我的优惠券</a>&nbsp&nbsp
+            <a href = "showorder">我的订单</a><br>
+        </fieldset>
         <div class="space-6"></div>
         <%--${pageContext.request.contextPath }--%>
         <form action="${pageContext.request.contextPath}/search.do" method="POST">
-            <fieldset>
+            <fieldset><legend>搜索栏</legend>
                 <div class="block input-icon input-icon-right">
                     关键字<input type="text" name="keyword" class="form-control" placeholder="请输入关键字"/>
                 </div>
@@ -53,7 +55,10 @@
                 ${result}
             </fieldset>
         </form>
-
+        <h4 class="header blue lighter bigger">
+            <i class="ace-icon fa fa-coffee green"></i>
+            ${failReason}
+        </h4>
     </div>
 </div>
 </body>

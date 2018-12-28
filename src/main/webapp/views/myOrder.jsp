@@ -22,8 +22,14 @@
 </head>
 <body class="login-layout">
 <body>
-<div class="widget-main">
+<div class="widget-main"style="margin-left: 30%;margin-right: 30%">
     <div class="space-6"></div>
+    <fieldset><legend>菜单</legend>
+        <a href = "search">搜索商品</a>&nbsp&nbsp
+        <a href = "showcart">我的购物车</a>&nbsp&nbsp
+        <a href = "mydiscount">我的优惠券</a>&nbsp&nbsp
+        <a href = "showorder">我的订单</a><br>
+    </fieldset>
     <%--${pageContext.request.contextPath }--%>
     ${cartresult}
     <form action="${pageContext.request.contextPath}/showorder.do" method="GET">

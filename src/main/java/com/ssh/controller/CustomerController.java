@@ -1,12 +1,15 @@
 package com.ssh.controller;
 
+import com.ssh.entity.Customer;
 import com.ssh.entity.Discount;
 import com.ssh.entity.Discountdetail;
+import com.ssh.service.CustomerServiceImpl;
 import com.ssh.service.DiscountServiceImpl;
 import com.ssh.utils.DiscountUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,6 +25,18 @@ import java.util.List;
 public class CustomerController {
     @Autowired
     DiscountServiceImpl discountService;
+    @Autowired
+    CustomerServiceImpl customerService;
+
+    @RequestMapping(value = "/mydiscount",method = RequestMethod.GET)
+    public ModelAndView showMyDiscountsByCookie(@CookieValue(value = "customerId",defaultValue = "") String customerId) {
+        ModelMap map = new ModelMap();
+        Customer customer = customerService.get(customerId);
+        if (customer == null) {//请先登录
+            return new ModelAndView("login");
+        }
+        return showMyDiscounts(customerId);
+    }
 
     @RequestMapping(value = "/customer",method = RequestMethod.GET)
     public ModelAndView showMyDiscounts(String id){

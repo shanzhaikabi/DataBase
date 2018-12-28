@@ -25,12 +25,18 @@
 </head>
 <body class="login-layout">
 
-<div class="widget-body" style="width:500px;margin-left: 33%;">
+<div class="widget-body" style="margin-left: 30%;margin-right: 30%">
     <div class="widget-main">
         <h4 class="header blue lighter bigger">
             <i class="ace-icon fa fa-coffee green"></i>
         </h4>
         <div class="space-6"></div>
+        <fieldset><legend>菜单</legend>
+            <a href = "search">搜索商品</a>&nbsp&nbsp
+            <a href = "showcart">我的购物车</a>&nbsp&nbsp
+            <a href = "mydiscount">我的优惠券</a>&nbsp&nbsp
+            <a href = "showorder">我的订单</a><br>
+        </fieldset>
         <%--${pageContext.request.contextPath }--%>
         <form>
             <a href="javascript:history.back(-1)">返回上一页</a>
