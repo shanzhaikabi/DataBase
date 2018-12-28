@@ -10,12 +10,10 @@ public class CartUtils {
     public static String onecart(Product p, Cart c,Integer x)
     {
         String ans = OrderUtils.product_order(x,p,c);
-        ans = ans + "<form action = \"editcart.do\" method=\"GET\">" +
-                "<input type=\"number\" name=\"quantity\" value=\"" +
-            c.getQuantity().toString() + "\" min=\"0\" max=\"" +(p.getProductStock()).toString() + "\" />";
-        ans = ans + "<input type = \"submit\" value = \"修改\"/>" +
-                "<input type=\"hidden\" name=\"cartId\" value=\""+ ((Integer)c.getId()).toString() + "\">"
-                +"</form>";
+        ans = ans + "<a href = \"editcart.do?cartId="+((Integer)c.getId()).toString()+ "&quantity=" +
+                ((Integer)(c.getQuantity()+1)).toString() + "\">+1</a>&nbsp&nbsp&nbsp&nbsp";
+        ans = ans + "<a href = \"editcart.do?cartId="+((Integer)c.getId()).toString()+ "&quantity=" +
+                ((Integer)(c.getQuantity()-1)).toString() + "\">-1</a>";
         ans = ans + "<br><input type=\"checkbox\" name=\"cartId\" value =\" " + ((Integer)c.getId()).toString();
         if(c.getStatus().equals("yes"))
             ans = ans + "\"checked=\"checked";
@@ -34,7 +32,8 @@ public class CartUtils {
     }
     public static String showcart(List<Object[]> list)
     {
-        String ans = "<fieldset><legend>购物车信息</legend>";
+        String ans =  "<form action=\"commitcart.do\" method=\"POST\">";
+        ans = ans + "<fieldset><legend>购物车信息</legend>";
         Integer sum = 0,cnt = 0;
         Iterator<Object[]>it = list.iterator();
         while(it.hasNext())
@@ -48,8 +47,7 @@ public class CartUtils {
                 sum += tmp1.getProductPrice() * tmp2.getQuantity();
         }
         ans = ans + "</fieldset>";
-        ans = ans + "<br>" +
-                "<form action=\"commitcart.do\" method=\"POST\"><input type = \"submit\" value = \"下单\"/>";
+        ans = ans + "<input type = \"submit\" value = \"下单\"/><br>";
         return ans;
     }
 }
