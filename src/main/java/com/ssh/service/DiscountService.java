@@ -28,6 +28,7 @@ public interface DiscountService {
     List<Clazz> getClassFromDiscount(int discountType);
     List<Product> getProductFromDiscount(int discountType);
     List<Shop> getShopFromDiscount(int discountType);
+    List<Discount> getDiscountUsedInOrder(Integer orderId);
     boolean addDiscountToUser(int discountType,String customerId);
     void useDiscount(List<Discount> discountList,String customerId,Integer orderId);
     void returnDiscount(String customerId, Integer orderId);

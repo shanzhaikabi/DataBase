@@ -108,6 +108,11 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     @Override
+    public List<Discount> getDiscountUsedInOrder(Integer orderId) {
+        return discountdetailRepository.getDiscountUsedInOrder(orderId).stream().map(objects -> (Discount)objects[0]).collect(Collectors.toList());
+    }
+
+    @Override
     public boolean addDiscountToUser(int discountType, String customerId) {
         Discountdetail discountdetail = new Discountdetail();
         if(discountdetailRepository.getDiscountByTypeAndCustomer(discountType,customerId) != null) return false;
@@ -137,4 +142,6 @@ public class DiscountServiceImpl implements DiscountService{
     public void returnDiscount(String customerId, Integer orderId){
         discountdetailRepository.returnDiscount(customerId,orderId);
     }
+
+
 }

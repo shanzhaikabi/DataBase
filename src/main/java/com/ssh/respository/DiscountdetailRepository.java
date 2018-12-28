@@ -14,4 +14,5 @@ public interface DiscountdetailRepository extends DomainRepository<Discountdetai
     Discountdetail getDiscountByTypeAndCustomer(int discountType,String customerId);
     void useDiscount(List<Discount> discountList,String customerId,Integer orderId);
     void returnDiscount(String customerId,Integer orderId);
+    List<Object[]> getDiscountUsedInOrder(Integer orderId);
 }

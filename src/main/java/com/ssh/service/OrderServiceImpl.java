@@ -1,15 +1,13 @@
 package com.ssh.service;
 
-import com.ssh.entity.Cart;
-import com.ssh.entity.Orderdetail;
-import com.ssh.entity.Ordermaster;
-import com.ssh.entity.Product;
+import com.ssh.entity.*;
 import com.ssh.respository.OrderdetailRepositoryImpl;
 import com.ssh.respository.OrdermasterRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,9 +19,7 @@ public class OrderServiceImpl implements OrderService{
     OrderdetailRepositoryImpl orderdetailRepository;
     @Autowired
     DiscountServiceImpl discountService;
-    //todo: "我的订单/订单中心" showorder,jsp(.do);
-    // 单个订单：result = OrderUtils.confirm_order_invoice(ordermaster o,(String)"detail") + OrderUtils.confirm_order_product(list(cart,order))
-    // 订单总览: for(i,List<ordermaster>list){result += OrderUtils.confirm_order_invoice(list[i],"all")}
+
     @Override
     public Integer createOrder(String customerId, List<Object[]> list,int tot) {
         Ordermaster ordermaster = new Ordermaster();
@@ -54,5 +50,18 @@ public class OrderServiceImpl implements OrderService{
             discountService.returnDiscount(ordermaster.getCustomerId(),ordermaster.getOrderId());
         }
     }
+
+    @Override
+    public List<Object> getOrderdetail(Integer id) {
+        List list = new ArrayList<>();
+        Ordermaster orderMaster = ordermasterRepository.get(id);
+        List<Object[]> orderDetailList = orderdetailRepository.getOrderdetailByOrderId(id);
+        List<Discount> discountList = discountService.getDiscountUsedInOrder(id);
+        list.add(orderMaster);
+        list.add(orderDetailList);
+        list.add(discountList);
+        return list;
+    }
+
 
 }

@@ -111,6 +111,11 @@ public class DiscountdetailRepositoryImpl implements DiscountdetailRepository{
     }
 
     @Override
+    public List<Object[]> getDiscountUsedInOrder(Integer orderId) {
+        return (List<Object[]>) getCurrentSession().createQuery("from Discount d,Discountdetail dt where d.discountType = dt.discountType and dt.discountStatus = ?").setParameter(0,orderId.toString());
+    }
+
+    @Override
     public void returnDiscount(String customerId, Integer orderId) {
         List<Integer> avaList = getAvailableDiscountdetailByCustomerId(customerId).stream().map(discountdetail -> discountdetail.getDiscountType()).collect(Collectors.toList());
         List<Discountdetail> list = getCurrentSession().createCriteria(Discountdetail.class)
