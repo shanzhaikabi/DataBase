@@ -9,4 +9,6 @@ public interface ShopService {
     List<Shop> showShopByName(String name);
     String getNameById(String id);
     Shop getShopById(String id);
+    void addDiscountForShop(String id,Integer least,Integer price);
+    void addDiscountForProduct(String id,Integer least,Integer price);
 }

@@ -1,5 +1,6 @@
 package com.ssh.service;
 
+import com.ssh.entity.Discount;
 import com.ssh.entity.Shop;
 import com.ssh.respository.ShopRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import java.util.List;
 public class ShopServiceImpl implements ShopService{
     @Autowired
     ShopRepositoryImpl shopRepository;
+    @Autowired
+    DiscountServiceImpl discountService;
 
     public List<Shop> showShopByName(String name) {
         List shopList = shopRepository.findByName(name);
@@ -27,4 +30,23 @@ public class ShopServiceImpl implements ShopService{
         return shop;
     }
 
+    @Override
+    public void addDiscountForShop(String shopId,Integer least, Integer price) {
+        Discount discount = new Discount();
+        discount.setDiscountLeast(least);
+        discount.setDiscountPrice(price);
+        discount.setDiscountRule("shop");
+        Integer discountType = discountService.discountRepository.save(discount);
+        discountService.addDiscountByShop(discountType,shopId);
+    }
+
+    @Override
+    public void addDiscountForProduct(String productId,Integer least, Integer price) {
+        Discount discount = new Discount();
+        discount.setDiscountLeast(least);
+        discount.setDiscountPrice(price);
+        discount.setDiscountRule("product");
+        Integer discountType = discountService.discountRepository.save(discount);
+        discountService.addDiscountByProduct(discountType,productId);
+    }
 }

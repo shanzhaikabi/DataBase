@@ -113,7 +113,7 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     @Override
-    public boolean addDiscountToUser(int discountType, String customerId) {
+    public boolean addDiscountToUser(Integer discountType, String customerId) {
         Discountdetail discountdetail = new Discountdetail();
         if(discountdetailRepository.getDiscountByTypeAndCustomer(discountType,customerId) != null) return false;
         discountdetail.setCustomerId(customerId);
@@ -124,12 +124,20 @@ public class DiscountServiceImpl implements DiscountService{
         return true;
     }
 
-    public boolean addDiscountByShop(Discount discount,String shopId) {
-        int discountType = discountRepository.save(discount);
+    public boolean addDiscountByShop(Integer discountType,String shopId) {
         Shopdiscount sd = new Shopdiscount();
         sd.setDiscountType(discountType);
         sd.setShopId(shopId);
         shopdiscountRepository.save(sd);
+        return true;
+    }
+
+    @Override
+    public boolean addDiscountByProduct(Integer discountType, String productId) {
+        Productdiscount pd = new Productdiscount();
+        pd.setDiscountType(discountType);
+        pd.setProductId(productId);
+        productdiscountRepository.save(pd);
         return true;
     }
 

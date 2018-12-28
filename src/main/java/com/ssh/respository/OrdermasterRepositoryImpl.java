@@ -1,9 +1,9 @@
 package com.ssh.respository;
 
 import com.ssh.entity.Ordermaster;
-import com.ssh.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -61,6 +61,6 @@ public class OrdermasterRepositoryImpl implements OrdermasterRepository{
 
     @Override
     public List<Ordermaster> showMyOrder(String customerId) {
-        return getCurrentSession().createCriteria(Ordermaster.class).add(Restrictions.eq("customerId",customerId)).list();
+        return getCurrentSession().createCriteria(Ordermaster.class).add(Restrictions.eq("customerId",customerId)).addOrder(Order.desc("orderId")).list();
     }
 }
