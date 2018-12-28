@@ -2,6 +2,7 @@ package com.ssh.utils;
 
 import com.ssh.entity.Cart;
 import com.ssh.entity.Discount;
+import com.ssh.entity.Ordermaster;
 import com.ssh.entity.Product;
 
 import java.util.Iterator;
@@ -34,6 +35,21 @@ public class OrderUtils {
             cnt++;
             ans = ans + DiscountUtils.discount_detail(it.next(),"");
         }
+        ans = ans + "</fieldset>";
+        return ans;
+    }
+    public static String confirm_order_invoice(Ordermaster o,String s)
+    {
+        String ans = "<fieldset><legend>订单小票</legend>";
+        ans = ans + "订单编号：" + ((Integer)o.getOrderId()).toString();
+        ans = ans + "<br>下单时间：" + (o.getOrderDate()).toString();
+        if(o.getOrderStatus().equals("yes")) {
+            ans = ans + "<br>订单状态：已完成";
+            ans = ans + "<br>发票号：" + o.getInvoiceNo();
+            ans = ans + "<br>实际支付：" + o.getOrderSum().toString();
+            if(s.equals("all"))ans = ans + "<br>查看订单详情";
+        }
+        else ans = ans + "<br>订单状态：已取消";
         ans = ans + "</fieldset>";
         return ans;
     }

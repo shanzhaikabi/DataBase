@@ -21,7 +21,9 @@ public class OrderServiceImpl implements OrderService{
     OrderdetailRepositoryImpl orderdetailRepository;
     @Autowired
     DiscountServiceImpl discountService;
-
+    //todo: "我的订单/订单中心" showorder,jsp(.do);
+    // 单个订单：result = OrderUtils.confirm_order_invoice(ordermaster o,(String)"detail") + OrderUtils.confirm_order_product(list(cart,order))
+    // 订单总览: for(i,List<ordermaster>list){result += OrderUtils.confirm_order_invoice(list[i],"all")}
     @Override
     public Integer createOrder(String customerId, List<Object[]> list,int tot) {
         Ordermaster ordermaster = new Ordermaster();
