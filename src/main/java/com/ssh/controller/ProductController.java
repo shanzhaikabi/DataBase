@@ -53,7 +53,7 @@ public class ProductController {
             return new ModelAndView("forward:product");
         }
         ModelMap map=new ModelMap();
-        if (product.getProductId() == null || product.getProductId().length() == 0){//创建
+        if (product.getProductId() == null || product.getProductId().length() == 0 || product.getProductId().equals("null")){//创建
             product.setProductId("" + new Date().getTime());
         }
         if (product.getProductStock() < 0){

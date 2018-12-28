@@ -1,9 +1,6 @@
 package com.ssh.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -33,6 +30,7 @@ public class Productdiscount {
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;

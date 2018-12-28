@@ -13,14 +13,16 @@
 <body>
     <form action="${pageContext.request.contextPath}/login" method="GET">
         <label class="block clearfix">
-            登陆
+            客户登陆
         </label>
+        <input type="text" name="id" value="C114514">
         <input type="submit" value="前往" style="width:100px;">
     </form>
-    <form action="${pageContext.request.contextPath}/mainPage" method="GET">
+    <form action="${pageContext.request.contextPath}/slogin" method="GET">
         <label class="block clearfix">
-            主页
+            商家登录
         </label>
+        <input type="text" name="id" value="11451401">
         <input type="submit" value="前往" style="width:100px;">
     </form>
 </body>

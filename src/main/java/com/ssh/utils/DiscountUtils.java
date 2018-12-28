@@ -11,32 +11,30 @@ public class DiscountUtils {
     public static String shop_discount_simple(Discount d)
     {
         String ans = "<fieldset>";
-        ans = ans + "优惠券类型：";
-        ans = ans + "商店专用优惠券";
-        ans = ans + "<br>";
         if(d.getDiscountLeast()==0)
             ans = ans + "无门槛优惠券：" + d.getDiscountPrice().toString() + "&nbsp元<br>";
         else
             ans = ans + "满&nbsp" + d.getDiscountLeast().toString() +
                     "&nbsp减&nbsp" + d.getDiscountPrice().toString() + "&nbsp元<br>";
-        return ans;
+        ans = ans + "<a href=\"editdiscount?id="+ d.getDiscountType() + "\">修改</a>";
+        return ans + "</fieldset>";
     }
     public static String shop_discount_simple(Discount d,List<Product>list)
     {
         String ans = "<fieldset>";
-        ans = ans + "优惠券类型：";
-        ans = ans + "商品专用优惠券：<br>";
         Iterator<Product>it = list.iterator();
         while(it.hasNext())
         {
-            ans = ans + it.next().getProductName() + "&nbsp&nbsp&nbsp&nbsp单价：" + it.next().getProductPrice().toString() + "<br>";
+            Product product = it.next();
+            ans = ans + product.getProductName() + "&nbsp&nbsp&nbsp&nbsp单价：" + product.getProductPrice().toString() + "<br>";
         }
         if(d.getDiscountLeast()==0)
             ans = ans + "无门槛优惠券：" + d.getDiscountPrice().toString() + "&nbsp元<br>";
         else
             ans = ans + "满&nbsp" + d.getDiscountLeast().toString() +
                     "&nbsp减&nbsp" + d.getDiscountPrice().toString() + "&nbsp元<br>";
-        return ans;
+        ans = ans + "<a href=\"editdiscount?id="+ d.getDiscountType() + "\">修改</a>";
+        return ans + "</fieldset>";
     }
     public static String mydiscount_haveList(List<Object[]>list)
     {

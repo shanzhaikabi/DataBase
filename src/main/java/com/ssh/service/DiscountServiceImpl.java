@@ -146,10 +146,35 @@ public class DiscountServiceImpl implements DiscountService{
         return true;
     }
 
+    public boolean removeDiscountProducts(Integer discountType, String[] productId) {
+        List<String> strings = new ArrayList<>();
+        for (String s : productId) {
+            strings.add(s);
+        }
+        List<Productdiscount> list = productdiscountRepository.removeDiscountProducts(discountType);
+        list.forEach(
+                productdiscount -> {
+                    if (strings.contains(productdiscount.getProductId())){
+                        strings.remove(productdiscount.getProductId());
+                    }
+                    else{
+                        productdiscountRepository.delete(productdiscount);
+                    }
+                }
+        );
+        String[] ret = new String[strings.size()];
+        for (int i = 0; i < strings.size(); i++) {
+            ret[i] = strings.get(i);
+        }
+        addDiscountByProducts(discountType,ret);
+        return true;
+    }
+
     @Override
     public boolean addDiscountByProducts(Integer discountType, String[] productId) {
         for (String s : productId) {
             Productdiscount pd = new Productdiscount();
+            System.out.println("wtf " + s);
             pd.setDiscountType(discountType);
             pd.setProductId(s.replace(" ",""));
             productdiscountRepository.save(pd);

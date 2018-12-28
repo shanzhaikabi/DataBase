@@ -11,7 +11,7 @@ public class ShopUtils {
     public static String shop_discount_shop(List<Discount>list)
     {
         String ans = "<fieldset><legend>商店优惠券</legend>";
-        ans = ans + "<a href=\"editdiscount?id=-1\">添加新商店优惠券</a><br>";
+        ans = ans + "<a href=\"editdiscount?id=-1\">添加新商店优惠券</a><br><br>";
         Iterator<Discount>it = list.iterator();
         while(it.hasNext())
         {
@@ -23,7 +23,7 @@ public class ShopUtils {
     public static String shop_discount_set_product(List<Object[]>list)
     {
         String ans = "<fieldset><legend>商品优惠券</legend>";
-        ans = ans + "<a href=\"editdiscount?id=-2\">添加新商品优惠券</a><br>";
+        ans = ans + "<a href=\"editdiscount?id=-2\">添加新商品优惠券</a><br><br>";
         Iterator<Object[]>it = list.iterator();
         while(it.hasNext())
         {
@@ -38,11 +38,11 @@ public class ShopUtils {
         String ans = "<fieldset>";
         if(d.getDiscountPrice()!=null)
         {
-            ans = ans + "满减上限：" + "<input type=\"text\" name=\"discountPrice\" value=\"" + d.getDiscountPrice().toString() +"\">";
+            ans = ans + "满减金额：" + "<input type=\"text\" name=\"discountPrice\" value=\"" + d.getDiscountPrice().toString() +"\">";
         }
         else
         {
-            ans = ans + "满减上限：" + "<input type=\"text\" name=\"discountPrice\">";
+            ans = ans + "满减金额：" + "<input type=\"text\" name=\"discountPrice\">";
         }
         ans = ans + "<input type=\"hidden\" name=\"discountType\" value=\"" + d.getDiscountType() +"\"><br>" ;
         if(d.getDiscountLeast()!=null)
@@ -58,7 +58,7 @@ public class ShopUtils {
             ans = ans + "<br><input type = \"submit\" value = \"提交\"></fieldset>";
         return ans;
     }
-    public static String shop_discount_product(List<Product>list)
+    public static String shop_discount_product(List<Product>list,List<Product> haveList)
     {
         String ans = "商品类别：";
         Iterator<Product> it = list.iterator();
@@ -66,7 +66,9 @@ public class ShopUtils {
         {
             Product tmp = it.next();
             ans = ans + "<input type=\"checkbox\" name=\"productId\"  value=\""
-                    + tmp.getProductId() + "\">" + tmp.getProductName() + "</input>";
+                    + tmp.getProductId();
+            if (haveList.contains(tmp)) ans = ans + "\"checked=\"checked";
+            ans = ans + "\">" + tmp.getProductName() + "</input>";
         }
         ans = ans + "<br><input type = \"submit\" value = \"提交\"></fieldset>";
         return ans;

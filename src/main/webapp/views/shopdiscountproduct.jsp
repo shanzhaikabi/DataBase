@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resource/register/assets/css/ace-rtl.min.css" />
 </head>
 <body class="login-layout">
-<form action="${pageContext.request.contextPath}/editdiscountshop" method="POST">
+<form action="${pageContext.request.contextPath}/editdiscountproduct" method="POST">
 <div class="widget-body" style="margin-left: 30%;margin-right: 30%">
     <div class="widget-main">
         <fieldset><legend>菜单</legend>

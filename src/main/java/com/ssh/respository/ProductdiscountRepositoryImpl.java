@@ -4,6 +4,7 @@ import com.ssh.entity.Product;
 import com.ssh.entity.Productdiscount;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -67,6 +68,10 @@ public class ProductdiscountRepositoryImpl implements ProductdiscountRepository{
 
     @Override
     public List<Object[]> getDiscountAndDetailForShop(String shopId) {
-        return getCurrentSession().createQuery("from Product c,Productdiscount cd,Discount d where c.productId = cd.productId and cd.discountType = d.discountType and d.shopId = ?").setParameter(0,shopId).list();
+        return getCurrentSession().createQuery("from Discount d,Product c,Productdiscount cd where c.productId = cd.productId and cd.discountType = d.discountType and c.shopId = ?").setParameter(0,shopId).list();
+    }
+
+    public List<Productdiscount> removeDiscountProducts(Integer discountType){
+        return getCurrentSession().createCriteria(Productdiscount.class).add(Restrictions.eq("discountType",discountType)).list();
     }
 }

@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -59,31 +60,40 @@ public class ShopController {
         return new ModelAndView("editproduct",map);
     }
 
-    @RequestMapping(value = "/adddiscount",method = RequestMethod.GET)
-    public ModelAndView showMyShopProduct(@CookieValue(value = "shopId",defaultValue = "") String shopId,Integer discountType){
+    @RequestMapping(value = "/editdiscount",method = RequestMethod.GET)
+    public ModelAndView showMyShopProduct(@CookieValue(value = "shopId",defaultValue = "") String shopId,Integer id){
         ModelMap map=new ModelMap();
         Shop shop = shopService.getShopById(shopId);
-        Discount discount = discountService.get(discountType);
         if (shop == null){//访客页面
             return new ModelAndView("redirect:search.sp",map);
         }
-        List<Object[]> list = discountService.getDiscountAndDetailForShop(shopId);
-        if (discount == null){
-            if (discountType == -1){
-                //do something1
-                return new ModelAndView("editdiscount_shop",map);
-            }
-            else if (discountType == -2){
-                //do something2
-                return new ModelAndView("editdiscount_product",map);
-            }
+        List<Product> list = productService.showProductByShopId(shopId);
+        Discount discount = new Discount();
+        if (id == -1){
+            //todo something1
+            discount.setDiscountRule("shop");
+            discount.setDiscountType(-1);
+            map.put("result",ShopUtils.shop_one_discount(discount));
+            return new ModelAndView("shopdiscount",map);
         }
-        if (discount.getDiscountRule() == "shop"){
+        else if (id == -2){
+            //do something2
+            discount.setDiscountRule("product");
+            discount.setDiscountType(-2);
+            map.put("result",ShopUtils.shop_one_discount(discount) + ShopUtils.shop_discount_product(list,new ArrayList<>()));
+            return new ModelAndView("shopdiscountproduct",map);
+        }
+        discount = discountService.get(id);
+        if (discount.getDiscountRule().equals("shop")){
             //do something1
-            return new ModelAndView("editdiscount_shop",map);
+            discount.setDiscountRule("shop");
+            map.put("result",ShopUtils.shop_one_discount(discount));
+            return new ModelAndView("shopdiscount",map);
         }
-        //do something2
-        return new ModelAndView("editdiscount_product",map);
+        discount.setDiscountRule("product");
+        List<Product> productList = discountService.getProductByDiscount(discount.getDiscountType());
+        map.put("result",ShopUtils.shop_one_discount(discount) + ShopUtils.shop_discount_product(list,productList));
+        return new ModelAndView("shopdiscountproduct",map);
     }
 
     @RequestMapping(value = "/shop_discount",method = RequestMethod.GET)
@@ -95,7 +105,9 @@ public class ShopController {
         }
         //管理页面
         List<Discount> discountList = discountService.getDiscountForShop(shopId);
+        List<Object[]> list = discountService.getDiscountAndDetailForShop(shopId);
         //TODO:加入关于商品和优惠券的修改页面
+        map.put("result",ShopUtils.shop_discount_shop(discountList) + ShopUtils.shop_discount_set_product(list));
         return new ModelAndView("shopdiscount",map);
     }
 
