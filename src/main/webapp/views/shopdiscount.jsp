@@ -21,12 +21,12 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resource/register/assets/css/ace-rtl.min.css" />
 </head>
 <body class="login-layout">
-
+<form action="${pageContext.request.contextPath}/editproduct.do" method="POST">
 <div class="widget-body" style="margin-left: 30%;margin-right: 30%">
     <div class="widget-main">
         <fieldset><legend>菜单</legend>
-            <a href = "shopproduct">搜索商品</a>&nbsp&nbsp
-            <a href = "shopdiscount">我的购物车</a>&nbsp&nbsp
+            <a href = "shop_product">我的商品</a>&nbsp&nbsp
+            <a href = "shop_discount">我的优惠券</a>&nbsp&nbsp
         </fieldset>
         <div id="content">
             ${cartresult}
@@ -34,5 +34,6 @@
         </div>
     </div>
 </div>
+</form>
 </body>
 </html>

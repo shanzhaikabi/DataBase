@@ -7,7 +7,7 @@ import com.ssh.entity.Shop;
 import com.ssh.service.DiscountServiceImpl;
 import com.ssh.service.ProductServiceImpl;
 import com.ssh.service.ShopServiceImpl;
-import com.ssh.utils.SearchUtils;
+import com.ssh.utils.ShopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -38,16 +38,16 @@ public class ShopController {
         }
         //管理页面
         List<Object[]> productList = shopService.showProductAndClazzByShopId(shopId);
-        List<Clazz> clazzList = shopService.getAll();
-        //TODO:加入关于商品和优惠券的修改页面
+        map.put("result", ShopUtils.shop_product(productList));
         return new ModelAndView("shopproduct",map);
     }
 
     @RequestMapping(value = "/editproduct",method = RequestMethod.GET)
-    public ModelAndView editProduct(@CookieValue(value = "shopId",defaultValue = "") String shopId,String productId){
+    public ModelAndView editProduct(@CookieValue(value = "shopId",defaultValue = "") String shopId,String id){
         ModelMap map=new ModelMap();
         Shop shop = shopService.getShopById(shopId);
-        Product product = productService.get(productId);
+        Product product = productService.get(id);
+        List<Clazz> clz = shopService.getAll();
         if (shop == null || (product != null && !product.getShopId().equals(shopId))){//访客页面
             return new ModelAndView("forward:search.sp",map);
         }
@@ -55,7 +55,7 @@ public class ShopController {
             product = new Product();
             product.setShopId(shopId);
         }
-
+        map.put("result",ShopUtils.shop_one_product(product)+ShopUtils.shop_class(clz));
         //TODO:加入关于商品和优惠券的修改页面
         return new ModelAndView("editproduct",map);
     }

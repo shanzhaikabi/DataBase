@@ -27,7 +27,7 @@ public class ProductUtils {
         ans = ans + "商品类别：" + c.getClassName() + "<br>";
         ans = ans + "价格：" + p.getProductPrice() + "<br>";
         ans = ans + "库存：" + p.getProductStock() + "<br>";
-        ans = ans + "<a href='editproduct?id=\"" + p.getProductId() + "\">修改商品信息</a><br>";
+        ans = ans + "<a href=\"editproduct?id=" + p.getProductId().toString() + "\">修改商品信息</a><br>";
         ans = ans + "</fieldset>";
         return ans;
     }

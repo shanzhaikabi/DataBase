@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2018/12/28
-  Time: 21:51
+  Time: 23:14
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,7 +10,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>我发布的商品</title>
+    <title>修改商品</title>
     <meta name="description" content="User login page" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <!-- bootstrap & fontawesome -->
@@ -22,6 +22,7 @@
 </head>
 <body class="login-layout">
 <form action="${pageContext.request.contextPath}/editproduct.do" method="POST">
+
 <div class="widget-body" style="margin-left: 30%;margin-right: 30%">
     <div class="widget-main">
         <fieldset><legend>菜单</legend>

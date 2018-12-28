@@ -8,6 +8,23 @@ import java.util.Iterator;
 import java.util.List;
 
 public class DiscountUtils {
+    public static String shop_discount_simple(Discount d)
+    {
+        String ans = "<fieldset>";
+        ans = ans + "优惠券类型：";
+        String rule = d.getDiscountRule();
+        if(rule.equals("shop"))ans = ans + "商店专用优惠券";
+        else if(rule.equals("class"))ans = ans + "种类专用优惠券";
+        else ans = ans + "商品专用优惠券";
+        ans = ans + "<br>";
+        if(d.getDiscountLeast()==0)
+            ans = ans + "无门槛优惠券：" + d.getDiscountPrice().toString() + "&nbsp元<br>";
+        else
+            ans = ans + "满&nbsp" + d.getDiscountLeast().toString() +
+                    "&nbsp减&nbsp" + d.getDiscountPrice().toString() + "&nbsp元<br>";
+        ans = ans + "<></fieldset>";
+        return ans;
+    }
     public static String mydiscount_haveList(List<Object[]>list)
     {
         String ans = "<fieldset>";
