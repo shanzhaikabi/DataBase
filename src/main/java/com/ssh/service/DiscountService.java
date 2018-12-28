@@ -34,4 +34,5 @@ public interface DiscountService {
     void returnDiscount(String customerId, Integer orderId);
     boolean addDiscountByShop(Integer discountType,String shopId);
     boolean addDiscountByProduct(Integer discountType,String productId);
+    void saveOrUpdate(Discount discount);
 }

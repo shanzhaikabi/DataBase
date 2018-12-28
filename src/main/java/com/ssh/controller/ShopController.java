@@ -1,5 +1,6 @@
 package com.ssh.controller;
 
+import com.ssh.entity.Clazz;
 import com.ssh.entity.Discount;
 import com.ssh.entity.Product;
 import com.ssh.entity.Shop;
@@ -28,24 +29,68 @@ public class ShopController {
     @Autowired
     DiscountServiceImpl discountService;
 
-    @RequestMapping(value = "/shop",method = RequestMethod.GET)
-    public ModelAndView showMyShop(@CookieValue(value = "shopId",defaultValue = "") String shopId, String id){
+    @RequestMapping(value = "/shop_product",method = RequestMethod.GET)
+    public ModelAndView showMyShopProduct(@CookieValue(value = "shopId",defaultValue = "") String shopId){
         ModelMap map=new ModelMap();
-        Shop shop = shopService.getShopById(id);
-        List<Product> productList = productService.showProductByShopId(shopId);
-        List<Discount> discountList = discountService.getDiscountForShop(shopId);
-        if (shop.getShopId().equals(shopId)){//管理页面
-            //TODO:加入关于商品和优惠券的修改页面
-        }
-        else{//访客页面
+        Shop shop = shopService.getShopById(shopId);
+        if (shop == null){//访客页面
             return new ModelAndView("forward:search.sp",map);
         }
-        return new ModelAndView("/myshop",map);
+        //管理页面
+        List<Object[]> productList = shopService.showProductAndClazzByShopId(shopId);
+        List<Clazz> clazzList = shopService.getAll();
+        //TODO:加入关于商品和优惠券的修改页面
+        return new ModelAndView("shopproduct",map);
+    }
+
+    @RequestMapping(value = "/editproduct",method = RequestMethod.GET)
+    public ModelAndView editProduct(@CookieValue(value = "shopId",defaultValue = "") String shopId,String productId){
+        ModelMap map=new ModelMap();
+        Shop shop = shopService.getShopById(shopId);
+        Product product = productService.get(productId);
+        if (shop == null || (product != null && !product.getShopId().equals(shopId))){//访客页面
+            return new ModelAndView("forward:search.sp",map);
+        }
+        if (product == null){
+            product = new Product();
+            product.setShopId(shopId);
+        }
+
+        //TODO:加入关于商品和优惠券的修改页面
+        return new ModelAndView("editproduct",map);
+    }
+
+    @RequestMapping(value = "/editdiscount",method = RequestMethod.GET)
+    public ModelAndView showMyShopProduct(@CookieValue(value = "shopId",defaultValue = "") String shopId,Integer discountType){
+        ModelMap map=new ModelMap();
+        Shop shop = shopService.getShopById(shopId);
+        Discount discount = discountService.get(discountType);
+        if (shop == null){//访客页面
+            return new ModelAndView("forward:search.sp",map);
+        }
+        if (discount == null){
+            discount = new Discount();
+        }
+        //TODO:加入关于商品和优惠券的修改页面
+        return new ModelAndView("editproduct",map);
+    }
+
+    @RequestMapping(value = "/shop_discount",method = RequestMethod.GET)
+    public ModelAndView showMyShopDiscount(@CookieValue(value = "shopId",defaultValue = "") String shopId){
+        ModelMap map=new ModelMap();
+        Shop shop = shopService.getShopById(shopId);
+        if (shop == null){//访客页面
+            return new ModelAndView("forward:search.sp",map);
+        }
+        //管理页面
+        List<Discount> discountList = discountService.getDiscountForShop(shopId);
+        //TODO:加入关于商品和优惠券的修改页面
+        return new ModelAndView("shopdiscount",map);
     }
 
     @RequestMapping(value = "/slogin",method = RequestMethod.GET)
     public ModelAndView becomeCustomer(HttpServletResponse response, String id){
         response.addCookie(new Cookie("shopId",id));
-        return showMyShop(id,id);
+        return showMyShopProduct(id);
     }
 }

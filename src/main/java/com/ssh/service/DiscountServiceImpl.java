@@ -142,6 +142,11 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     @Override
+    public void saveOrUpdate(Discount discount) {
+        discountRepository.saveOrUpdate(discount);
+    }
+
+    @Override
     public void useDiscount(List<Discount> discountList, String customerId,Integer orderId){
         discountdetailRepository.useDiscount(discountList,customerId,orderId);
     }

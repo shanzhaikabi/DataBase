@@ -1,7 +1,10 @@
 package com.ssh.service;
 
+import com.ssh.entity.Clazz;
 import com.ssh.entity.Discount;
+import com.ssh.entity.Product;
 import com.ssh.entity.Shop;
+import com.ssh.respository.ClazzRepositoryImpl;
 import com.ssh.respository.ShopRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +17,8 @@ public class ShopServiceImpl implements ShopService{
     ShopRepositoryImpl shopRepository;
     @Autowired
     DiscountServiceImpl discountService;
+    @Autowired
+    ClazzRepositoryImpl clazzRepository;
 
     public List<Shop> showShopByName(String name) {
         List shopList = shopRepository.findByName(name);
@@ -48,5 +53,15 @@ public class ShopServiceImpl implements ShopService{
         discount.setDiscountRule("product");
         Integer discountType = discountService.discountRepository.save(discount);
         discountService.addDiscountByProduct(discountType,productId);
+    }
+
+    @Override
+    public List<Clazz> getAll() {
+        return clazzRepository.findAll();
+    }
+
+    public List<Object[]> showProductAndClazzByShopId(String shopId) {
+        List<Object[]> list = shopRepository.showProductAndClazz(shopId);
+        return list;
     }
 }

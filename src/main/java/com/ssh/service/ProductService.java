@@ -21,4 +21,6 @@ public interface ProductService {
     String deleteProduct(Product product);
 
     String addProduct(Product product);
+
+    void saveOrUpdate(Product product);
 }

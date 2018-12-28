@@ -40,6 +40,11 @@ public class ShopRepositoryImpl implements ShopRepository{
         return c.list() == null ? new ArrayList<>() : c.list();
     }
 
+    @Override
+    public List<Object[]> showProductAndClazz(String id) {
+        return getCurrentSession().createQuery("from Product p,Clazz c where p.classId = c.classId and p.shopId = ?").setParameter(0,id).list();
+    }
+
     public void persist(Shop entity) {
         getCurrentSession().persist(entity);
     }
