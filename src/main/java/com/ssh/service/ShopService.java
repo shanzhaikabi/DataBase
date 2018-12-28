@@ -11,7 +11,7 @@ public interface ShopService {
     String getNameById(String id);
     Shop getShopById(String id);
     void addDiscountForShop(String id,Integer least,Integer price);
-    void addDiscountForProduct(String id,Integer least,Integer price);
+    void addDiscountForProducts(String[] id,Integer least,Integer price);
     List<Clazz> getAll();
     List<Object[]> showProductAndClazzByShopId(String shopId);
 }

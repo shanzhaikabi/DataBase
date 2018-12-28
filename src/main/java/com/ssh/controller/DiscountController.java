@@ -66,7 +66,7 @@ public class DiscountController {
     }
 
     @RequestMapping(value = "/editdiscount.do",method = RequestMethod.POST)
-    public ModelAndView editProduct(@CookieValue(value = "shopId",defaultValue = "") String shopId, Discount discount,String productId){
+    public ModelAndView editProduct(@CookieValue(value = "shopId",defaultValue = "") String shopId, Discount discount,String[] productId){
         Shop shop = shopService.getShopById(shopId);
         if (shop == null){//访客页面
             return new ModelAndView("forward:search");
@@ -77,7 +77,7 @@ public class DiscountController {
                 shopService.addDiscountForShop(shopId,discount.getDiscountLeast(),discount.getDiscountPrice());
             }
             else if (discount.getDiscountRule() == "product"){
-                shopService.addDiscountForProduct(productId,discount.getDiscountLeast(),discount.getDiscountPrice());
+                shopService.addDiscountForProducts(productId,discount.getDiscountLeast(),discount.getDiscountPrice());
             }
         }
         else discountService.saveOrUpdate(discount);

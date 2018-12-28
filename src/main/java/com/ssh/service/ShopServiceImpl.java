@@ -46,13 +46,13 @@ public class ShopServiceImpl implements ShopService{
     }
 
     @Override
-    public void addDiscountForProduct(String productId,Integer least, Integer price) {
+    public void addDiscountForProducts(String[] productId,Integer least, Integer price) {
         Discount discount = new Discount();
         discount.setDiscountLeast(least);
         discount.setDiscountPrice(price);
         discount.setDiscountRule("product");
         Integer discountType = discountService.discountRepository.save(discount);
-        discountService.addDiscountByProduct(discountType,productId);
+        discountService.addDiscountByProducts(discountType,productId);
     }
 
     @Override
