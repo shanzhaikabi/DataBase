@@ -1,9 +1,6 @@
 package com.ssh.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Discount {
@@ -13,6 +10,7 @@ public class Discount {
     private String discountRule;
 
     @Id
+    @GeneratedValue
     @Column(name = "discountType", nullable = false)
     public Integer getDiscountType() {
         return discountType;
